@@ -1,34 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+ 小康 Tools
+</h1>
 
-## Getting Started
+<p align="center">
+  <img src="https://socialify.git.ci/tszhong0411/tools.honghong.me/image?font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fhonghong.me%2Fstatic%2Fimages%2Flogo%2Flogo-black.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark"  alt="Banner">
+</p>
 
-First, run the development server:
+<p align="center">
+    <a href="https://tools.honghong.me" target="blank">View Demo</a>
+    ·
+    <a href="https://github.com/tszhong0411/tools.honghong.me/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/tszhong0411/tools.honghong.me/issues/new/choose">Request Feature</a>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
+## 🌍 tools.honghong.me
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **favicon**: [realfavicongenerator](https://realfavicongenerator.net/)
+
+## 🚀 Demo
+
+<a href="https://tools.honghong.me" target="_blank">
+  <img src="https://img.shields.io/badge/website-tools.honghong.me-blue?style=flat-square&color=black" />
+</a>
+
+<img src="https://img.shields.io/github/repo-size/tszhong0411/tools.honghong.me?style=flat-square&color=green" />
+
+<img src="https://img.shields.io/github/languages/top/tszhong0411/tools.honghong.me?style=flat-square" />
+
+<img src="https://img.shields.io/github/commit-activity/m/tszhong0411/tools.honghong.me?color=orange&style=flat-square" />
+
+<img src="https://img.shields.io/github/deployments/tszhong0411/tools.honghong.me/Production?style=flat-square" />
+
+## 🤩 Features
+
+- CSS Units converter
+- Color converter
+- Source code viewer
+
+## 👋 Getting Started
+
+### Installation
+
+1. Clone this repo
+
+```sh
+git clone https://github.com/tszhong0411/tools.honghong.me.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Change directories
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```sh
+cd tools.honghong.me
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Install yarn Packages
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+yarn
+```
 
-## Learn More
+## 🛳️ Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] Multi-language Support
+  - [ ] Chinese
+  - [ ] English
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🍰 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Deploy on Vercel
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the Project
+2. Commit your Changes (`git commit -m 'Add some Feature'`)
+3. Push to the Branch (`git push origin main`)
+4. Open a Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<hr>
+<p align="center">
+Made with ❤️ in Hong Kong
+</p>
