@@ -10,7 +10,7 @@ type Unit = {
   onChange: (val: number) => void
 }
 
-export default function CSSUnit() {
+export default function CSSUnitConverter() {
   const [em, setEm] = React.useState(1)
   const [rem, setRem] = React.useState(1)
   const [px, setPx] = React.useState(16)

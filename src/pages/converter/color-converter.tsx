@@ -47,7 +47,7 @@ type List = {
   value: string
 }
 
-export default function Color() {
+export default function ColorConverter() {
   const [value, setValue] = React.useState('#ffffff')
   const { classes } = useStyles()
 

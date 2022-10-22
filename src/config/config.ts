@@ -2,6 +2,7 @@ import {
   IconArrowsExchange,
   IconCode,
   IconColorPicker,
+  IconPhoto,
   TablerIcon,
 } from '@tabler/icons'
 
@@ -42,6 +43,13 @@ export const config: Config = {
           keywords: ['convert', 'color'],
           color: 'orange',
           icon: IconColorPicker,
+        },
+        {
+          label: 'Image converter',
+          link: '/converter/image-converter',
+          keywords: ['image', 'extension'],
+          color: 'green',
+          icon: IconPhoto,
         },
       ],
     },

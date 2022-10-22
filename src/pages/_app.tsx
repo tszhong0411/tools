@@ -5,6 +5,7 @@ import {
   MantineProvider,
 } from '@mantine/core'
 import { useHotkeys, useLocalStorage } from '@mantine/hooks'
+import { NotificationsProvider } from '@mantine/notifications'
 import type { AppProps } from 'next/app'
 
 import Layout from '@/components/Layout'
@@ -36,32 +37,34 @@ function MyApp({ Component, pageProps }: AppProps) {
             'Sora,Noto Sans TC,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
         }}
       >
-        <Layout>
-          <Global
-            styles={() => ({
-              html: {
-                scrollBehavior: 'smooth',
-              },
-              '::selection': {
-                background: 'rgb(249, 6, 6, 0.05)',
-                color: '#f90606',
-              },
-              '::-webkit-scrollbar': {
-                width: 7,
-                height: 5,
-              },
-              '::-webkit-scrollbar-thumb': {
-                background: '#ef4444',
-                transition: '0.25s',
-                borderRadius: 2,
-              },
-              '::-webkit-scrollbar-track': {
-                background: '0 0',
-              },
-            })}
-          />
-          <Component {...pageProps} />
-        </Layout>
+        <NotificationsProvider autoClose={5000}>
+          <Layout>
+            <Global
+              styles={() => ({
+                html: {
+                  scrollBehavior: 'smooth',
+                },
+                '::selection': {
+                  background: 'rgb(249, 6, 6, 0.05)',
+                  color: '#f90606',
+                },
+                '::-webkit-scrollbar': {
+                  width: 7,
+                  height: 5,
+                },
+                '::-webkit-scrollbar-thumb': {
+                  background: '#ef4444',
+                  transition: '0.25s',
+                  borderRadius: 2,
+                },
+                '::-webkit-scrollbar-track': {
+                  background: '0 0',
+                },
+              })}
+            />
+            <Component {...pageProps} />
+          </Layout>
+        </NotificationsProvider>
       </MantineProvider>
     </ColorSchemeProvider>
   )
