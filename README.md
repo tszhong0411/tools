@@ -36,8 +36,9 @@
 
 ## 🤩 Features
 
-- CSS Units converter
+- CSS Unit converter
 - Color converter
+- Image converter
 - Source code viewer
 
 ## 👋 Getting Started
