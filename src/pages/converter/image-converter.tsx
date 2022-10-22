@@ -114,8 +114,13 @@ export default function ImageConverter() {
     files.forEach((file) => {
       const { extension } = file
 
-      if (extension === 'JPG' || extension === 'PNG' || extension === 'GIF') {
-        imageToBase64(file.originalFile, (result) =>
+      if (
+        extension === 'JPG' ||
+        extension === 'PNG' ||
+        extension === 'GIF' ||
+        extension === 'JPEG'
+      ) {
+        return imageToBase64(file.originalFile, (result) =>
           setFiles((state) =>
             state.map((item) => {
               if (item.id === file.id) return { ...item, result }
@@ -126,7 +131,7 @@ export default function ImageConverter() {
       }
 
       if (extension === 'SVG') {
-        svgToBase64(file.originalFile, (result) =>
+        return svgToBase64(file.originalFile, (result) =>
           setFiles((state) =>
             state.map((item) => {
               if (item.id === file.id) return { ...item, result }
@@ -135,6 +140,11 @@ export default function ImageConverter() {
           )
         )
       }
+
+      showNotification({
+        title: 'Error',
+        message: 'This format is not supported currently',
+      })
     })
   }
 
