@@ -2,6 +2,8 @@ import {
   IconArrowsExchange,
   IconCode,
   IconColorPicker,
+  IconFile,
+  IconFileText,
   IconPhoto,
   TablerIcon,
 } from '@tabler/icons'
@@ -63,6 +65,19 @@ export const config: Config = {
           keywords: ['source code', 'code', 'viewer'],
           color: 'blue',
           icon: IconCode,
+        },
+      ],
+    },
+    {
+      label: 'Document',
+      icon: IconFile,
+      links: [
+        {
+          label: 'PDF Viewer',
+          link: '/document/pdf-viewer',
+          keywords: ['pdf', 'viewer', 'document'],
+          color: 'cyan',
+          icon: IconFileText,
         },
       ],
     },
