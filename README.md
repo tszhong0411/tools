@@ -40,6 +40,7 @@
 - Color converter
 - Image converter
 - Source code viewer
+- PDF Viewer
 
 ## 👋 Getting Started
 
