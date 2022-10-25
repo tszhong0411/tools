@@ -41,6 +41,7 @@
 - Image converter
 - Source code viewer
 - PDF Viewer
+- Word counter
 
 ## 👋 Getting Started
 
