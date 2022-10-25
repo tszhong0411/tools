@@ -1,9 +1,11 @@
 import {
   IconArrowsExchange,
+  IconBlockquote,
   IconCode,
   IconColorPicker,
   IconFile,
   IconFileText,
+  IconMathFunction,
   IconPhoto,
   TablerIcon,
 } from '@tabler/icons'
@@ -29,26 +31,26 @@ type LinksGroup = {
 export const config: Config = {
   tools: [
     {
-      label: 'Converter',
+      label: 'Conversion',
       icon: IconArrowsExchange,
       links: [
         {
           label: 'CSS Unit converter',
-          link: '/converter/css-unit-converter',
+          link: '/conversion/css-unit-converter',
           keywords: ['convert', 'css unit'],
           color: 'red',
           icon: IconArrowsExchange,
         },
         {
           label: 'Color converter',
-          link: '/converter/color-converter',
+          link: '/conversion/color-converter',
           keywords: ['convert', 'color'],
           color: 'orange',
           icon: IconColorPicker,
         },
         {
           label: 'Image converter',
-          link: '/converter/image-converter',
+          link: '/conversion/image-converter',
           keywords: ['image', 'extension'],
           color: 'green',
           icon: IconPhoto,
@@ -78,6 +80,19 @@ export const config: Config = {
           keywords: ['pdf', 'viewer', 'document'],
           color: 'cyan',
           icon: IconFileText,
+        },
+      ],
+    },
+    {
+      label: 'Calculation',
+      icon: IconMathFunction,
+      links: [
+        {
+          label: 'Word counter',
+          link: '/calculation/word-counter',
+          keywords: ['word', 'counter'],
+          color: 'indigo',
+          icon: IconBlockquote,
         },
       ],
     },
