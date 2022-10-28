@@ -5,8 +5,10 @@ import {
   IconColorPicker,
   IconFile,
   IconFileText,
+  IconKeyboard,
   IconMathFunction,
   IconPhoto,
+  IconTestPipe,
   TablerIcon,
 } from '@tabler/icons'
 
@@ -93,6 +95,19 @@ export const config: Config = {
           keywords: ['word', 'counter'],
           color: 'indigo',
           icon: IconBlockquote,
+        },
+      ],
+    },
+    {
+      label: 'Tester',
+      icon: IconTestPipe,
+      links: [
+        {
+          label: 'Keyborad tester',
+          link: '/tester/keyboard-tester',
+          keywords: ['tester', 'keyboard'],
+          color: 'grape',
+          icon: IconKeyboard,
         },
       ],
     },

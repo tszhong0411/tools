@@ -42,6 +42,7 @@
 - Source code viewer
 - PDF Viewer
 - Word counter
+- Keyboard tester
 
 ## 👋 Getting Started
 
