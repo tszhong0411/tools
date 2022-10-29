@@ -16,7 +16,6 @@ import { useClipboard } from '@mantine/hooks'
 import Editor, { OnMount } from '@monaco-editor/react'
 import { IconLink } from '@tabler/icons'
 import { IconCopy, IconTextWrap, IconTrashX } from '@tabler/icons'
-import axios from 'axios'
 import React from 'react'
 
 import { isValidUrl } from '@/lib/isValidUrl'
@@ -77,11 +76,11 @@ export default function SourceCodeViewer() {
   const submitHandler = async (url: string) => {
     setVisible(true)
 
-    const { data } = await axios.post('/api/get-source-code', null, {
-      params: {
-        url,
-      },
-    })
+    const data = await (
+      await fetch(`/api/get-source-code?url=${url}`, {
+        method: 'POST',
+      })
+    ).text()
 
     setCode(data)
     setVisible(false)
@@ -184,6 +183,8 @@ export default function SourceCodeViewer() {
               minimap: {
                 enabled: false,
               },
+              wordWrap: 'wordWrapColumn',
+              wordWrapColumn: 10000,
             }}
           />
           <LoadingOverlay visible={visible} />

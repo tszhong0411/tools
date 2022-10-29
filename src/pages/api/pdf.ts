@@ -1,13 +1,11 @@
-import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const url = req.query.url as string
-  const { data: buffer } = await axios.get(url, {
-    responseType: 'arraybuffer',
-  })
+
+  const buffer = Buffer.from(await (await fetch(url)).arrayBuffer())
 
   res.setHeader('Content-Type', 'application/pdf')
 

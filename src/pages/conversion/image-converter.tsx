@@ -20,7 +20,6 @@ import {
 import { randomId } from '@mantine/hooks'
 import { showNotification } from '@mantine/notifications'
 import { IconPhoto, IconX } from '@tabler/icons'
-import axios from 'axios'
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
 import React from 'react'
@@ -152,9 +151,7 @@ export default function ImageConverter() {
     const { name, extension, size, to, id, result } = file
 
     const downloadHandler = async () => {
-      const { data: blob } = await axios.get(result, {
-        responseType: 'blob',
-      })
+      const blob = await (await fetch(result)).blob()
 
       FileSaver.saveAs(
         blob,

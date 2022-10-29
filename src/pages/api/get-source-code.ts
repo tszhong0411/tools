@@ -1,4 +1,3 @@
-import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
@@ -6,7 +5,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const url = req.query.url as string
-  const { data } = await axios.get(url)
+  const data = await (await fetch(url)).text()
 
   res.setHeader('Content-Type', 'text/plain')
 
