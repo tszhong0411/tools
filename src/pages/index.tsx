@@ -26,7 +26,7 @@ const Home = () => {
         label='Search'
         onChange={(e) => setValue(e.currentTarget.value)}
       />
-      <Stack id='get-started'>
+      <Stack id='get-started' sx={{ scrollMarginTop: 80 }}>
         {!value &&
           config.tools.map(({ label, links }) => (
             <Card key={label} tools={links} title={label} />
