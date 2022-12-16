@@ -3,7 +3,8 @@ import { useRouter } from 'next/router'
 import { NextSeo, NextSeoProps } from 'next-seo'
 import React from 'react'
 
-import { Favicons } from './Favicons'
+import { favicons } from '@/lib/favicon'
+
 import Footer from './Footer'
 import Header from './Header'
 
@@ -32,14 +33,14 @@ export default function Layout({
           description: 'Tools to help you.',
           images: [
             {
-              url: 'https://honghong.me/static/images/og/og.png',
-              width: 1200,
-              height: 630,
+              url: 'https://tools.honghong.me/static/images/og.png',
+              width: 1600,
+              height: 960,
               alt: 'Online Tools',
             },
           ],
         }}
-        additionalLinkTags={[...Favicons]}
+        additionalLinkTags={[...favicons]}
         {...props}
       />
       <Header />
