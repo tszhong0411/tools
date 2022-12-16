@@ -43,7 +43,7 @@ export default function Hero() {
               radius='md'
               size='md'
               component={Link}
-              href='https://github.com/tszhong0411/tools.honghong.me'
+              href='https://github.com/tszhong0411/tools'
               underline={false}
             >
               Source code
