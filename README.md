@@ -3,15 +3,15 @@
 </h1>
 
 <p align="center">
-  <img src="https://socialify.git.ci/tszhong0411/tools.honghong.me/image?font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fhonghong.me%2Fstatic%2Fimages%2Flogo%2Flogo-black.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark"  alt="Banner">
+  <img src="https://socialify.git.ci/tszhong0411/tools/image?forks=1&issues=1&logo=https%3A%2F%2Ftools.honghong.me%2Fstatic%2Flogo.png&name=1&owner=1&pulls=1&stargazers=1&theme=Dark"  alt="Banner">
 </p>
 
 <p align="center">
     <a href="https://tools.honghong.me" target="blank">View Demo</a>
     ·
-    <a href="https://github.com/tszhong0411/tools.honghong.me/issues/new/choose">Report Bug</a>
+    <a href="https://github.com/tszhong0411/tools/issues/new/choose">Report Bug</a>
     ·
-    <a href="https://github.com/tszhong0411/tools.honghong.me/issues/new/choose">Request Feature</a>
+    <a href="https://github.com/tszhong0411/tools/issues/new/choose">Request Feature</a>
 </p>
 
 ## 🌍 tools.honghong.me
@@ -26,13 +26,13 @@
   <img src="https://img.shields.io/badge/website-tools.honghong.me-blue?style=flat-square&color=black" />
 </a>
 
-<img src="https://img.shields.io/github/repo-size/tszhong0411/tools.honghong.me?style=flat-square&color=green" />
+<img src="https://img.shields.io/github/repo-size/tszhong0411/tools?style=flat-square&color=green" />
 
-<img src="https://img.shields.io/github/languages/top/tszhong0411/tools.honghong.me?style=flat-square" />
+<img src="https://img.shields.io/github/languages/top/tszhong0411/tools?style=flat-square" />
 
-<img src="https://img.shields.io/github/commit-activity/m/tszhong0411/tools.honghong.me?color=orange&style=flat-square" />
+<img src="https://img.shields.io/github/commit-activity/m/tszhong0411/tools?color=orange&style=flat-square" />
 
-<img src="https://img.shields.io/github/deployments/tszhong0411/tools.honghong.me/Production?style=flat-square" />
+<img src="https://img.shields.io/github/deployments/tszhong0411/tools/Production?style=flat-square" />
 
 ## 🤩 Features
 
@@ -51,7 +51,7 @@
 1. Clone this repo
 
 ```sh
-git clone https://github.com/tszhong0411/tools.honghong.me.git
+git clone https://github.com/tszhong0411/tools.git
 ```
 
 2. Change directories
