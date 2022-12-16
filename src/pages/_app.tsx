@@ -8,6 +8,7 @@ import { useHotkeys, useLocalStorage } from '@mantine/hooks'
 import { NotificationsProvider } from '@mantine/notifications'
 import type { AppProps } from 'next/app'
 
+import Analytics from '@/components/Analytics'
 import Layout from '@/components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -62,6 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 },
               })}
             />
+            <Analytics />
             <Component {...pageProps} />
           </Layout>
         </NotificationsProvider>

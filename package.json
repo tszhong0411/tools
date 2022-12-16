@@ -34,6 +34,7 @@
     "@monaco-editor/react": "^4.4.6",
     "@react-pdf-viewer/core": "^3.7.0",
     "@react-pdf-viewer/default-layout": "^3.7.0",
+    "@vercel/analytics": "^0.1.6",
     "colord": "^2.9.3",
     "dayjs": "^1.11.5",
     "embla-carousel-react": "^7.0.3",
