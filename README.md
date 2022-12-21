@@ -22,9 +22,7 @@
 
 ## 🚀 Demo
 
-<a href="https://tools.honghong.me" target="_blank">
-  <img src="https://img.shields.io/badge/website-tools.honghong.me-blue?style=flat-square&color=black" />
-</a>
+<img src="https://img.shields.io/badge/website-tools.honghong.me-blue?style=flat-square&color=black" />
 
 <img src="https://img.shields.io/github/repo-size/tszhong0411/tools?style=flat-square&color=green" />
 
