@@ -1,5 +1,5 @@
 <h1 align="center">
- 小康 Tools
+ 小康工具
 </h1>
 
 <p align="center">
@@ -7,20 +7,20 @@
 </p>
 
 <p align="center">
-    <a href="https://tools.honghong.me" target="blank">View Demo</a>
+    <a href="https://tools.honghong.me" target="blank">線上查看</a>
     ·
-    <a href="https://github.com/tszhong0411/tools/issues/new/choose">Report Bug</a>
+    <a href="https://github.com/tszhong0411/tools/issues/new/choose">回報錯誤</a>
     ·
-    <a href="https://github.com/tszhong0411/tools/issues/new/choose">Request Feature</a>
+    <a href="https://github.com/tszhong0411/tools/issues/new/choose">要求新功能</a>
 </p>
 
 ## 🌍 tools.honghong.me
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Deployment**: [Vercel](https://vercel.com)
+- **框架**: [Next.js](https://nextjs.org/)
+- **部署**: [Vercel](https://vercel.com)
 - **favicon**: [realfavicongenerator](https://realfavicongenerator.net/)
 
-## 🚀 Demo
+## 🚀 演示
 
 <img src="https://img.shields.io/badge/website-tools.honghong.me-blue?style=flat-square&color=black" />
 
@@ -32,57 +32,50 @@
 
 <img src="https://img.shields.io/github/deployments/tszhong0411/tools/Production?style=flat-square" />
 
-## 🤩 Features
+## 🤩 特色
 
-- CSS Unit converter
-- Color converter
-- Image converter
-- Source code viewer
-- PDF Viewer
-- Word counter
-- Keyboard tester
+- CSS 單位轉換器
+- 顏色轉換器
+- 圖片格式轉換器
+- PDF 閱讀器
+- 字數計算器
+- 鍵盤測試器
 
-## 👋 Getting Started
+## 👋 開始
 
-### Installation
+### 安裝
 
-1. Clone this repo
+1. 複製這個倉庫
 
 ```sh
 git clone https://github.com/tszhong0411/tools.git
 ```
 
-2. Change directories
+2. 更改目錄
 
 ```sh
 cd tools.honghong.me
 ```
 
-3. Install yarn Packages
+3. 安裝 yarn 包
 
 ```sh
 yarn
 ```
 
-## 🛳️ Roadmap
+## 🍰 貢獻
 
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] English
+貢獻使開源社區成為學習、啟發和創造的絕佳場所。 **非常感謝**您所做的任何貢獻。
 
-## 🍰 Contributing
+如果您有更好的建議，請 fork 和建立 pull request。您也可以簡單地打開帶有 "enhancement" 標籤的 issue。
+別忘了給這個項目一個 Star！再次感謝！
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Commit your Changes (`git commit -m 'Add some Feature'`)
-3. Push to the Branch (`git push origin main`)
-4. Open a Pull Request
+1. Fork 這個項目
+2. 提交你的更改 (`git commit -m 'Add some Feature'`)
+3. 推到分支上 (`git push origin main`)
+4. 打開一個 Pull Request
 
 <hr>
 <p align="center">
-Made with ❤️ in Hong Kong
+用 ❤️ 製作在 Hong Kong
 </p>

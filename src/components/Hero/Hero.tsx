@@ -1,56 +1,40 @@
-import { Button, Container, Group, Text, Title } from '@mantine/core'
-
-import { useStyles } from './Hero.styles'
 import Link from '../Link'
 
-export default function Hero() {
-  const { classes } = useStyles()
+const Hero = () => {
   return (
-    <Container pb={48}>
-      <div className={classes.inner}>
-        <div className={classes.content}>
-          <Title className={classes.title}>
-            The{' '}
-            <Text
-              component='span'
-              inherit
-              variant='gradient'
-              gradient={{ from: 'pink', to: 'yellow' }}
-            >
-              Best
-            </Text>{' '}
-            online tools
-          </Title>
-
-          <Text className={classes.description} mt={30}>
-            Here are some free online tools created by{' '}
-            <Link href='https://instagram.com/tszhong0411'>@tszhong0411</Link>.
-            I wish to hone my abilities. This is my side project, maybe :)
-          </Text>
-
-          <Group mt={30}>
-            <Button
-              radius='md'
-              size='md'
-              component={Link}
-              href='#get-started'
-              underline={false}
-            >
-              Get started
-            </Button>
-            <Button
-              variant='default'
-              radius='md'
-              size='md'
-              component={Link}
-              href='https://github.com/tszhong0411/tools'
-              underline={false}
-            >
-              Source code
-            </Button>
-          </Group>
-        </div>
+    <div className='my-12 space-y-8'>
+      <h1 className='font-extrabold text-3xl'>
+        <span className='text-transparent bg-clip-text bg-gradient-to-r dark:from-red-700 dark:to-orange-500 from-pink-500 to-orange-400'>
+          最好
+        </span>{' '}
+        的線上工具
+      </h1>
+      <p className='text-accent-6 leading-6'>
+        這裡有一些由{' '}
+        <Link href='https://instagram.com/tszhong0411' className='text-red-500'>
+          @tszhong0411
+        </Link>{' '}
+        製作的免費線上工具。我希望能訓練我的能力。這也許是我的 side project :)
+      </p>
+      <div className='flex gap-4'>
+        <Link
+          href='#get-started'
+          animation={false}
+          className='rounded-lg bg-theme-9 hover:bg-theme-10 transition-colors duration-300 text-white px-6 py-2.5 font-bold'
+        >
+          開始
+        </Link>
+        <Link
+          href='https://github.com/tszhong0411/tools'
+          animation={false}
+          icon={false}
+          className='rounded-lg bg-theme-1 border border-theme-7 hover:border-theme-8 transition-colors duration-300 text-theme-11 px-6 py-2.5 font-bold'
+        >
+          原始碼
+        </Link>
       </div>
-    </Container>
+    </div>
   )
 }
+
+export default Hero

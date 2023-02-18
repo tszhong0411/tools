@@ -1,7 +1,7 @@
 import {
+  Icon,
   IconArrowsExchange,
   IconBlockquote,
-  IconCode,
   IconColorPicker,
   IconFile,
   IconFileText,
@@ -9,8 +9,7 @@ import {
   IconMathFunction,
   IconPhoto,
   IconTestPipe,
-  TablerIcon,
-} from '@tabler/icons'
+} from '@tabler/icons-react'
 
 type Config = {
   tools: Array<LinksGroup>
@@ -20,93 +19,80 @@ export type Tool = {
   label: string
   link: string
   color: string
-  icon: TablerIcon
+  icon: Icon
   keywords: Array<string>
 }
 
 type LinksGroup = {
   label: string
-  icon: TablerIcon
+  icon: Icon
   links: Array<Tool>
 }
 
 export const config: Config = {
   tools: [
     {
-      label: 'Conversion',
+      label: '轉換',
       icon: IconArrowsExchange,
       links: [
         {
-          label: 'CSS Unit converter',
+          label: 'CSS 單位轉換器',
           link: '/conversion/css-unit-converter',
-          keywords: ['convert', 'css unit'],
-          color: 'red',
+          keywords: ['轉換', 'css'],
+          color: '#fa5252',
           icon: IconArrowsExchange,
         },
         {
-          label: 'Color converter',
+          label: '顏色轉換器',
           link: '/conversion/color-converter',
-          keywords: ['convert', 'color'],
-          color: 'orange',
+          keywords: ['轉換', '顏色'],
+          color: '#fd7e14',
           icon: IconColorPicker,
         },
         {
-          label: 'Image converter',
+          label: '圖片格式轉換器',
           link: '/conversion/image-converter',
-          keywords: ['image', 'extension'],
-          color: 'green',
+          keywords: ['圖片', '格式'],
+          color: '#40c057',
           icon: IconPhoto,
         },
       ],
     },
     {
-      label: 'Code',
-      icon: IconCode,
-      links: [
-        {
-          label: 'Source code viewer',
-          link: '/code/source-code-viewer',
-          keywords: ['source code', 'code', 'viewer'],
-          color: 'blue',
-          icon: IconCode,
-        },
-      ],
-    },
-    {
-      label: 'Document',
+      label: '文件',
       icon: IconFile,
       links: [
         {
-          label: 'PDF Viewer',
+          label: 'PDF 閱讀器',
           link: '/document/pdf-viewer',
-          keywords: ['pdf', 'viewer', 'document'],
-          color: 'cyan',
+          keywords: ['pdf', '閱讀器', '文件'],
+          color: '#15aabf',
           icon: IconFileText,
         },
       ],
     },
     {
-      label: 'Calculation',
+      label: '計算',
       icon: IconMathFunction,
       links: [
         {
-          label: 'Word counter',
+          label: '字數計算器',
           link: '/calculation/word-counter',
-          keywords: ['word', 'counter'],
-          color: 'indigo',
+          keywords: ['字數', '計算器'],
+          color: '#4c6ef5',
           icon: IconBlockquote,
         },
       ],
     },
     {
-      label: 'Tester',
+      label: '測試',
       icon: IconTestPipe,
       links: [
         {
-          label: 'Keyborad tester',
+          label: '鍵盤測試器',
           link: '/tester/keyboard-tester',
-          keywords: ['tester', 'keyboard'],
-          color: 'grape',
+          keywords: ['測試器', '鍵盤'],
+          color: '#be4bdb',
           icon: IconKeyboard,
         },
       ],
