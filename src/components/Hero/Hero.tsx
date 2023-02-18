@@ -6,7 +6,7 @@ const Hero = () => {
       <h1 className='font-extrabold text-3xl'>
         <span className='text-transparent bg-clip-text bg-gradient-to-r dark:from-red-700 dark:to-orange-500 from-pink-500 to-orange-400'>
           最好
-        </span>{' '}
+        </span>
         的線上工具
       </h1>
       <p className='text-accent-6 leading-6'>
