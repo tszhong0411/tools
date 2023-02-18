@@ -5,7 +5,9 @@ export const imageToBase64 = (
   const reader = new FileReader()
 
   reader.addEventListener('load', (e) => {
-    callback(e.target.result as string)
+    if (e.target) {
+      callback(e.target.result as string)
+    }
   })
 
   reader.readAsDataURL(file)
