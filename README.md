@@ -20,18 +20,6 @@
 - **部署**: [Vercel](https://vercel.com)
 - **favicon**: [realfavicongenerator](https://realfavicongenerator.net/)
 
-## 🚀 演示
-
-<img src="https://img.shields.io/badge/website-tools.honghong.me-blue?style=flat-square&color=black" />
-
-<img src="https://img.shields.io/github/repo-size/tszhong0411/tools?style=flat-square&color=green" />
-
-<img src="https://img.shields.io/github/languages/top/tszhong0411/tools?style=flat-square" />
-
-<img src="https://img.shields.io/github/commit-activity/m/tszhong0411/tools?color=orange&style=flat-square" />
-
-<img src="https://img.shields.io/github/deployments/tszhong0411/tools/Production?style=flat-square" />
-
 ## 🤩 特色
 
 - CSS 單位轉換器
