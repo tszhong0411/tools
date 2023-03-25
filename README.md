@@ -16,9 +16,9 @@
 
 ## 🌍 tools.honghong.me
 
-- **框架**: [Next.js](https://nextjs.org/)
-- **部署**: [Vercel](https://vercel.com)
-- **favicon**: [realfavicongenerator](https://realfavicongenerator.net/)
+- 框架: [Next.js](https://nextjs.org/)
+- 部署: [Vercel](https://vercel.com)
+- 網站圖標: [realfavicongenerator](https://realfavicongenerator.net/)
 
 ## 🤩 特色
 
@@ -29,11 +29,9 @@
 - 字數計算器
 - 鍵盤測試器
 
-## 👋 開始
+## 👋 在本地運行
 
-### 安裝
-
-1. 複製這個倉庫
+1. Clone 這個倉庫
 
 ```sh
 git clone https://github.com/tszhong0411/tools.git
@@ -45,23 +43,11 @@ git clone https://github.com/tszhong0411/tools.git
 cd tools.honghong.me
 ```
 
-3. 安裝 yarn 包
+3. 安裝 packages
 
 ```sh
 yarn
 ```
-
-## 🍰 貢獻
-
-貢獻使開源社區成為學習、啟發和創造的絕佳場所。 **非常感謝**您所做的任何貢獻。
-
-如果您有更好的建議，請 fork 和建立 pull request。您也可以簡單地打開帶有 "enhancement" 標籤的 issue。
-別忘了給這個項目一個 Star！再次感謝！
-
-1. Fork 這個項目
-2. 提交你的更改 (`git commit -m 'Add some Feature'`)
-3. 推到分支上 (`git push origin main`)
-4. 打開一個 Pull Request
 
 <hr>
 <p align="center">
