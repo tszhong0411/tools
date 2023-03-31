@@ -34,7 +34,7 @@ const Head = (props: HeadProps) => {
           description,
           images: [
             {
-              url: 'https://tools.honghong.me/static/og.png',
+              url: 'https://honghong.me/static/images/projects/tools/cover.png',
               width: 1600,
               height: 960,
               alt: '小康工具 - 最好的線上工具',
