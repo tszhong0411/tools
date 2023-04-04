@@ -35,8 +35,8 @@ const Head = (props: HeadProps) => {
           images: [
             {
               url: 'https://honghong.me/static/images/projects/tools/cover.png',
-              width: 1600,
-              height: 960,
+              width: 1200,
+              height: 630,
               alt: '小康工具 - 最好的線上工具',
             },
           ],
