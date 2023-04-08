@@ -1,7 +1,14 @@
 {
   "name": "tools",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
+  "license": "MIT",
+  "description": "Free online tools",
+  "author": "Lai Tsz Hong <info@honghong.me> (https://github.com/tszhong0411/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tszhong0411/honghong.me.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
