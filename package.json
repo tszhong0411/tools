@@ -7,7 +7,7 @@
   "author": "Lai Tsz Hong <info@honghong.me> (https://github.com/tszhong0411/)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tszhong0411/honghong.me.git"
+    "url": "git+https://github.com/tszhong0411/tools.git"
   },
   "scripts": {
     "dev": "next dev",
