@@ -7,7 +7,6 @@ import { IconFile } from '@tabler/icons-react'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
-
 import '@react-pdf-viewer/core/lib/styles/index.css'
 import '@react-pdf-viewer/default-layout/lib/styles/index.css'
 
@@ -39,18 +38,18 @@ const PDFViewer = () => {
   React.useEffect(() => setMounted(true), [])
 
   return (
-    <Container className='max-w-5xl flex justify-center flex-col items-center'>
-      <Title title='PDF 閱讀器' />
+    <Container className='flex max-w-5xl flex-col items-center justify-center'>
+      <Title title='PDF Viewer' />
 
       <div className='my-12 w-full'>
-        {/* 拖曳區 */}
+        {/* Dropzone */}
         <div
           {...getRootProps()}
-          className='border-2 border-dashed border-accent-4 px-4 py-6 rounded-lg my-12 cursor-pointer flex flex-col items-center gap-2 hover:bg-accent-1 transition-colors duration-300'
+          className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed border-accent-4 px-4 py-6 transition-colors duration-300 hover:bg-accent-1'
         >
           <IconFile size={48} />
           <input {...getInputProps()} />
-          <p>將 PDF 拖曳到此處，或單擊以選擇檔案</p>
+          <p>Drag and drop PDF here, or click to select a file</p>
         </div>
 
         {mounted && url && (

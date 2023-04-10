@@ -133,73 +133,79 @@ const ImageConverter = () => {
   }
 
   return (
-    <Container className='flex justify-center flex-col items-center'>
-      <Title title='圖片格式轉換器' />
+    <Container className='flex flex-col items-center justify-center'>
+      <Title title='Image Converter' />
 
-      {/* 拖曳區 */}
+      {/* Dropzone */}
       <div
         {...getRootProps()}
-        className='border-2 border-dashed border-accent-4 px-4 py-6 rounded-lg my-12 cursor-pointer flex flex-col items-center gap-2 hover:bg-accent-1 transition-colors duration-300'
+        className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed border-accent-4 px-4 py-6 transition-colors duration-300 hover:bg-accent-1'
       >
         <IconPhoto size={48} />
         <input {...getInputProps()} />
-        <p>將一些圖像拖曳到此處，或單擊以選擇檔案</p>
+        <p>Drag some images here, or click to select files.</p>
       </div>
 
-      {/* 檔案 */}
+      {/* Files */}
       {files.length !== 0 && (
         <div className='w-full'>
-          {/* 控制 */}
+          {/* Control */}
           <div className='flex flex-col items-start gap-4 sm:flex-row sm:justify-between'>
-            <div className='flex items-center gap-2.5 justify-start'>
-              轉換全部到
-              <Select onChange={setAllExtensions} options={options} />
+            <div className='flex items-center justify-start gap-2.5'>
+              Convert all to
+              <Select
+                onChange={(option) => setAllExtensions(option as Option)}
+                options={options}
+              />
             </div>
-            <div className='flex gap-2 items-center justify-center'>
+            <div className='flex items-center justify-center gap-2'>
               <button
-                className='rounded-lg py-2 px-4 transition-colors duration-300 bg-theme-9 hover:bg-theme-10 text-white'
+                className='rounded-lg border border-black bg-black py-2 px-4 font-bold text-white transition-colors duration-300 hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white'
                 onClick={clearAll}
+                type='button'
               >
-                清除全部
+                Clear all
               </button>
               <button
-                className='rounded-lg py-2 px-4 transition-colors duration-300 bg-theme-1 border border-theme-7 hover:border-theme-8 text-theme-11 dark:disabled:bg-gray-800 disabled:text-gray-500 dark:disabled:border-gray-900 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:border-gray-100'
+                className='rounded-lg border border-black bg-black py-2 px-4 font-bold text-white transition-colors duration-300 hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:border-accent-2 disabled:bg-accent-1 disabled:text-gray-700 dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:disabled:border-accent-2 dark:disabled:bg-accent-1 dark:disabled:text-gray-300'
                 disabled={
                   files.filter((file) => file.to !== undefined).length !==
                   files.length
                 }
                 onClick={convertAll}
+                type='button'
               >
-                轉換全部
+                Convert all
               </button>
             </div>
           </div>
 
-          {/* 檔案列表 */}
-          <div className='space-y-4 my-8'>
+          {/* File list */}
+          <div className='my-8 space-y-4'>
             {files.map((file) => {
               const { name, size, extension, id, result, to } = file
 
               return (
                 <div
                   key={id}
-                  className='border border-accent-2 p-4 rounded-lg flex flex-col gap-4'
+                  className='flex flex-col gap-4 rounded-lg border border-accent-2 p-4'
                 >
-                  {/* 檔案名稱 */}
+                  {/* File name */}
                   <div>{name}</div>
 
-                  <div className='flex justify-between sm:items-center flex-col sm:flex-row'>
-                    {/* 檔案大小 */}
+                  <div className='flex flex-col justify-between sm:flex-row sm:items-center'>
+                    {/* File size */}
                     <div className='text-sm text-accent-7'>{size}</div>
 
-                    {/* 轉換到 / 下載按鈕 */}
-                    <div className='flex items-center justify-between mt-4 sm:mt-0 sm:justify-center gap-2'>
+                    {/* Convert to / Download button */}
+                    <div className='mt-4 flex items-center justify-between gap-2 sm:mt-0 sm:justify-center'>
                       {result ? (
                         <button
-                          className='bg-green-500 rounded-lg px-4 py-2 text-white'
+                          className='rounded-lg bg-green-500 px-4 py-2 text-white'
                           onClick={() => to && download(result, name, to.value)}
+                          type='button'
                         >
-                          下載
+                          Download
                         </button>
                       ) : (
                         <div className='flex items-center gap-2'>
@@ -207,17 +213,18 @@ const ImageConverter = () => {
                           <Select
                             options={options}
                             value={to}
-                            onChange={(option: Option) =>
-                              setExtension(id, option)
+                            onChange={(option) =>
+                              setExtension(id, option as Option)
                             }
                           />
                         </div>
                       )}
 
-                      {/* 刪除按鈕 */}
+                      {/* Delete button */}
                       <button
-                        className='p-1 rounded-lg hover:bg-accent-2 transition-colors duration-300'
+                        className='rounded-lg p-1 transition-colors duration-300 hover:bg-accent-2'
                         onClick={() => deleteHandler(id)}
+                        type='button'
                       >
                         <IconX />
                       </button>

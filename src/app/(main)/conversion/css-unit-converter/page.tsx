@@ -70,11 +70,11 @@ const CSSUnitConverter = () => {
   }
 
   return (
-    <Container className='max-w-xl flex justify-center flex-col items-center'>
-      <Title title='CSS 單位轉換器' />
+    <Container className='flex max-w-xl flex-col items-center justify-center'>
+      <Title title='CSS Unit Converter' />
 
-      {/* CSS 單位轉換器 */}
-      <div className='space-y-4 my-12'>
+      {/* CSS unit converter */}
+      <div className='my-12 space-y-4'>
         <Input
           unit='PX'
           value={values.PX}
@@ -111,7 +111,7 @@ const Input = (props: InputProps) => {
   return (
     <div className='relative'>
       <input
-        className='rounded-lg outline-none border border-accent-2 px-4 py-4 bg-transparent appearance-none focus:border-accent-5 transition-colors duration-300 pr-14'
+        className='appearance-none rounded-lg border border-accent-2 bg-transparent px-4 py-4 pr-14 outline-none transition-colors duration-300 focus:border-accent-5'
         type='number'
         {...rest}
       />

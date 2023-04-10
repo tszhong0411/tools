@@ -40,7 +40,7 @@ const ColorConverter = () => {
 
   const lists: Lists[] = [
     {
-      label: '轉換',
+      label: 'Conversion',
       data: [
         {
           label: 'HEX',
@@ -67,20 +67,20 @@ const ColorConverter = () => {
           value: colord(value).toLchString(),
         },
         {
-          label: 'CSS 關鍵字',
+          label: 'CSS Keyword',
           value: colord(value).toName({ closest: true }) || '未知',
         },
       ],
     },
     {
-      label: '分析',
+      label: 'Analysis',
       data: [
         {
-          label: '是 CSS 有效值？',
+          label: 'Is it a valid CSS value?',
           value: colord(value).isValid() ? 'Yes' : 'No',
         },
         {
-          label: '格式',
+          label: 'Format',
           value: getFormat(value) || '-',
         },
         {
@@ -88,17 +88,17 @@ const ColorConverter = () => {
           value: `${colord(value).hue()} deg`,
         },
         {
-          label: '亮度 (brightness)',
+          label: 'Brightness',
           value: `${Math.floor(colord(value).brightness() * 100)}% (${
             colord(value).isDark() ? 'Dark' : 'Light'
           })`,
         },
         {
-          label: '亮度 (luminance)',
+          label: 'Luminance',
           value: `${Math.floor(colord(value).luminance() * 100)}%`,
         },
         {
-          label: '對比白色',
+          label: 'Contrast',
           value: `${colord(value).contrast()}:1`,
         },
       ],
@@ -106,14 +106,15 @@ const ColorConverter = () => {
   ]
 
   return (
-    <Container className='flex justify-center flex-col items-center'>
-      <Title title='顏色轉換器' />
+    <Container className='flex flex-col items-center justify-center'>
+      <Title title='Color Converter' />
 
-      {/* 顏色輸入器 */}
-      <div className='relative my-8 flex gap-4 items-center justify-between w-full max-w-[250px]'>
-        <div
-          className='w-7 h-7 rounded-lg cursor-pointer'
+      {/* Color input */}
+      <div className='relative my-8 flex w-full max-w-[250px] items-center justify-between gap-4'>
+        <button
+          className='h-7 w-7 cursor-pointer rounded-lg'
           style={{ backgroundColor: value }}
+          type='button'
           onClick={() => setOpened(true)}
         />
         <div>{value}</div>
@@ -128,15 +129,18 @@ const ColorConverter = () => {
         )}
       </div>
 
-      {/* 顏色 */}
-      <div className='grid sm:grid-cols-2 w-full gap-4 my-12'>
-        {lists.map((list, i) => {
+      {/* Color conversion results */}
+      <div className='my-12 grid w-full gap-4 sm:grid-cols-2'>
+        {lists.map((list) => {
           const { label, data } = list
 
           return (
             <>
-              <div key={i} className='border border-accent-2 rounded-lg p-4'>
-                <div className='text-3xl font-bold text-center mb-8'>
+              <div
+                key={label}
+                className='rounded-lg border border-accent-2 p-4'
+              >
+                <div className='mb-8 text-center text-3xl font-bold'>
                   {label}
                 </div>
                 <Items list={data} />
@@ -154,13 +158,13 @@ const Items = (props: ItemProps) => {
 
   return (
     <>
-      {list.map((item, i) => {
+      {list.map((item) => {
         const { label, value } = item
 
         return (
-          <div className='border-b-4 border-accent-2 mb-4' key={i}>
-            <div className='font-medium text-sm'>{label}</div>
-            <div className='my-2 font-bold text-lg'>{value}</div>
+          <div className='mb-4 border-b-4 border-accent-2' key={label}>
+            <div className='text-sm font-medium'>{label}</div>
+            <div className='my-2 text-lg font-bold'>{value}</div>
           </div>
         )
       })}

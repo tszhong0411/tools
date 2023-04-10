@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
+  "type": "module",
   "description": "Free online tools",
   "author": "Lai Tsz Hong <info@honghong.me> (https://github.com/tszhong0411/)",
   "repository": {
@@ -19,9 +20,9 @@
     "type-check": "tsc --noEmit",
     "prepare": "husky install"
   },
+  "prettier": "@tszhong0411/prettier-config",
   "dependencies": {
     "@monaco-editor/react": "^4.4.6",
-    "@next/font": "^13.1.7-canary.7",
     "@react-pdf-viewer/core": "^3.11.0",
     "@react-pdf-viewer/default-layout": "^3.11.0",
     "@react-pdf-viewer/locales": "^1.0.0",
@@ -29,7 +30,7 @@
     "@types/dom-to-image": "^2.6.4",
     "@types/sharp": "^0.31.1",
     "@types/uuid": "^9.0.0",
-    "@vercel/analytics": "^0.1.10",
+    "@vercel/analytics": "^0.1.11",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
     "colord": "^2.9.3",
@@ -39,7 +40,7 @@
     "file-saver": "^2.0.5",
     "filesize": "^10.0.6",
     "highlight.js": "^11.7.0",
-    "next": "^13.1.7-canary.7",
+    "next": "13.2.5-canary.17",
     "next-seo": "^5.15.0",
     "next-themes": "^0.2.1",
     "pdfjs-dist": "^3.3.122",
@@ -58,19 +59,16 @@
   "devDependencies": {
     "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.4.4",
+    "@tszhong0411/eslint-config": "^1.0.7",
+    "@tszhong0411/prettier-config": "^1.0.1",
+    "@tszhong0411/tsconfig": "^1.0.1",
     "@types/file-saver": "^2.0.5",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.34.0",
-    "eslint-config-next": "^13.1.6",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-config-next": "13.2.5-canary.17",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "postcss": "^8.4.21",
@@ -86,106 +84,14 @@
       "prettier -c"
     ]
   },
-  "prettier": {
-    "arrowParens": "always",
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "tabWidth": 2,
-    "semi": false
-  },
   "eslintConfig": {
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "node": true
-    },
-    "plugins": [
-      "@typescript-eslint",
-      "simple-import-sort",
-      "unused-imports"
-    ],
     "extends": [
-      "eslint:recommended",
-      "next",
       "next/core-web-vitals",
-      "plugin:@typescript-eslint/recommended",
-      "prettier"
+      "@tszhong0411/eslint-config"
     ],
-    "rules": {
-      "no-unused-vars": "off",
-      "no-console": "warn",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
-      "react/display-name": "off",
-      "react/jsx-curly-brace-presence": [
-        "warn",
-        {
-          "props": "never",
-          "children": "never"
-        }
-      ],
-      "@typescript-eslint/no-unused-vars": "off",
-      "unused-imports/no-unused-imports": "warn",
-      "unused-imports/no-unused-vars": [
-        "warn",
-        {
-          "vars": "all",
-          "varsIgnorePattern": "^_",
-          "args": "after-used",
-          "argsIgnorePattern": "^_"
-        }
-      ],
-      "simple-import-sort/exports": "warn",
-      "simple-import-sort/imports": [
-        "warn",
-        {
-          "groups": [
-            [
-              "^@?\\w",
-              "^\\u0000"
-            ],
-            [
-              "^.+\\.s?css$"
-            ],
-            [
-              "^@/lib",
-              "^@/hooks"
-            ],
-            [
-              "^@/data"
-            ],
-            [
-              "^@/components",
-              "^@/container"
-            ],
-            [
-              "^@/store"
-            ],
-            [
-              "^@/"
-            ],
-            [
-              "^\\./?$",
-              "^\\.(?!/?$)",
-              "^\\.\\./?$",
-              "^\\.\\.(?!/?$)",
-              "^\\.\\./\\.\\./?$",
-              "^\\.\\./\\.\\.(?!/?$)",
-              "^\\.\\./\\.\\./\\.\\./?$",
-              "^\\.\\./\\.\\./\\.\\.(?!/?$)"
-            ],
-            [
-              "^@/types"
-            ],
-            [
-              "^"
-            ]
-          ]
-        }
-      ]
-    },
-    "globals": {
-      "React": true,
-      "JSX": true
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "ecmaVersion": "latest"
     }
   },
   "config": {

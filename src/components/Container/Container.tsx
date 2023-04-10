@@ -11,7 +11,7 @@ const Container = (props: ContainerProps) => {
 
   return (
     <div
-      className={clsxm('mx-auto py-12 min-h-[calc(100vh-312px)]', className)}
+      className={clsxm('mx-auto min-h-[calc(100vh-312px)] py-12', className)}
     >
       {children}
     </div>

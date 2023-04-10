@@ -20,25 +20,24 @@ const Header = () => {
         <Link href='/'>
           <Logo />
         </Link>
-        <div className='flex gap-6 justify-center items-center'>
+        <div className='flex items-center justify-center gap-6'>
           {mounted && (
             <button
               onClick={() =>
                 setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
               }
+              type='button'
             >
               {resolvedTheme === 'dark' ? <IconSun /> : <IconMoon />}
             </button>
           )}
-          <button>
-            <a
-              href='https://github.com/tszhong0411/tools'
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <IconBrandGithub />
-            </a>
-          </button>
+          <a
+            href='https://github.com/tszhong0411/tools'
+            target='_blank'
+            rel='noreferrer noopener'
+          >
+            <IconBrandGithub />
+          </a>
         </div>
       </div>
     </header>

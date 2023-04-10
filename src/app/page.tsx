@@ -5,7 +5,7 @@ import React from 'react'
 
 import Hero from '@/components/Hero'
 
-import { config, Tool } from '@/config'
+import { site, Tool } from '@/config/site'
 
 type CardProps = {
   tools: Tool[]
@@ -25,21 +25,21 @@ const HomePage = () => {
     <div>
       <Hero />
       <div className='flex flex-col items-start'>
-        {/* 搜尋 */}
+        {/* Search */}
         <input
           type='text'
           value={value}
           onChange={(e) => setValue(e.currentTarget.value)}
-          className='w-full py-2 border-accent-2 border rounded-lg px-2 outline-none focus:border-accent-5 bg-transparent transition-colors duration-300'
-          placeholder='搜尋'
+          className='w-full rounded-lg border border-accent-2 bg-transparent py-2 px-2 outline-none transition-colors duration-300 focus:border-accent-5'
+          placeholder='Search'
         />
-        {/* 工具 */}
+        {/* Tools */}
         <div
           id='get-started'
-          className='scroll-mt-20 flex flex-col w-full my-12 gap-6'
+          className='my-12 flex w-full scroll-mt-20 flex-col gap-6'
         >
           {value
-            ? config.tools
+            ? site.tools
                 .filter((tool) => tool.links.some((tool) => filter(tool)))
                 .map((tool) => {
                   const { label, links } = tool
@@ -49,7 +49,7 @@ const HomePage = () => {
                     <Card key={label} tools={filtered} title={label}></Card>
                   )
                 })
-            : config.tools.map((tool) => {
+            : site.tools.map((tool) => {
                 const { label, links } = tool
 
                 return <Card key={label} tools={links} title={label} />
@@ -64,9 +64,9 @@ const Card = (props: CardProps) => {
   const { tools, title } = props
 
   return (
-    <div className='rounded-lg border border-accent-2 p-4 w-full'>
+    <div className='w-full rounded-lg border border-accent-2 p-4'>
       <div>{title}</div>
-      <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4'>
+      <div className='mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {tools.map((tool) => (
           <Item key={tool.label} {...tool} />
         ))}
@@ -82,7 +82,7 @@ const Item = (props: Tool) => {
   return (
     <Link
       href={link}
-      className='flex flex-col justify-center items-center hover:scale-105 transition-transform duration-300 bg-accent-1 rounded-lg p-4 text-center'
+      className='flex flex-col items-center justify-center rounded-lg bg-accent-1 p-4 text-center transition-transform duration-300 hover:scale-105'
     >
       <Icon color={color} size={32} />
       <div className='mt-1.5'>{label}</div>

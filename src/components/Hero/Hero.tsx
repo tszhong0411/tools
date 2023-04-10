@@ -1,36 +1,34 @@
-import Link from '../Link'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
     <div className='my-12 space-y-8'>
-      <h1 className='font-extrabold text-3xl'>
-        <span className='text-transparent bg-clip-text bg-gradient-to-r dark:from-red-700 dark:to-orange-500 from-pink-500 to-orange-400'>
-          最好
-        </span>
-        的線上工具
+      <h1 className='text-3xl font-extrabold'>
+        The{' '}
+        <span className='bg-gradient-to-r from-[#ff4d4d] to-[#f9cb28] bg-clip-text text-transparent dark:from-red-700 dark:to-orange-500'>
+          Best
+        </span>{' '}
+        Online Tools
       </h1>
-      <p className='text-accent-6 leading-6'>
-        這裡有一些由{' '}
+      <p className='leading-6 text-accent-6'>
+        Here are some free online tools made by{' '}
         <Link href='https://instagram.com/tszhong0411' className='text-red-500'>
           @tszhong0411
         </Link>{' '}
-        製作的免費線上工具。我希望能訓練我的能力。這也許是我的 side project :)
+        . I hope to train my skills. This may be my side project :)
       </p>
       <div className='flex gap-4'>
         <Link
           href='#get-started'
-          animation={false}
-          className='rounded-lg bg-theme-9 hover:bg-theme-10 transition-colors duration-300 text-white px-6 py-2.5 font-bold'
+          className='rounded-lg border border-black bg-black px-6 py-2.5 font-bold text-white transition-colors duration-300 hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white'
         >
-          開始
+          Get started
         </Link>
         <Link
           href='https://github.com/tszhong0411/tools'
-          animation={false}
-          icon={false}
-          className='rounded-lg bg-theme-1 border border-theme-7 hover:border-theme-8 transition-colors duration-300 text-theme-11 px-6 py-2.5 font-bold'
+          className='rounded-lg border border-accent-2 px-6 py-2.5 font-bold text-accent-5 transition-colors duration-300 hover:border-black hover:text-black dark:hover:border-white dark:hover:text-white'
         >
-          原始碼
+          Source code
         </Link>
       </div>
     </div>
