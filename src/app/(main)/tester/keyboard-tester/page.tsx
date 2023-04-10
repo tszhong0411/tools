@@ -583,56 +583,56 @@ const KeyboardTester = () => {
               <div className='flex gap-[45px]'>
                 <div className='flex gap-4'>
                   {/* ESC */}
-                  {layout.slice(0, 1).map((key, i) => (
+                  {layout.slice(0, 1).map((key) => (
                     <Key key={key.id} item={key} />
                   ))}
                 </div>
                 <div className='flex gap-[14px]'>
                   {/* F1 - F4 */}
-                  {layout.slice(1, 5).map((key, i) => (
+                  {layout.slice(1, 5).map((key) => (
                     <Key key={key.id} item={key} />
                   ))}
                 </div>
                 <div className='flex gap-[14px]'>
                   {/* F5 - F8 */}
-                  {layout.slice(5, 9).map((key, i) => (
+                  {layout.slice(5, 9).map((key) => (
                     <Key key={key.id} item={key} />
                   ))}
                 </div>
                 <div className='flex gap-[14px]'>
                   {/* F9 - F12 */}
-                  {layout.slice(9, 13).map((key, i) => (
+                  {layout.slice(9, 13).map((key) => (
                     <Key key={key.id} item={key} />
                   ))}
                 </div>
               </div>
               <div className='flex gap-[14px]'>
                 {/* ` to backspace */}
-                {layout.slice(13, 27).map((key, i) => (
+                {layout.slice(13, 27).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* Tab to \ */}
-                {layout.slice(27, 41).map((key, i) => (
+                {layout.slice(27, 41).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* Caps Lock to Enter */}
-                {layout.slice(41, 54).map((key, i) => (
+                {layout.slice(41, 54).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* Left shift to Right shift */}
-                {layout.slice(54, 66).map((key, i) => (
+                {layout.slice(54, 66).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* Left CTRL to right CTRL */}
-                {layout.slice(66, 73).map((key, i) => (
+                {layout.slice(66, 73).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
@@ -642,19 +642,19 @@ const KeyboardTester = () => {
             <div className='flex flex-col gap-4'>
               <div className='flex gap-4'>
                 {/* Print screen to Pause */}
-                {layout.slice(73, 76).map((key, i) => (
+                {layout.slice(73, 76).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* Insert to Page up */}
-                {layout.slice(76, 79).map((key, i) => (
+                {layout.slice(76, 79).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* Delete to Page down */}
-                {layout.slice(79, 82).map((key, i) => (
+                {layout.slice(79, 82).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
@@ -662,14 +662,14 @@ const KeyboardTester = () => {
               <div className='flex gap-4'>
                 <div className='h-8 w-8' />
                 {/* Up arrow */}
-                {layout.slice(82, 83).map((key, i) => (
+                {layout.slice(82, 83).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
                 <div className='h-8 w-8' />
               </div>
               <div className='flex gap-4'>
                 {/* Left arrow to right arrow */}
-                {layout.slice(83, 86).map((key, i) => (
+                {layout.slice(83, 86).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
@@ -680,31 +680,31 @@ const KeyboardTester = () => {
               <div className='h-[35px]' />
               <div className='flex gap-4'>
                 {/* Num Lock to * */}
-                {layout.slice(86, 89).map((key, i) => (
+                {layout.slice(86, 89).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* 7 to 9 */}
-                {layout.slice(90, 93).map((key, i) => (
+                {layout.slice(90, 93).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* 4 to 6 */}
-                {layout.slice(93, 96).map((key, i) => (
+                {layout.slice(93, 96).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* 1 to 3 */}
-                {layout.slice(96, 99).map((key, i) => (
+                {layout.slice(96, 99).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
               <div className='flex gap-4'>
                 {/* 0 to . */}
-                {layout.slice(99, 101).map((key, i) => (
+                {layout.slice(99, 101).map((key) => (
                   <Key key={key.id} item={key} />
                 ))}
               </div>
@@ -714,15 +714,15 @@ const KeyboardTester = () => {
             <div className='flex flex-col gap-4'>
               <div className='h-[35px]' />
               {/* - */}
-              {layout.slice(89, 90).map((key, i) => (
+              {layout.slice(89, 90).map((key) => (
                 <Key key={key.id} item={key} />
               ))}
               {/* + */}
-              {layout.slice(101, 102).map((key, i) => (
+              {layout.slice(101, 102).map((key) => (
                 <Key key={key.id} item={key} />
               ))}
               {/* Enter */}
-              {layout.slice(102, 103).map((key, i) => (
+              {layout.slice(102, 103).map((key) => (
                 <Key key={key.id} item={key} />
               ))}
             </div>
