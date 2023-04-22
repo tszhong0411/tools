@@ -100,15 +100,12 @@ const ImageConverter = () => {
       const { extension, to } = imageFile
 
       if (to) {
-        let conversion
-
-        if (to.value === 'svg') {
-          conversion = base64ToSvg
-        } else if (extension === 'SVG') {
-          conversion = svgToBase64
-        } else {
-          conversion = imageToBase64
-        }
+        const conversion =
+          to.value === 'svg'
+            ? base64ToSvg
+            : extension === 'SVG'
+            ? svgToBase64
+            : imageToBase64
 
         conversion(imageFile.file, (result) =>
           setFiles((prev) =>
@@ -139,7 +136,6 @@ const ImageConverter = () => {
     <Container className='flex flex-col items-center justify-center'>
       <Title title='Image Converter' />
 
-      {/* Dropzone */}
       <div
         {...getRootProps()}
         className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed border-accent-4 px-4 py-6 transition-colors duration-300 hover:bg-accent-1'
@@ -149,10 +145,8 @@ const ImageConverter = () => {
         <p>Drag some images here, or click to select files.</p>
       </div>
 
-      {/* Files */}
       {files.length !== 0 && (
         <div className='w-full'>
-          {/* Control */}
           <div className='flex flex-col items-start gap-4 sm:flex-row sm:justify-between'>
             <div className='flex items-center justify-start gap-2.5'>
               Convert all to
@@ -183,7 +177,6 @@ const ImageConverter = () => {
             </div>
           </div>
 
-          {/* File list */}
           <div className='my-8 space-y-4'>
             {files.map((file) => {
               const { name, size, extension, id, result, to } = file
@@ -193,14 +186,11 @@ const ImageConverter = () => {
                   key={id}
                   className='flex flex-col gap-4 rounded-lg border border-accent-2 p-4'
                 >
-                  {/* File name */}
                   <div>{name}</div>
 
                   <div className='flex flex-col justify-between sm:flex-row sm:items-center'>
-                    {/* File size */}
                     <div className='text-sm text-accent-7'>{size}</div>
 
-                    {/* Convert to / Download button */}
                     <div className='mt-4 flex items-center justify-between gap-2 sm:mt-0 sm:justify-center'>
                       {result ? (
                         <button
@@ -223,7 +213,6 @@ const ImageConverter = () => {
                         </div>
                       )}
 
-                      {/* Delete button */}
                       <button
                         className='rounded-lg p-1 transition-colors duration-300 hover:bg-accent-2'
                         onClick={() => deleteHandler(id)}

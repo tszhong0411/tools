@@ -109,7 +109,6 @@ const ColorConverter = () => {
     <Container className='flex flex-col items-center justify-center'>
       <Title title='Color Converter' />
 
-      {/* Color input */}
       <div className='relative my-8 flex w-full max-w-[250px] items-center justify-between gap-4'>
         <button
           className='h-7 w-7 cursor-pointer rounded-lg'
@@ -129,7 +128,6 @@ const ColorConverter = () => {
         )}
       </div>
 
-      {/* Color conversion results */}
       <div className='my-12 grid w-full gap-4 sm:grid-cols-2'>
         {lists.map((list) => {
           const { label, data } = list

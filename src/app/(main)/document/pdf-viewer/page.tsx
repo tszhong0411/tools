@@ -39,7 +39,6 @@ const PDFViewer = () => {
       <Title title='PDF Viewer' />
 
       <div className='my-12 w-full'>
-        {/* Dropzone */}
         <div
           {...getRootProps()}
           className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed border-accent-4 px-4 py-6 transition-colors duration-300 hover:bg-accent-1'

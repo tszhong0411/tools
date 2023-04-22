@@ -25,15 +25,13 @@ const HomePage = () => {
     <div>
       <Hero />
       <div className='flex flex-col items-start'>
-        {/* Search */}
         <input
           type='text'
           value={value}
           onChange={(e) => setValue(e.currentTarget.value)}
-          className='w-full rounded-lg border border-accent-2 bg-transparent px-2 py-2 outline-none transition-colors duration-300 focus:border-accent-5'
+          className='w-full rounded-lg border border-accent-2 bg-transparent px-3 py-2 transition-colors duration-300 focus:border-accent-5 focus:outline-none'
           placeholder='Search'
         />
-        {/* Tools */}
         <div
           id='get-started'
           className='my-12 flex w-full scroll-mt-20 flex-col gap-6'

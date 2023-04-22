@@ -73,7 +73,6 @@ const CSSUnitConverter = () => {
     <Container className='flex max-w-xl flex-col items-center justify-center'>
       <Title title='CSS Unit Converter' />
 
-      {/* CSS unit converter */}
       <div className='my-12 space-y-4'>
         <Input
           unit='PX'

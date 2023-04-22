@@ -18,7 +18,6 @@ const WordCounter = () => {
     <Container className='flex max-w-5xl flex-col items-center justify-center'>
       <Title title='Word Counter' />
 
-      {/* Word counter */}
       <div className='my-12 grid w-full grid-cols-2 gap-2 sm:grid-cols-4'>
         <div className='h-24 w-full rounded-lg border border-accent-2 p-3'>
           <div className='text-2xl font-bold'>{words}</div>
@@ -40,10 +39,9 @@ const WordCounter = () => {
         </div>
       </div>
 
-      {/* Textarea */}
       <TextareaAutosize
         className='w-full rounded-md border border-accent-2 bg-hong-bg px-3 py-2 transition-colors duration-200 ease-linear focus:border-accent-5 focus:outline-none'
-        placeholder='在這裡輸入 ...'
+        placeholder='Type here ...'
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
