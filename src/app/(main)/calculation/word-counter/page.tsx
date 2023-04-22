@@ -42,7 +42,7 @@ const WordCounter = () => {
 
       {/* Textarea */}
       <TextareaAutosize
-        className='w-full rounded-md border border-accent-2 bg-hong-bg py-2 px-3 transition-colors duration-200 ease-linear focus:border-accent-5 focus:outline-none'
+        className='w-full rounded-md border border-accent-2 bg-hong-bg px-3 py-2 transition-colors duration-200 ease-linear focus:border-accent-5 focus:outline-none'
         placeholder='在這裡輸入 ...'
         value={value}
         onChange={(e) => setValue(e.target.value)}

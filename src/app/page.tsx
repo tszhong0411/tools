@@ -30,7 +30,7 @@ const HomePage = () => {
           type='text'
           value={value}
           onChange={(e) => setValue(e.currentTarget.value)}
-          className='w-full rounded-lg border border-accent-2 bg-transparent py-2 px-2 outline-none transition-colors duration-300 focus:border-accent-5'
+          className='w-full rounded-lg border border-accent-2 bg-transparent px-2 py-2 outline-none transition-colors duration-300 focus:border-accent-5'
           placeholder='Search'
         />
         {/* Tools */}

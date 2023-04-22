@@ -1,8 +1,7 @@
 'use client'
 
-import { LocalizationMap, Viewer, Worker } from '@react-pdf-viewer/core'
+import { Viewer, Worker } from '@react-pdf-viewer/core'
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
-import zh_TW from '@react-pdf-viewer/locales/lib/zh_TW.json'
 import { IconFile } from '@tabler/icons-react'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
@@ -11,7 +10,6 @@ import '@react-pdf-viewer/core/lib/styles/index.css'
 import '@react-pdf-viewer/default-layout/lib/styles/index.css'
 
 import { getExtension } from '@/lib/get-extension'
-import { useTheme } from '@/lib/next-themes'
 
 import Container from '@/components/Container'
 import Title from '@/components/Title'
@@ -21,7 +19,6 @@ const PDFViewer = () => {
   const [url, setUrl] = React.useState('')
   const onDrop = (files: File[]) => setUrl(URL.createObjectURL(files[0]))
   const defaultLayoutPluginInstance = defaultLayoutPlugin()
-  const { resolvedTheme } = useTheme()
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
@@ -53,14 +50,11 @@ const PDFViewer = () => {
         </div>
 
         {mounted && url && (
-          <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js'>
+          <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.5.141/build/pdf.worker.min.js'>
             <div className='my-20 h-[1000px]'>
               <Viewer
                 fileUrl={url}
-                theme={{
-                  theme: resolvedTheme,
-                }}
-                localization={zh_TW as unknown as LocalizationMap}
+                theme={'dark'}
                 plugins={[defaultLayoutPluginInstance]}
               />
             </div>

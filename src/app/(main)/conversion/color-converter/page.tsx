@@ -121,7 +121,7 @@ const ColorConverter = () => {
 
         {opened && (
           <div
-            className='absolute top-[calc(100%+12px)] left-0 rounded-lg'
+            className='absolute left-0 top-[calc(100%+12px)] rounded-lg'
             ref={popover}
           >
             <RgbaStringColorPicker color={value} onChange={setValue} />

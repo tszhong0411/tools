@@ -4,8 +4,6 @@ import type { Metadata } from 'next'
 import { Inter, Noto_Sans_TC } from 'next/font/google'
 import '@/styles/globals.css'
 
-import { ThemeProvider } from '@/lib/next-themes'
-
 import CustomToaster from '@/components/CustomToaster'
 import Footer from '@/components/Layout/Footer'
 import Header from '@/components/Layout/Header'
@@ -95,15 +93,13 @@ const RootLayout = (props: RootLayoutProps) => {
       lang='en'
       className={clsx(inter.variable, notoSansTC.variable, 'scroll-smooth')}
     >
-      <body className='overflow-x-hidden bg-hong-bg font-default'>
-        <ThemeProvider attribute='class'>
-          <Header />
-          <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
-            {children}
-          </main>
-          <CustomToaster />
-          <Footer />
-        </ThemeProvider>
+      <body className='overflow-x-hidden bg-hong-bg font-default text-hong-fg'>
+        <Header />
+        <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
+          {children}
+        </main>
+        <CustomToaster />
+        <Footer />
         <Analytics />
       </body>
     </html>

@@ -3,20 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --hong-bg: #fff;
-  --hong-fg: #000;
-
-  --accent-1: #fafafa;
-  --accent-2: #eaeaea;
-  --accent-3: #999;
-  --accent-4: #888;
-  --accent-5: #666;
-  --accent-6: #444;
-  --accent-7: #333;
-  --accent-8: #111;
-}
-
-.dark:root {
   --hong-bg: #000;
   --hong-fg: #fff;
 

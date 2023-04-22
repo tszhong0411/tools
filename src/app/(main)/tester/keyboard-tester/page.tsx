@@ -562,7 +562,7 @@ const KeyboardTester = () => {
         className={clsx(
           'flex h-[35px] w-8 items-center justify-center rounded bg-[#333] text-sm text-white shadow-[rgb(34_34_34)_0px_4px_0px_5px]',
           {
-            ['bg-[#008000] dark:bg-[#025c02]']: active,
+            ['bg-[#025c02]']: active,
           }
         )}
         style={style}
