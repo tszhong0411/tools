@@ -100,12 +100,15 @@ const ImageConverter = () => {
       const { extension, to } = imageFile
 
       if (to) {
-        const conversion =
-          to.value === 'svg'
-            ? base64ToSvg
-            : extension === 'SVG'
-            ? svgToBase64
-            : imageToBase64
+        let conversion
+
+        if (to.value === 'svg') {
+          conversion = base64ToSvg
+        } else if (extension === 'SVG') {
+          conversion = svgToBase64
+        } else {
+          conversion = imageToBase64
+        }
 
         conversion(imageFile.file, (result) =>
           setFiles((prev) =>
@@ -160,14 +163,14 @@ const ImageConverter = () => {
             </div>
             <div className='flex items-center justify-center gap-2'>
               <button
-                className='rounded-lg border border-black bg-black py-2 px-4 font-bold text-white transition-colors duration-300 hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white'
+                className='rounded-lg border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white'
                 onClick={clearAll}
                 type='button'
               >
                 Clear all
               </button>
               <button
-                className='rounded-lg border border-black bg-black py-2 px-4 font-bold text-white transition-colors duration-300 hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:border-accent-2 disabled:bg-accent-1 disabled:text-gray-700 dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white dark:disabled:border-accent-2 dark:disabled:bg-accent-1 dark:disabled:text-gray-300'
+                className='rounded-lg border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:border-accent-2 disabled:bg-accent-1 disabled:text-gray-300'
                 disabled={
                   files.filter((file) => file.to !== undefined).length !==
                   files.length
