@@ -1,5 +1,6 @@
 'use client'
 
+import { Input } from '@tszhong0411/ui'
 import { colord, extend, getFormat } from 'colord'
 import a11yPlugin from 'colord/plugins/a11y'
 import cmykPlugin from 'colord/plugins/cmyk'
@@ -7,8 +8,6 @@ import hwbPlugin from 'colord/plugins/hwb'
 import lchPlugin from 'colord/plugins/lch'
 import namesPlugin from 'colord/plugins/names'
 import React from 'react'
-import { RgbaStringColorPicker } from 'react-colorful'
-import { useClickAway } from 'react-use'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
@@ -30,13 +29,7 @@ type ItemProps = {
 }
 
 const ColorConverter = () => {
-  const [value, setValue] = React.useState('rgba(255, 255, 255, 1)')
-  const [opened, setOpened] = React.useState(false)
-  const popover = React.useRef(null)
-
-  useClickAway(popover, () => {
-    setOpened(false)
-  })
+  const [value, setValue] = React.useState('#ffffff')
 
   const lists: Lists[] = [
     {
@@ -68,7 +61,7 @@ const ColorConverter = () => {
         },
         {
           label: 'CSS Keyword',
-          value: colord(value).toName({ closest: true }) || '未知',
+          value: colord(value).toName({ closest: true }) || 'Unknown',
         },
       ],
     },
@@ -110,22 +103,19 @@ const ColorConverter = () => {
       <Title title='Color Converter' />
 
       <div className='relative my-8 flex w-full max-w-[250px] items-center justify-between gap-4'>
-        <button
-          className='h-7 w-7 cursor-pointer rounded-lg'
-          style={{ backgroundColor: value }}
-          type='button'
-          onClick={() => setOpened(true)}
-        />
-        <div>{value}</div>
-
-        {opened && (
+        <label htmlFor='color' className='text-lg font-bold'>
           <div
-            className='absolute left-0 top-[calc(100%+12px)] rounded-lg'
-            ref={popover}
-          >
-            <RgbaStringColorPicker color={value} onChange={setValue} />
-          </div>
-        )}
+            className='h-7 w-7 cursor-pointer rounded-lg'
+            style={{ backgroundColor: value }}
+          />
+        </label>
+        <input
+          className='invisible absolute left-0 top-2'
+          type='color'
+          id='color'
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <Input value={value} onChange={(e) => setValue(e.target.value)} />
       </div>
 
       <div className='my-12 grid w-full gap-4 sm:grid-cols-2'>
@@ -133,17 +123,10 @@ const ColorConverter = () => {
           const { label, data } = list
 
           return (
-            <>
-              <div
-                key={label}
-                className='rounded-lg border border-accent-2 p-4'
-              >
-                <div className='mb-8 text-center text-3xl font-bold'>
-                  {label}
-                </div>
-                <Items list={data} />
-              </div>
-            </>
+            <div key={label} className='rounded-lg border border-accent-2 p-4'>
+              <div className='mb-8 text-center text-3xl font-bold'>{label}</div>
+              <Items list={data} />
+            </div>
           )
         })}
       </div>
