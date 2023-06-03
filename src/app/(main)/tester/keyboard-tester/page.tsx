@@ -1,13 +1,13 @@
 'use client'
 
-import clsx from 'clsx'
+import { cx } from '@tszhong0411/utils'
 import React from 'react'
 import { useEventListener } from 'usehooks-ts'
 
 import { useOs } from '@/hooks'
 
-import Container from '@/components/Container'
-import Title from '@/components/Title'
+import Container from '@/components/container'
+import Title from '@/components/title'
 
 type KeyType = {
   keyName: string
@@ -559,7 +559,7 @@ const KeyboardTester = () => {
 
     return (
       <div
-        className={clsx(
+        className={cx(
           'flex h-[35px] w-8 items-center justify-center rounded bg-[#333] text-sm text-white shadow-[rgb(34_34_34)_0px_4px_0px_5px]',
           {
             ['bg-green-800']: active,

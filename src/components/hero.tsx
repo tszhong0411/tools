@@ -1,3 +1,4 @@
+import { buttonVariants } from '@tszhong0411/ui'
 import Link from 'next/link'
 
 const Hero = () => {
@@ -18,15 +19,12 @@ const Hero = () => {
         . I hope to train my skills. This may be my side project :)
       </p>
       <div className='flex gap-4'>
-        <Link
-          href='#get-started'
-          className='rounded-lg border border-white bg-white px-6 py-2.5 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white'
-        >
+        <Link href='#get-started' className={buttonVariants()}>
           Get started
         </Link>
         <Link
           href='https://github.com/tszhong0411/tools'
-          className='rounded-lg border border-accent-2 px-6 py-2.5 font-bold text-accent-5 transition-colors duration-300 hover:border-white hover:text-white'
+          className={buttonVariants({ variant: 'ghost' })}
         >
           Source code
         </Link>

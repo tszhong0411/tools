@@ -1,9 +1,10 @@
 'use client'
 
+import { Input } from '@tszhong0411/ui'
 import Link from 'next/link'
 import React from 'react'
 
-import Hero from '@/components/Hero'
+import Hero from '@/components/hero'
 
 import { site, Tool } from '@/config/site'
 
@@ -25,12 +26,12 @@ const HomePage = () => {
     <div>
       <Hero />
       <div className='flex flex-col items-start'>
-        <input
+        <Input
           type='text'
           value={value}
           onChange={(e) => setValue(e.currentTarget.value)}
-          className='w-full rounded-lg border border-accent-2 bg-transparent px-3 py-2 transition-colors duration-300 focus:border-accent-5 focus:outline-none'
           placeholder='Search'
+          className='w-full'
         />
         <div
           id='get-started'

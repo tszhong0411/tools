@@ -1,18 +1,15 @@
-import clsxm from '@/lib/clsxm'
-
-import { WithChildren } from '@/types'
+import { cx } from '@tszhong0411/utils'
 
 type ContainerProps = {
   className: string
-} & WithChildren
+  children: React.ReactNode
+}
 
 const Container = (props: ContainerProps) => {
   const { children, className } = props
 
   return (
-    <div
-      className={clsxm('mx-auto min-h-[calc(100vh-312px)] py-12', className)}
-    >
+    <div className={cx('mx-auto min-h-[calc(100vh-312px)] py-12', className)}>
       {children}
     </div>
   )

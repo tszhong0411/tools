@@ -1,18 +1,18 @@
+import { cx } from '@tszhong0411/utils'
 import { Analytics } from '@vercel/analytics/react'
-import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { Inter, Noto_Sans_TC } from 'next/font/google'
 import '@/styles/globals.css'
 
-import CustomToaster from '@/components/CustomToaster'
-import Footer from '@/components/Layout/Footer'
-import Header from '@/components/Layout/Header'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import CustomToaster from '@/components/toaster'
 
 import { site } from '@/config/site'
 
-import { WithChildren } from '@/types'
-
-type RootLayoutProps = WithChildren
+type RootLayoutProps = {
+  children: React.ReactNode
+}
 
 export const metadata: Metadata = {
   title: {
@@ -91,9 +91,9 @@ const RootLayout = (props: RootLayoutProps) => {
   return (
     <html
       lang='en'
-      className={clsx(inter.variable, notoSansTC.variable, 'scroll-smooth')}
+      className={cx(inter.variable, notoSansTC.variable, 'dark scroll-smooth')}
     >
-      <body className='overflow-x-hidden bg-hong-bg font-default text-hong-fg'>
+      <body className='overflow-x-hidden bg-accent-bg font-default text-accent-fg'>
         <Header />
         <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
           {children}

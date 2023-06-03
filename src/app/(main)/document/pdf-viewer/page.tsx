@@ -11,8 +11,8 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css'
 
 import { getExtension } from '@/lib/get-extension'
 
-import Container from '@/components/Container'
-import Title from '@/components/Title'
+import Container from '@/components/container'
+import Title from '@/components/title'
 
 const PDFViewer = () => {
   const [mounted, setMounted] = React.useState(false)

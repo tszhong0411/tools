@@ -1,9 +1,10 @@
 'use client'
 
+import { Input } from '@tszhong0411/ui'
 import React from 'react'
 
-import Container from '@/components/Container'
-import Title from '@/components/Title'
+import Container from '@/components/container'
+import Title from '@/components/title'
 
 type Units = 'PX' | 'PC' | 'PT' | 'EM' | 'REM'
 type Values = {
@@ -74,27 +75,27 @@ const CSSUnitConverter = () => {
       <Title title='CSS Unit Converter' />
 
       <div className='my-12 space-y-4'>
-        <Input
+        <NumberInput
           unit='PX'
           value={values.PX}
           onChange={(e) => changeHandler(Number(e.currentTarget.value), 'PX')}
         />
-        <Input
+        <NumberInput
           unit='%'
           value={values.PC}
           onChange={(e) => changeHandler(Number(e.currentTarget.value), 'PC')}
         />
-        <Input
+        <NumberInput
           unit='PT'
           value={values.PT}
           onChange={(e) => changeHandler(Number(e.currentTarget.value), 'PT')}
         />
-        <Input
+        <NumberInput
           unit='EM'
           value={values.EM}
           onChange={(e) => changeHandler(Number(e.currentTarget.value), 'EM')}
         />
-        <Input
+        <NumberInput
           unit='REM'
           value={values.REM}
           onChange={(e) => changeHandler(Number(e.currentTarget.value), 'REM')}
@@ -104,16 +105,12 @@ const CSSUnitConverter = () => {
   )
 }
 
-const Input = (props: InputProps) => {
+const NumberInput = (props: InputProps) => {
   const { unit, ...rest } = props
 
   return (
     <div className='relative'>
-      <input
-        className='appearance-none rounded-lg border border-accent-2 bg-transparent px-4 py-4 pr-14 outline-none transition-colors duration-300 focus:border-accent-5'
-        type='number'
-        {...rest}
-      />
+      <Input className='px-4 py-4 pr-14' type='number' {...rest} />
       <div className='absolute right-3 top-1/2 -translate-y-1/2 select-none'>
         {unit}
       </div>

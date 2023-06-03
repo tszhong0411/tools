@@ -1,1 +1,1 @@
-export { useOs } from './useOs'
+export { useOs } from './use-os'

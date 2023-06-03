@@ -1,22 +1,23 @@
 'use client'
 
+import { Button, Checkbox, Input, Label } from '@tszhong0411/ui'
 import React from 'react'
 import { toast } from 'react-hot-toast'
 
-import Container from '@/components/Container'
-import Title from '@/components/Title'
+import Container from '@/components/container'
+import Title from '@/components/title'
 
 const PasswordGenerator = () => {
   const [length, setLength] = React.useState(10)
-  const [useUpperCase, setUseUpperCase] = React.useState(true)
-  const [useLowerCase, setUseLowerCase] = React.useState(true)
-  const [useDigits, setUseDigits] = React.useState(true)
-  const [useSymbols, setUseSymbols] = React.useState(true)
+  const [upperCase, setUpperCase] = React.useState(true)
+  const [lowerCase, setLowerCase] = React.useState(true)
+  const [digits, setDigits] = React.useState(true)
+  const [symbols, setSymbols] = React.useState(true)
   const [avoidSimilarChars, setAvoidSimilarChars] = React.useState(true)
   const [password, setPassword] = React.useState('')
 
   const handleGeneratePassword = () => {
-    if (!useUpperCase && !useLowerCase && !useDigits && !useSymbols) {
+    if (!upperCase && !lowerCase && !digits && !symbols) {
       toast.error('Please select at least one of character types.')
       return
     }
@@ -29,19 +30,19 @@ const PasswordGenerator = () => {
 
     let chars = ''
 
-    if (useUpperCase) {
+    if (upperCase) {
       chars += uppercaseChars
     }
 
-    if (useLowerCase) {
+    if (lowerCase) {
       chars += lowercaseChars
     }
 
-    if (useDigits) {
+    if (digits) {
       chars += digitChars
     }
 
-    if (useSymbols) {
+    if (symbols) {
       chars += symbolChars
     }
 
@@ -93,11 +94,10 @@ const PasswordGenerator = () => {
 
       <div className='my-12 w-full max-w-3xl items-center justify-center space-y-4 rounded-md border border-accent-2 p-6'>
         <div>
-          <label className='mb-2 block font-bold' htmlFor='length'>
+          <Label className='mb-2 block font-bold' htmlFor='length'>
             Length
-          </label>
-          <input
-            className='rounded-md border border-accent-2 bg-transparent px-3 py-2 transition-colors duration-300 focus:border-accent-5 focus:outline-none'
+          </Label>
+          <Input
             id='length'
             type='number'
             min='1'
@@ -107,83 +107,59 @@ const PasswordGenerator = () => {
         </div>
         <div>
           <div className='space-y-2'>
-            <div className='flex items-center'>
-              <input
-                className='mr-2'
-                type='checkbox'
-                id='useUpperCase'
-                checked={useUpperCase}
-                onChange={(event) => setUseUpperCase(event.target.checked)}
+            <div className='flex items-center gap-2'>
+              <Checkbox
+                id='uppercase'
+                checked={upperCase}
+                onCheckedChange={(value: boolean) => setUpperCase(value)}
               />
-              <label htmlFor='useUpperCase' className='text-sm'>
-                Uppercase letters
-              </label>
+              <Label htmlFor='uppercase'>Uppercase letters</Label>
             </div>
-            <div className='flex items-center'>
-              <input
-                className='mr-2'
-                type='checkbox'
-                id='useLowerCase'
-                checked={useLowerCase}
-                onChange={(event) => setUseLowerCase(event.target.checked)}
+            <div className='flex items-center gap-2'>
+              <Checkbox
+                id='lowercase'
+                checked={lowerCase}
+                onCheckedChange={(value: boolean) => setLowerCase(value)}
               />
-              <label htmlFor='useLowerCase' className='text-sm'>
-                Lowercase letters
-              </label>
+              <Label htmlFor='lowercase'>Lowercase letters</Label>
             </div>
-            <div className='flex items-center'>
-              <input
-                className='mr-2'
-                type='checkbox'
-                id='useDigits'
-                checked={useDigits}
-                onChange={(event) => setUseDigits(event.target.checked)}
+            <div className='flex items-center gap-2'>
+              <Checkbox
+                id='digits'
+                checked={digits}
+                onCheckedChange={(value: boolean) => setDigits(value)}
               />
-              <label htmlFor='useDigits' className='text-sm'>
-                Digits
-              </label>
+              <Label htmlFor='digits'>Digits</Label>
             </div>
-            <div className='flex items-center'>
-              <input
-                className='mr-2'
-                type='checkbox'
-                id='useSymbols'
-                checked={useSymbols}
-                onChange={(event) => setUseSymbols(event.target.checked)}
+            <div className='flex items-center gap-2'>
+              <Checkbox
+                id='symbols'
+                checked={symbols}
+                onCheckedChange={(value: boolean) => setSymbols(value)}
               />
-              <label htmlFor='useSymbols' className='text-sm'>
-                Symbols
-              </label>
+              <Label htmlFor='symbols'>Symbols</Label>
             </div>
-            <div className='flex items-center'>
-              <input
-                className='mr-2'
-                type='checkbox'
-                id='avoidSimilarChars'
+            <div className='flex items-center gap-2'>
+              <Checkbox
+                id='avoid-similar-chars'
                 checked={avoidSimilarChars}
-                onChange={(event) => setAvoidSimilarChars(event.target.checked)}
+                onCheckedChange={(value: boolean) =>
+                  setAvoidSimilarChars(value)
+                }
               />
-              <label htmlFor='avoidSimilarChars' className='text-sm'>
+              <Label htmlFor='avoid-similar-chars'>
                 Avoid similar characters (e.g. 1 and l, 0 and O)
-              </label>
+              </Label>
             </div>
           </div>
         </div>
-        <div className='mb-4'>
-          <button
-            className='mr-2 rounded border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white focus:outline-none'
-            onClick={handleGeneratePassword}
-            type='button'
-          >
+        <div className='mb-4 flex gap-2'>
+          <Button onClick={handleGeneratePassword} type='button'>
             Generate
-          </button>
-          <button
-            className='mr-2 rounded border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white focus:outline-none'
-            onClick={handleClearPassword}
-            type='button'
-          >
+          </Button>
+          <Button onClick={handleClearPassword} type='button'>
             Clear
-          </button>
+          </Button>
         </div>
         {password && (
           <div className='space-y-2'>
@@ -191,20 +167,14 @@ const PasswordGenerator = () => {
             <div className='break-all rounded-md border border-accent-2 p-2'>
               {password}
             </div>
-            <button
-              className='mr-2 rounded border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white focus:outline-none'
-              onClick={handleCopyPassword}
-              type='button'
-            >
-              Copy
-            </button>
-            <button
-              className='mr-2 rounded border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white focus:outline-none'
-              onClick={handleSavePassword}
-              type='button'
-            >
-              Save
-            </button>
+            <div className='flex gap-2'>
+              <Button onClick={handleCopyPassword} type='button'>
+                Copy
+              </Button>
+              <Button onClick={handleSavePassword} type='button'>
+                Save
+              </Button>
+            </div>
           </div>
         )}
       </div>

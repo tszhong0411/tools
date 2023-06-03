@@ -1,8 +1,7 @@
 import { IconBrandGithub } from '@tabler/icons-react'
+import { Logo } from '@tszhong0411/ui'
 import Link from 'next/link'
 import React from 'react'
-
-import { Logo } from './Logo'
 
 const Header = () => {
   return (

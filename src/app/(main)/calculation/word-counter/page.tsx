@@ -1,10 +1,10 @@
 'use client'
 
+import { Textarea } from '@tszhong0411/ui'
 import React from 'react'
-import TextareaAutosize from 'react-textarea-autosize'
 
-import Container from '@/components/Container'
-import Title from '@/components/Title'
+import Container from '@/components/container'
+import Title from '@/components/title'
 
 const WordCounter = () => {
   const [value, setValue] = React.useState('')
@@ -39,8 +39,7 @@ const WordCounter = () => {
         </div>
       </div>
 
-      <TextareaAutosize
-        className='w-full rounded-md border border-accent-2 bg-hong-bg px-3 py-2 transition-colors duration-200 ease-linear focus:border-accent-5 focus:outline-none'
+      <Textarea
         placeholder='Type here ...'
         value={value}
         onChange={(e) => setValue(e.target.value)}

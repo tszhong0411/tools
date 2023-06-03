@@ -1,6 +1,14 @@
 'use client'
 
 import { IconPhoto, IconX } from '@tabler/icons-react'
+import {
+  Button,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@tszhong0411/ui'
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
 import React from 'react'
@@ -14,9 +22,8 @@ import { imageToBase64 } from '@/lib/image-to-base64'
 import { svgToBase64 } from '@/lib/svg-to-base64'
 import { truncateFilename } from '@/lib/truncate-filename'
 
-import Container from '@/components/Container'
-import Select from '@/components/Select'
-import Title from '@/components/Title'
+import Container from '@/components/container'
+import Title from '@/components/title'
 
 type ImageFile = {
   file: File
@@ -28,7 +35,7 @@ type ImageFile = {
   result?: string
 }
 
-type Option = (typeof options)[number]
+type Option = (typeof options)[number]['value']
 
 const options = [
   { value: 'jpg', label: 'JPG' },
@@ -101,7 +108,7 @@ const ImageConverter = () => {
 
       if (to) {
         const conversion =
-          to.value === 'svg'
+          to === 'svg'
             ? base64ToSvg
             : extension === 'SVG'
             ? svgToBase64
@@ -151,20 +158,25 @@ const ImageConverter = () => {
             <div className='flex items-center justify-start gap-2.5'>
               Convert all to
               <Select
-                onChange={(option) => setAllExtensions(option as Option)}
-                options={options}
-              />
+                onValueChange={(option: Option) => setAllExtensions(option)}
+              >
+                <SelectTrigger className='w-32'>
+                  <SelectValue placeholder='Select' />
+                </SelectTrigger>
+                <SelectContent>
+                  {options.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div className='flex items-center justify-center gap-2'>
-              <button
-                className='rounded-lg border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white'
-                onClick={clearAll}
-                type='button'
-              >
+              <Button onClick={clearAll} type='button'>
                 Clear all
-              </button>
-              <button
-                className='rounded-lg border border-white bg-white px-4 py-2 font-bold text-black transition-colors duration-300 hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:border-accent-2 disabled:bg-accent-1 disabled:text-gray-300'
+              </Button>
+              <Button
                 disabled={
                   files.filter((file) => file.to !== undefined).length !==
                   files.length
@@ -173,7 +185,7 @@ const ImageConverter = () => {
                 type='button'
               >
                 Convert all
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -193,33 +205,47 @@ const ImageConverter = () => {
 
                     <div className='mt-4 flex items-center justify-between gap-2 sm:mt-0 sm:justify-center'>
                       {result ? (
-                        <button
-                          className='rounded-lg bg-green-500 px-4 py-2 text-white'
-                          onClick={() => to && download(result, name, to.value)}
+                        <Button
+                          className='border-none bg-green-500 text-accent-fg hover:bg-green-600'
+                          onClick={() => to && download(result, name, to)}
                           type='button'
                         >
                           Download
-                        </button>
+                        </Button>
                       ) : (
                         <div className='flex items-center gap-2'>
                           {extension} to{' '}
                           <Select
-                            options={options}
                             value={to}
-                            onChange={(option) =>
-                              setExtension(id, option as Option)
+                            onValueChange={(option: Option) =>
+                              setExtension(id, option)
                             }
-                          />
+                          >
+                            <SelectTrigger className='w-32'>
+                              <SelectValue placeholder='Select' />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {options.map((option) => (
+                                <SelectItem
+                                  key={option.value}
+                                  value={option.value}
+                                >
+                                  {option.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
                         </div>
                       )}
 
-                      <button
-                        className='rounded-lg p-1 transition-colors duration-300 hover:bg-accent-2'
+                      <Button
+                        variant='ghost'
+                        className='h-10 w-10 p-0'
                         onClick={() => deleteHandler(id)}
                         type='button'
                       >
                         <IconX />
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>

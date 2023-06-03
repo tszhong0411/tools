@@ -10,8 +10,8 @@ import React from 'react'
 import { RgbaStringColorPicker } from 'react-colorful'
 import { useClickAway } from 'react-use'
 
-import Container from '@/components/Container'
-import Title from '@/components/Title'
+import Container from '@/components/container'
+import Title from '@/components/title'
 
 extend([hwbPlugin, cmykPlugin, lchPlugin, namesPlugin, a11yPlugin])
 
