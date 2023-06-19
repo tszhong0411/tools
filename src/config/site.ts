@@ -42,11 +42,11 @@ export const site: Site = {
     process.env.NODE_ENV === 'production'
       ? 'https://tools.honghong.me'
       : 'http://localhost:3000',
-  title: '小康 Tools',
-  name: '小康 Tools',
-  keywords: ['小康', 'Tools', '小康 Tools', '小康工具', '小康工具箱'],
-  titleTemplate: '- 小康 Tools',
-  description: '小康 Tools - The Best Online Tools',
+  title: 'Tools',
+  name: 'Hong',
+  keywords: ['Hong', 'Tools', 'Web Tools'],
+  titleTemplate: '- Tools',
+  description: 'A collection of tools created by Hong.',
   favicons: [
     {
       rel: 'icon',
