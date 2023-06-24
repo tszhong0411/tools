@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@tszhong0411/ui'
+import { Input } from '@codewithhong/ui'
 import React from 'react'
 
 import Container from '@/components/container'

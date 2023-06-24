@@ -1,4 +1,4 @@
-import { cx } from '@tszhong0411/utils'
+import { cx } from '@codewithhong/utils'
 
 type ContainerProps = {
   className: string

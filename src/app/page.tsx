@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@tszhong0411/ui'
+import { Input } from '@codewithhong/ui'
 import Link from 'next/link'
 import React from 'react'
 

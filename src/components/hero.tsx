@@ -1,4 +1,4 @@
-import { buttonVariants } from '@tszhong0411/ui'
+import { buttonVariants } from '@codewithhong/ui'
 import Link from 'next/link'
 
 const Hero = () => {
@@ -13,8 +13,11 @@ const Hero = () => {
       </h1>
       <p className='leading-6 text-accent-6'>
         Here are some free online tools made by{' '}
-        <Link href='https://instagram.com/tszhong0411' className='text-red-500'>
-          @tszhong0411
+        <Link
+          href='https://instagram.com/codewithhong'
+          className='text-red-500'
+        >
+          @codewithhong
         </Link>{' '}
         . I hope to train my skills. This may be my side project :)
       </p>
@@ -23,7 +26,7 @@ const Hero = () => {
           Get started
         </Link>
         <Link
-          href='https://github.com/tszhong0411/tools'
+          href='https://github.com/codewithhong/tools'
           className={buttonVariants({ variant: 'ghost' })}
         >
           Source code

@@ -1,6 +1,5 @@
 'use client'
 
-import { IconPhoto, IconX } from '@tabler/icons-react'
 import {
   Button,
   Select,
@@ -8,7 +7,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@tszhong0411/ui'
+} from '@codewithhong/ui'
+import { IconPhoto, IconX } from '@tabler/icons-react'
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
 import React from 'react'

@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@tszhong0411/ui'
+import { Input } from '@codewithhong/ui'
 import { colord, extend, getFormat } from 'colord'
 import a11yPlugin from 'colord/plugins/a11y'
 import cmykPlugin from 'colord/plugins/cmyk'

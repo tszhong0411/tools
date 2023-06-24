@@ -1,4 +1,4 @@
-import { cx } from '@tszhong0411/utils'
+import { cx } from '@codewithhong/utils'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Inter, Noto_Sans_TC } from 'next/font/google'
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
   twitter: {
     title: site.name,
     card: 'summary_large_image',
-    site: '@TszhongLai0411',
-    creator: '@TszhongLai0411',
+    site: '@codewithhong',
+    creator: '@codewithhong',
   },
   keywords: site.keywords,
   themeColor: '#000',
-  creator: 'tszhong0411',
+  creator: 'codewithhong',
   openGraph: {
     url: `${site.url}`,
     type: 'website',
