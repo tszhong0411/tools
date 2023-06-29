@@ -5,10 +5,10 @@
   "license": "MIT",
   "type": "module",
   "description": "Free online tools",
-  "author": "Lai Tsz Hong <info@honghong.me> (https://github.com/codewithhong/)",
+  "author": "Lai Tsz Hong <info@honghong.me> (https://github.com/tszhong0411/)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codewithhong/tools.git"
+    "url": "git+https://github.com/tszhong0411/tools.git"
   },
   "scripts": {
     "dev": "next dev",
@@ -20,15 +20,15 @@
     "type-check": "tsc --noEmit",
     "prepare": "husky install"
   },
-  "prettier": "@codewithhong/prettier-config",
+  "prettier": "@tszhong0411/prettier-config",
   "dependencies": {
-    "@codewithhong/ui": "^2.0.0",
-    "@codewithhong/utils": "^2.0.0",
     "@monaco-editor/react": "^4.5.0",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
     "@react-pdf-viewer/locales": "^1.0.0",
     "@tabler/icons-react": "^2.17.0",
+    "@tszhong0411/ui": "^1.0.6",
+    "@tszhong0411/utils": "^1.0.2",
     "@types/dom-to-image": "^2.6.4",
     "@types/uuid": "^9.0.1",
     "@vercel/analytics": "^1.0.0",
@@ -53,11 +53,11 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@codewithhong/eslint-config": "^2.0.0",
-    "@codewithhong/prettier-config": "^2.0.0",
-    "@codewithhong/tsconfig": "^2.0.0",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
+    "@tszhong0411/eslint-config": "^1.0.7",
+    "@tszhong0411/prettier-config": "^1.0.1",
+    "@tszhong0411/tsconfig": "^1.0.1",
     "@types/file-saver": "^2.0.5",
     "@types/node": "18.15.13",
     "@types/react": "18.0.38",
@@ -83,7 +83,7 @@
   "eslintConfig": {
     "extends": [
       "next/core-web-vitals",
-      "@codewithhong/eslint-config"
+      "@tszhong0411/eslint-config"
     ],
     "parserOptions": {
       "project": "./tsconfig.json",

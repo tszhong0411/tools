@@ -1,5 +1,5 @@
-import { Logo } from '@codewithhong/ui'
 import { IconBrandGithub } from '@tabler/icons-react'
+import { Logo } from '@tszhong0411/ui'
 import Link from 'next/link'
 import React from 'react'
 
@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
         <div className='flex items-center justify-center gap-6'>
           <a
-            href='https://github.com/codewithhong/tools'
+            href='https://github.com/tszhong0411/tools'
             target='_blank'
             rel='noreferrer noopener'
           >

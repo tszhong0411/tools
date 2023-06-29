@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Checkbox, Input, Label } from '@codewithhong/ui'
+import { Button, Checkbox, Input, Label } from '@tszhong0411/ui'
 import React from 'react'
 import { toast } from 'react-hot-toast'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { Textarea } from '@codewithhong/ui'
+import { Textarea } from '@tszhong0411/ui'
 import React from 'react'
 
 import Container from '@/components/container'
