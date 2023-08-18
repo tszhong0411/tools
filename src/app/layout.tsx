@@ -1,7 +1,6 @@
 import { cx } from '@tszhong0411/utils'
-import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
-import { Inter, Noto_Sans_TC } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 
 import Footer from '@/components/footer'
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  manifest: '/static/favicon/site.webmanifest',
+  manifest: '/favicon/site.webmanifest',
   twitter: {
     title: site.name,
     card: 'summary_large_image',
@@ -50,7 +49,7 @@ export const metadata: Metadata = {
     locale: 'en-US',
     images: [
       {
-        url: 'https://honghong.me/static/images/projects/tools/cover.png',
+        url: 'https://honghong.me/images/projects/tools/cover.png',
         width: 1200,
         height: 630,
         alt: site.description,
@@ -59,11 +58,11 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: '/static/favicon/favicon.svg',
-    shortcut: '/static/favicon/favicon.svg',
+    icon: '/favicon/favicon.svg',
+    shortcut: '/favicon/favicon.svg',
     apple: [
       {
-        url: '/static/favicon/apple-touch-icon.png',
+        url: '/favicon/apple-touch-icon.png',
         sizes: '180x180',
         type: 'image/png',
       },
@@ -78,21 +77,11 @@ const inter = Inter({
   display: 'swap',
 })
 
-const notoSansTC = Noto_Sans_TC({
-  variable: '--font-noto-sans-tc',
-  weight: ['400', '500', '700', '900'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-
 const RootLayout = (props: RootLayoutProps) => {
   const { children } = props
 
   return (
-    <html
-      lang='en'
-      className={cx(inter.variable, notoSansTC.variable, 'dark scroll-smooth')}
-    >
+    <html lang='en' className={cx(inter.variable, 'dark scroll-smooth')}>
       <body className='overflow-x-hidden bg-accent-bg font-default text-accent-fg'>
         <Header />
         <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
@@ -100,7 +89,6 @@ const RootLayout = (props: RootLayoutProps) => {
         </main>
         <CustomToaster />
         <Footer />
-        <Analytics />
       </body>
     </html>
   )
