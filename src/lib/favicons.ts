@@ -8,27 +8,27 @@ type Favicon = {
 export const favicons: Favicon[] = [
   {
     rel: 'icon',
-    href: '/static/favicon/favicon.svg',
+    href: '/favicon/favicon.svg',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '180x180',
-    href: '/static/favicon/apple-touch-icon.png',
+    href: '/favicon/apple-touch-icon.png',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '16x16',
-    href: '/static/favicon/favicon-16x16.png',
+    href: '/favicon/favicon-16x16.png',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '32x32',
-    href: '/static/favicon/favicon-32x32.png',
+    href: '/favicon/favicon-32x32.png',
   },
   {
     rel: 'manifest',
-    href: '/static/favicon/site.webmanifest',
+    href: '/favicon/site.webmanifest',
   },
 ]
