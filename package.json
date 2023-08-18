@@ -31,7 +31,6 @@
     "@tszhong0411/utils": "^1.0.2",
     "@types/dom-to-image": "^2.6.4",
     "@types/uuid": "^9.0.1",
-    "@vercel/analytics": "^1.0.0",
     "autoprefixer": "^10.4.14",
     "colord": "^2.9.3",
     "dayjs": "^1.11.7",
@@ -62,7 +61,6 @@
     "@types/node": "18.15.13",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.39.0",
     "eslint-config-next": "^13.4.4",
     "husky": "^8.0.3",
@@ -88,11 +86,6 @@
     "parserOptions": {
       "project": "./tsconfig.json",
       "ecmaVersion": "latest"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
