@@ -46,13 +46,13 @@ cd tools.honghong.me
 3. Install dependencies
 
 ```sh
-yarn
+pnpm
 ```
 
 4. Run the development server
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 <hr>
