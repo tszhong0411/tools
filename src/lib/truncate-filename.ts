@@ -4,7 +4,7 @@ export const truncateFilename = (filename: string) => {
   if (length > 40) {
     return `${filename.substring(0, 20)}...${filename.substring(
       length - 10,
-      length
+      length,
     )}`
   } else {
     return filename

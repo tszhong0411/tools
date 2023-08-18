@@ -15,7 +15,7 @@ const Hero = () => {
         Here are some free online tools made by{' '}
         <Link href='https://instagram.com/tszhong0411' className='text-red-500'>
           @tszhong0411
-        </Link>{' '}
+        </Link>
         . I hope to train my skills. This may be my side project :)
       </p>
       <div className='flex gap-4'>

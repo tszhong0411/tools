@@ -6,7 +6,7 @@ export const svgToBase64 = (file: Blob, callback: (result: string) => void) => {
       const svgURL = URL.createObjectURL(
         new Blob([e.target.result], {
           type: 'image/svg+xml',
-        })
+        }),
       )
 
       const svgImage = document.createElement('img')

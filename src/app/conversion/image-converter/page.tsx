@@ -85,7 +85,7 @@ const ImageConverter = () => {
       prev.map((file) => {
         file.to = options
         return file
-      })
+      }),
     )
   }
 
@@ -95,7 +95,7 @@ const ImageConverter = () => {
         if (file.id === id) return { ...file, to: option }
 
         return file
-      })
+      }),
     )
   }
 
@@ -123,8 +123,8 @@ const ImageConverter = () => {
                   result,
                 }
               return file
-            })
-          )
+            }),
+          ),
         )
       }
     })

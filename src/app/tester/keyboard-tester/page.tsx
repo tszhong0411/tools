@@ -534,7 +534,7 @@ const KeyboardTester = () => {
   const handler = (e: KeyboardEvent) => {
     const newArray = [...layout]
     const key = newArray.find(
-      (key) => key.id === e.keyCode || key.code === e.code
+      (key) => key.id === e.keyCode || key.code === e.code,
     )
 
     if (key) {
@@ -563,7 +563,7 @@ const KeyboardTester = () => {
           'flex h-[35px] w-8 items-center justify-center rounded bg-[#333] text-sm text-white shadow-[rgb(34_34_34)_0px_4px_0px_5px]',
           {
             ['bg-green-800']: active,
-          }
+          },
         )}
         style={style}
       >

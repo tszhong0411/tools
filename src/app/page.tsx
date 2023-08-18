@@ -19,7 +19,7 @@ const HomePage = () => {
   const filter = (tool: Tool): boolean =>
     tool.label.toLowerCase().includes(value.toLowerCase()) ||
     tool.keywords.some((keyword) =>
-      keyword.toLowerCase().includes(value.toLowerCase())
+      keyword.toLowerCase().includes(value.toLowerCase()),
     )
 
   return (
