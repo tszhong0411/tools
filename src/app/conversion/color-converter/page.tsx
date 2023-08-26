@@ -1,6 +1,5 @@
 'use client'
 
-import { Input } from '@tszhong0411/ui'
 import { colord, extend, getFormat } from 'colord'
 import a11yPlugin from 'colord/plugins/a11y'
 import cmykPlugin from 'colord/plugins/cmyk'
@@ -11,6 +10,7 @@ import React from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
+import { Input } from '@/components/ui/input'
 
 extend([hwbPlugin, cmykPlugin, lchPlugin, namesPlugin, a11yPlugin])
 
@@ -123,7 +123,7 @@ const ColorConverter = () => {
           const { label, data } = list
 
           return (
-            <div key={label} className='rounded-lg border border-accent-2 p-4'>
+            <div key={label} className='rounded-lg border p-4'>
               <div className='mb-8 text-center text-3xl font-bold'>{label}</div>
               <Items list={data} />
             </div>
@@ -143,7 +143,7 @@ const Items = (props: ItemProps) => {
         const { label, value } = item
 
         return (
-          <div className='mb-4 border-b-4 border-accent-2' key={label}>
+          <div className='mb-4 border-b-4' key={label}>
             <div className='text-sm font-medium'>{label}</div>
             <div className='my-2 text-lg font-bold'>{value}</div>
           </div>

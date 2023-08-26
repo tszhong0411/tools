@@ -1,4 +1,4 @@
-import { cx } from '@tszhong0411/utils'
+import { cn } from '@/lib/utils'
 
 type ContainerProps = {
   className: string
@@ -9,7 +9,7 @@ const Container = (props: ContainerProps) => {
   const { children, className } = props
 
   return (
-    <div className={cx('mx-auto min-h-[calc(100vh-312px)] py-12', className)}>
+    <div className={cn('mx-auto min-h-[calc(100vh-312px)] py-12', className)}>
       {children}
     </div>
   )

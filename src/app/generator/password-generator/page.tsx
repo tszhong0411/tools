@@ -1,11 +1,14 @@
 'use client'
 
-import { Button, Checkbox, Input, Label } from '@tszhong0411/ui'
 import React from 'react'
 import { toast } from 'react-hot-toast'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 
 const PasswordGenerator = () => {
   const [length, setLength] = React.useState(10)
@@ -92,7 +95,7 @@ const PasswordGenerator = () => {
     <Container className='flex max-w-xl flex-col items-center justify-center'>
       <Title title='Password generator' />
 
-      <div className='my-12 w-full max-w-3xl items-center justify-center space-y-4 rounded-md border border-accent-2 p-6'>
+      <div className='my-12 w-full max-w-3xl items-center justify-center space-y-4 rounded-md border p-6'>
         <div>
           <Label className='mb-2 block font-bold' htmlFor='length'>
             Length
@@ -102,7 +105,7 @@ const PasswordGenerator = () => {
             type='number'
             min='1'
             value={length}
-            onChange={(event) => setLength(parseInt(event.target.value))}
+            onChange={(e) => setLength(parseInt(e.target.value))}
           />
         </div>
         <div>
@@ -164,9 +167,7 @@ const PasswordGenerator = () => {
         {password && (
           <div className='space-y-2'>
             <div className='font-bold'>Generated Password</div>
-            <div className='break-all rounded-md border border-accent-2 p-2'>
-              {password}
-            </div>
+            <div className='break-all rounded-md border p-2'>{password}</div>
             <div className='flex gap-2'>
               <Button onClick={handleCopyPassword} type='button'>
                 Copy

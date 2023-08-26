@@ -2,7 +2,7 @@
 
 import { Viewer, Worker } from '@react-pdf-viewer/core'
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
-import { IconFile } from '@tabler/icons-react'
+import { FileIcon } from 'lucide-react'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
@@ -27,7 +27,7 @@ const PDFViewer = () => {
     },
     onDropRejected: (files) => {
       files.forEach((file) => {
-        toast.error(`${getExtension(file.file.name)} 格式不支援`)
+        toast.error(`${getExtension(file.file.name)} format not supported`)
       })
     },
   })
@@ -41,15 +41,15 @@ const PDFViewer = () => {
       <div className='my-12 w-full'>
         <div
           {...getRootProps()}
-          className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed border-accent-4 px-4 py-6 transition-colors duration-300 hover:bg-accent-1'
+          className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300 hover:bg-muted'
         >
-          <IconFile size={48} />
+          <FileIcon size={48} />
           <input {...getInputProps()} />
           <p>Drag and drop PDF here, or click to select a file</p>
         </div>
 
         {mounted && url && (
-          <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.5.141/build/pdf.worker.min.js'>
+          <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.9.179/build/pdf.worker.min.js'>
             <div className='my-20 h-[1000px]'>
               <Viewer
                 fileUrl={url}

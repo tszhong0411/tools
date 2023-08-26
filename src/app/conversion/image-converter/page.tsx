@@ -1,16 +1,8 @@
 'use client'
 
-import { IconPhoto, IconX } from '@tabler/icons-react'
-import {
-  Button,
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@tszhong0411/ui'
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
+import { ImageIcon, XIcon } from 'lucide-react'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
@@ -24,6 +16,14 @@ import { truncateFilename } from '@/lib/truncate-filename'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
+import { Button } from '@/components/ui/button'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 type ImageFile = {
   file: File
@@ -145,9 +145,9 @@ const ImageConverter = () => {
 
       <div
         {...getRootProps()}
-        className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed border-accent-4 px-4 py-6 transition-colors duration-300 hover:bg-accent-1'
+        className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300 hover:bg-muted'
       >
-        <IconPhoto size={48} />
+        <ImageIcon size={48} />
         <input {...getInputProps()} />
         <p>Drag some images here, or click to select files.</p>
       </div>
@@ -160,7 +160,7 @@ const ImageConverter = () => {
               <Select
                 onValueChange={(option: Option) => setAllExtensions(option)}
               >
-                <SelectTrigger className='w-32'>
+                <SelectTrigger>
                   <SelectValue placeholder='Select' />
                 </SelectTrigger>
                 <SelectContent>
@@ -196,17 +196,17 @@ const ImageConverter = () => {
               return (
                 <div
                   key={id}
-                  className='flex flex-col gap-4 rounded-lg border border-accent-2 p-4'
+                  className='flex flex-col gap-4 rounded-lg border p-4'
                 >
                   <div>{name}</div>
 
                   <div className='flex flex-col justify-between sm:flex-row sm:items-center'>
-                    <div className='text-sm text-accent-7'>{size}</div>
+                    <div className='text-sm text-muted-foreground'>{size}</div>
 
                     <div className='mt-4 flex items-center justify-between gap-2 sm:mt-0 sm:justify-center'>
                       {result ? (
                         <Button
-                          className='border-none bg-green-500 text-accent-fg hover:bg-green-600'
+                          className='border-none bg-green-500 text-foreground hover:bg-green-600'
                           onClick={() => to && download(result, name, to)}
                           type='button'
                         >
@@ -239,12 +239,12 @@ const ImageConverter = () => {
                       )}
 
                       <Button
-                        variant='ghost'
+                        variant='destructive'
                         className='h-10 w-10 p-0'
                         onClick={() => deleteHandler(id)}
                         type='button'
                       >
-                        <IconX />
+                        <XIcon />
                       </Button>
                     </div>
                   </div>

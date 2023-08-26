@@ -1,10 +1,10 @@
 'use client'
 
-import { Input } from '@tszhong0411/ui'
 import Link from 'next/link'
 import React from 'react'
 
 import Hero from '@/components/hero'
+import { Input } from '@/components/ui/input'
 
 import { site, Tool } from '@/config/site'
 
@@ -63,7 +63,7 @@ const Card = (props: CardProps) => {
   const { tools, title } = props
 
   return (
-    <div className='w-full rounded-lg border border-accent-2 p-4'>
+    <div className='w-full rounded-lg border p-4'>
       <div>{title}</div>
       <div className='mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {tools.map((tool) => (
@@ -81,7 +81,7 @@ const Item = (props: Tool) => {
   return (
     <Link
       href={link}
-      className='flex flex-col items-center justify-center rounded-lg bg-accent-1 p-4 text-center transition-transform duration-300 hover:scale-105'
+      className='flex flex-col items-center justify-center rounded-lg bg-zinc-900 p-4 text-center transition-colors duration-300 hover:bg-zinc-900/80'
     >
       <Icon color={color} size={32} />
       <div className='mt-1.5'>{label}</div>

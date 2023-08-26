@@ -1,17 +1,13 @@
 import {
-  Icon,
-  IconArrowsExchange,
-  IconBlockquote,
-  IconBulb,
-  IconColorPicker,
-  IconFile,
-  IconFileText,
-  IconKey,
-  IconKeyboard,
-  IconMathFunction,
-  IconPhoto,
-  IconTestPipe,
-} from '@tabler/icons-react'
+  ArrowRightLeftIcon,
+  FileTextIcon,
+  ImageIcon,
+  KeyboardIcon,
+  KeyIcon,
+  LucideIcon,
+  PipetteIcon,
+  TextIcon,
+} from 'lucide-react'
 import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types'
 
 type Site = {
@@ -24,7 +20,6 @@ type Site = {
   favicons: IconDescriptor[]
   tools: {
     label: string
-    icon: Icon
     links: Tool[]
   }[]
 }
@@ -33,7 +28,7 @@ export type Tool = {
   label: string
   link: string
   color: string
-  icon: Icon
+  icon: LucideIcon
   keywords: string[]
 }
 
@@ -64,80 +59,75 @@ export const site: Site = {
   tools: [
     {
       label: 'Conversion',
-      icon: IconArrowsExchange,
       links: [
         {
           label: 'CSS Unit Converter',
           link: '/conversion/css-unit-converter',
           keywords: ['Conversion', 'CSS'],
           color: '#fa5252',
-          icon: IconArrowsExchange,
+          icon: ArrowRightLeftIcon,
         },
         {
           label: 'Color Converter',
           link: '/conversion/color-converter',
           keywords: ['Conversion', 'Color'],
           color: '#fd7e14',
-          icon: IconColorPicker,
+          icon: PipetteIcon,
         },
         {
           label: 'Image Converter',
           link: '/conversion/image-converter',
           keywords: ['Image', 'Format'],
           color: '#40c057',
-          icon: IconPhoto,
+          icon: ImageIcon,
         },
       ],
     },
     {
       label: 'Document',
-      icon: IconFile,
       links: [
         {
           label: 'PDF Viewer',
           link: '/document/pdf-viewer',
           keywords: ['PDF', 'Viewer', 'Document'],
           color: '#15aabf',
-          icon: IconFileText,
+          icon: FileTextIcon,
         },
       ],
     },
     {
       label: 'Calculation',
-      icon: IconMathFunction,
       links: [
         {
           label: 'Word Counter',
           link: '/calculation/word-counter',
           keywords: ['Word', 'Counter'],
           color: '#4c6ef5',
-          icon: IconBlockquote,
+          icon: TextIcon,
         },
       ],
     },
     {
       label: 'Testing',
-      icon: IconTestPipe,
       links: [
         {
           label: 'Keyboard Tester',
           link: '/tester/keyboard-tester',
           keywords: ['Tester', 'Keyboard'],
           color: '#be4bdb',
-          icon: IconKeyboard,
+          icon: KeyboardIcon,
         },
       ],
     },
     {
       label: 'Generator',
-      icon: IconBulb,
       links: [
         {
           label: 'Password Generator',
           link: '/generator/password-generator',
           keywords: ['Generator', 'Password'],
           color: '#f783ac',
-          icon: IconKey,
+          icon: KeyIcon,
         },
       ],
     },

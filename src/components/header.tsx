@@ -1,7 +1,8 @@
-import { IconBrandGithub } from '@tabler/icons-react'
-import { Logo } from '@tszhong0411/ui'
+import { GithubIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+
+import { Logo } from './ui/logo'
 
 const Header = () => {
   return (
@@ -16,7 +17,7 @@ const Header = () => {
             target='_blank'
             rel='noreferrer noopener'
           >
-            <IconBrandGithub />
+            <GithubIcon />
           </a>
         </div>
       </div>

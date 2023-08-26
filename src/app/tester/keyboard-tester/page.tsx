@@ -1,9 +1,9 @@
 'use client'
 
-import { cx } from '@tszhong0411/utils'
 import React from 'react'
 import { useEventListener } from 'usehooks-ts'
 
+import { cn } from '@/lib/utils'
 import { useOs } from '@/hooks'
 
 import Container from '@/components/container'
@@ -327,7 +327,7 @@ const KeyboardTester = () => {
       },
     },
     {
-      keyName: isMacos ? 'Command' : 'Alt',
+      keyName: isMacos ? 'option' : 'Alt',
       code: 'AltLeft',
       style: {
         width: 40,
@@ -344,7 +344,7 @@ const KeyboardTester = () => {
       },
     },
     {
-      keyName: isMacos ? 'Command' : 'Alt',
+      keyName: isMacos ? 'option' : 'Alt',
       code: 'AltRight',
       style: {
         width: 40,
@@ -559,11 +559,9 @@ const KeyboardTester = () => {
 
     return (
       <div
-        className={cx(
+        className={cn(
           'flex h-[35px] w-8 items-center justify-center rounded bg-[#333] text-sm text-white shadow-[rgb(34_34_34)_0px_4px_0px_5px]',
-          {
-            ['bg-green-800']: active,
-          },
+          active && 'bg-green-800',
         )}
         style={style}
       >

@@ -1,10 +1,10 @@
 'use client'
 
-import { Textarea } from '@tszhong0411/ui'
 import React from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
+import { Textarea } from '@/components/ui/textarea'
 
 const WordCounter = () => {
   const [value, setValue] = React.useState('')
@@ -19,23 +19,27 @@ const WordCounter = () => {
       <Title title='Word Counter' />
 
       <div className='my-12 grid w-full grid-cols-2 gap-2 sm:grid-cols-4'>
-        <div className='h-24 w-full rounded-lg border border-accent-2 p-3'>
+        <div className='h-24 w-full rounded-lg border p-3'>
           <div className='text-2xl font-bold'>{words}</div>
-          <div className='text-xs font-bold text-accent-6'>words</div>
+          <div className='text-xs font-bold text-muted-foreground'>words</div>
         </div>
-        <div className='h-24 w-full rounded-lg border border-accent-2 p-3'>
+        <div className='h-24 w-full rounded-lg border p-3'>
           <div className='text-2xl font-bold'>{chars}</div>
-          <div className='text-xs font-bold text-accent-6'>characters</div>
+          <div className='text-xs font-bold text-muted-foreground'>
+            characters
+          </div>
         </div>
-        <div className='h-24 w-full rounded-lg border border-accent-2 p-3'>
+        <div className='h-24 w-full rounded-lg border p-3'>
           <div className='text-2xl font-bold'>{charsWithoutSpaces}</div>
-          <div className='text-xs font-bold text-accent-6'>
+          <div className='text-xs font-bold text-muted-foreground'>
             characters without spaces
           </div>
         </div>
-        <div className='h-24 w-full rounded-lg border border-accent-2 p-3'>
+        <div className='h-24 w-full rounded-lg border p-3'>
           <div className='text-2xl font-bold'>{paragraphs}</div>
-          <div className='text-xs font-bold text-accent-6'>paragraphs</div>
+          <div className='text-xs font-bold text-muted-foreground'>
+            paragraphs
+          </div>
         </div>
       </div>
 
