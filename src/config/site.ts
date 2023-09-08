@@ -37,10 +37,10 @@ export const site: Site = {
     process.env.NODE_ENV === 'production'
       ? 'https://tools.honghong.me'
       : 'http://localhost:3000',
-  title: 'Tools',
+  title: 'Tools | Hong',
   name: 'Hong',
   keywords: ['Hong', 'Tools', 'Web Tools'],
-  titleTemplate: '- Tools',
+  titleTemplate: '- Tools | Hong',
   description: 'A collection of tools created by Hong.',
   favicons: [
     {

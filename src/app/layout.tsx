@@ -15,6 +15,7 @@ type RootLayoutProps = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: site.title,
     template: `%s ${site.titleTemplate}`,
