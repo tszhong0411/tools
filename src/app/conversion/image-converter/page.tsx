@@ -8,12 +8,6 @@ import { useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
 import { v4 as uuid } from 'uuid'
 
-import { base64ToSvg } from '@/lib/base64-to-svg'
-import { getExtension } from '@/lib/get-extension'
-import { imageToBase64 } from '@/lib/image-to-base64'
-import { svgToBase64 } from '@/lib/svg-to-base64'
-import { truncateFilename } from '@/lib/truncate-filename'
-
 import Container from '@/components/container'
 import Title from '@/components/title'
 import { Button } from '@/components/ui/button'
@@ -22,8 +16,13 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '@/components/ui/select'
+import { base64ToSvg } from '@/lib/base64-to-svg'
+import { getExtension } from '@/lib/get-extension'
+import { imageToBase64 } from '@/lib/image-to-base64'
+import { svgToBase64 } from '@/lib/svg-to-base64'
+import { truncateFilename } from '@/lib/truncate-filename'
 
 type ImageFile = {
   file: File
@@ -44,14 +43,19 @@ const options = [
   { value: 'gif', label: 'GIF' },
   { value: 'webp', label: 'WEBP' },
   { value: 'svg', label: 'SVG' },
-  { value: 'ico', label: 'ICO' },
+  { value: 'ico', label: 'ICO' }
 ] as const
+
+const download = async (result: string, filename: string, to: string) => {
+  const blob = await (await fetch(result)).blob()
+  FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`)
+}
 
 const ImageConverter = () => {
   const [files, setFiles] = React.useState<ImageFile[]>([])
 
-  const onDrop = React.useCallback((files: File[]) => {
-    files.forEach((file) => {
+  const onDrop = React.useCallback((newFiles: File[]) => {
+    for (const file of newFiles) {
       const name = truncateFilename(file.name)
       const newFile: ImageFile = {
         file,
@@ -59,33 +63,33 @@ const ImageConverter = () => {
         name,
         size: filesize(file.size, {
           base: 2,
-          standard: 'jedec',
+          standard: 'jedec'
         }).toString(),
-        extension: getExtension(file.name).toUpperCase(),
+        extension: getExtension(file.name).toUpperCase()
       }
 
       setFiles((prev) => [...prev, newFile])
-    })
+    }
   }, [])
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
-      'image/png': options.map((option) => `.${option.value}`),
+      'image/png': options.map((option) => `.${option.value}`)
     },
-    onDropRejected: (files) => {
-      files.forEach((file) => {
+    onDropRejected: (newFiles) => {
+      for (const file of newFiles) {
         toast.error(`${getExtension(file.file.name)} is not supported`)
-      })
-    },
+      }
+    }
   })
 
-  const setAllExtensions = (options: Option) => {
+  const setAllExtensions = (opts: Option) => {
     setFiles((prev) =>
       prev.map((file) => {
-        file.to = options
+        file.to = opts
         return file
-      }),
+      })
     )
   }
 
@@ -95,44 +99,41 @@ const ImageConverter = () => {
         if (file.id === id) return { ...file, to: option }
 
         return file
-      }),
+      })
     )
   }
 
   const clearAll = () => setFiles([])
 
-  // Some bad code here 💩
-  const convertAll = async () => {
-    files.forEach((imageFile) => {
-      const { extension, to } = imageFile
+  const convertAll = () => {
+    for (const imageFile of files) {
+      const { extension, to, file, id } = imageFile
 
       if (to) {
-        const conversion =
-          to === 'svg'
-            ? base64ToSvg
-            : extension === 'SVG'
-            ? svgToBase64
-            : imageToBase64
+        let conversion
 
-        conversion(imageFile.file, (result) =>
+        if (to === 'svg') {
+          conversion = base64ToSvg
+        } else if (extension === 'SVG') {
+          conversion = svgToBase64
+        } else {
+          conversion = imageToBase64
+        }
+
+        conversion(file, (result) =>
           setFiles((prev) =>
-            prev.map((file) => {
-              if (file.id === imageFile.id)
+            prev.map((f) => {
+              if (f.id === id)
                 return {
-                  ...file,
-                  result,
+                  ...f,
+                  result
                 }
-              return file
-            }),
-          ),
+              return f
+            })
+          )
         )
       }
-    })
-  }
-
-  const download = async (result: string, filename: string, to: string) => {
-    const blob = await (await fetch(result)).blob()
-    FileSaver.saveAs(blob, `${filename.replace(/\.[^/.]+$/, '')}.${to}`)
+    }
   }
 
   const deleteHandler = (id: string) => {
@@ -152,7 +153,7 @@ const ImageConverter = () => {
         <p>Drag some images here, or click to select files.</p>
       </div>
 
-      {files.length !== 0 && (
+      {files.length > 0 && (
         <div className='w-full'>
           <div className='flex flex-col items-start gap-4 sm:flex-row sm:justify-between'>
             <div className='flex items-center justify-start gap-2.5'>

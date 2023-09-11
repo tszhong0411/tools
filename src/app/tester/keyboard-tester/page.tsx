@@ -3,11 +3,10 @@
 import React from 'react'
 import { useEventListener } from 'usehooks-ts'
 
-import { cn } from '@/lib/utils'
-import { useOs } from '@/hooks'
-
 import Container from '@/components/container'
 import Title from '@/components/title'
+import { useOs } from '@/hooks'
+import { cn } from '@/lib/utils'
 
 type KeyType = {
   keyName: string
@@ -29,302 +28,302 @@ const KeyboardTester = () => {
   const initialLayout: KeyType[] = [
     {
       id: 27,
-      keyName: 'ESC',
+      keyName: 'ESC'
     },
     {
       id: 112,
-      keyName: 'F1',
+      keyName: 'F1'
     },
     {
       id: 113,
-      keyName: 'F2',
+      keyName: 'F2'
     },
     {
       id: 114,
-      keyName: 'F3',
+      keyName: 'F3'
     },
     {
       id: 115,
-      keyName: 'F4',
+      keyName: 'F4'
     },
     {
       id: 116,
-      keyName: 'F5',
+      keyName: 'F5'
     },
     {
       id: 117,
-      keyName: 'F6',
+      keyName: 'F6'
     },
     {
       id: 118,
-      keyName: 'F7',
+      keyName: 'F7'
     },
     {
       id: 119,
-      keyName: 'F8',
+      keyName: 'F8'
     },
     {
       id: 120,
-      keyName: 'F9',
+      keyName: 'F9'
     },
     {
       id: 121,
-      keyName: 'F10',
+      keyName: 'F10'
     },
     {
       id: 122,
-      keyName: 'F11',
+      keyName: 'F11'
     },
     {
       id: 123,
-      keyName: 'F12',
+      keyName: 'F12'
     },
     {
       id: 192,
-      keyName: '`',
+      keyName: '`'
     },
     {
       id: 49,
-      keyName: '1',
+      keyName: '1'
     },
     {
       id: 50,
-      keyName: '2',
+      keyName: '2'
     },
     {
       id: 51,
-      keyName: '3',
+      keyName: '3'
     },
     {
       id: 52,
-      keyName: '4',
+      keyName: '4'
     },
     {
       id: 53,
-      keyName: '5',
+      keyName: '5'
     },
     {
       id: 54,
-      keyName: '6',
+      keyName: '6'
     },
     {
       id: 55,
-      keyName: '7',
+      keyName: '7'
     },
     {
       id: 56,
-      keyName: '8',
+      keyName: '8'
     },
     {
       id: 57,
-      keyName: '9',
+      keyName: '9'
     },
     {
       id: 48,
-      keyName: '0',
+      keyName: '0'
     },
     {
       id: 189,
-      keyName: '-',
+      keyName: '-'
     },
     {
       id: 187,
-      keyName: '=',
+      keyName: '='
     },
     {
       id: 8,
       keyName: '←',
       style: {
-        width: 78,
-      },
+        width: 78
+      }
     },
     {
       id: 9,
       keyName: 'Tab',
       style: {
-        width: 42,
-      },
+        width: 42
+      }
     },
     {
       id: 81,
-      keyName: 'Q',
+      keyName: 'Q'
     },
     {
       id: 87,
-      keyName: 'W',
+      keyName: 'W'
     },
     {
       id: 69,
-      keyName: 'E',
+      keyName: 'E'
     },
     {
       id: 82,
-      keyName: 'R',
+      keyName: 'R'
     },
     {
       id: 84,
-      keyName: 'T',
+      keyName: 'T'
     },
     {
       id: 89,
-      keyName: 'Y',
+      keyName: 'Y'
     },
     {
       id: 85,
-      keyName: 'U',
+      keyName: 'U'
     },
     {
       id: 73,
-      keyName: 'I',
+      keyName: 'I'
     },
     {
       id: 79,
-      keyName: 'O',
+      keyName: 'O'
     },
     {
       id: 80,
-      keyName: 'P',
+      keyName: 'P'
     },
     {
       id: 219,
-      keyName: '[',
+      keyName: '['
     },
     {
       id: 221,
-      keyName: ']',
+      keyName: ']'
     },
     {
       id: 220,
       keyName: '\\',
       style: {
-        width: 42,
-      },
+        width: 42
+      }
     },
     {
       id: 20,
       keyName: 'CAPS',
       style: {
-        width: 52,
-      },
+        width: 52
+      }
     },
     {
       id: 65,
-      keyName: 'A',
+      keyName: 'A'
     },
     {
       id: 83,
-      keyName: 'S',
+      keyName: 'S'
     },
     {
       id: 68,
-      keyName: 'D',
+      keyName: 'D'
     },
     {
       id: 70,
-      keyName: 'F',
+      keyName: 'F'
     },
     {
       id: 71,
-      keyName: 'G',
+      keyName: 'G'
     },
     {
       id: 72,
-      keyName: 'H',
+      keyName: 'H'
     },
     {
       id: 74,
-      keyName: 'J',
+      keyName: 'J'
     },
     {
       id: 75,
-      keyName: 'K',
+      keyName: 'K'
     },
     {
       id: 76,
-      keyName: 'L',
+      keyName: 'L'
     },
     {
       id: 186,
-      keyName: ';',
+      keyName: ';'
     },
     {
       id: 222,
-      keyName: "'",
+      keyName: "'"
     },
     {
       keyName: 'Enter',
       code: 'Enter',
       style: {
-        width: 80,
-      },
+        width: 80
+      }
     },
     {
       keyName: 'Shift',
       code: 'ShiftLeft',
       style: {
-        width: 80,
-      },
+        width: 80
+      }
     },
     {
       id: 90,
-      keyName: 'Z',
+      keyName: 'Z'
     },
     {
       id: 88,
-      keyName: 'X',
+      keyName: 'X'
     },
     {
       id: 67,
-      keyName: 'C',
+      keyName: 'C'
     },
     {
       id: 86,
-      keyName: 'V',
+      keyName: 'V'
     },
     {
       id: 66,
-      keyName: 'B',
+      keyName: 'B'
     },
     {
       id: 78,
-      keyName: 'N',
+      keyName: 'N'
     },
     {
       id: 77,
-      keyName: 'M',
+      keyName: 'M'
     },
     {
       id: 188,
-      keyName: ',',
+      keyName: ','
     },
     {
       id: 190,
-      keyName: '.',
+      keyName: '.'
     },
     {
       id: 191,
-      keyName: '/',
+      keyName: '/'
     },
     {
       keyName: 'Shift',
       code: 'ShiftRight',
       style: {
-        width: 100,
-      },
+        width: 100
+      }
     },
     {
       keyName: 'CTRL',
       code: 'ControlLeft',
       style: {
-        width: 52,
-      },
+        width: 52
+      }
     },
     {
       id: 91,
       keyName: isMacos ? '⌘' : '⊞',
       style: {
-        width: 40,
-      },
+        width: 40
+      }
     },
     {
       keyName: isMacos ? 'option' : 'Alt',
@@ -332,16 +331,16 @@ const KeyboardTester = () => {
       style: {
         width: 40,
         ...(isMacos && {
-          fontSize: 9,
-        }),
-      },
+          fontSize: 9
+        })
+      }
     },
     {
       id: 32,
       keyName: 'Space',
       style: {
-        width: 316,
-      },
+        width: 316
+      }
     },
     {
       keyName: isMacos ? 'option' : 'Alt',
@@ -349,193 +348,191 @@ const KeyboardTester = () => {
       style: {
         width: 40,
         ...(isMacos && {
-          fontSize: 9,
-        }),
-      },
+          fontSize: 9
+        })
+      }
     },
     {
       id: 93,
       keyName: isMacos ? '⌘' : '▤',
       style: {
-        width: 40,
-      },
+        width: 40
+      }
     },
     {
       keyName: 'CTRL',
       code: 'ControlRight',
       style: {
-        width: 52,
-      },
+        width: 52
+      }
     },
     {
       id: 44,
       keyName: 'PRTSC',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 145,
       keyName: 'SCRLK',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 19,
       keyName: 'PAUSE',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 45,
       keyName: 'INS',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 36,
       keyName: 'HOME',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 33,
       keyName: 'PGUP',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 46,
       keyName: 'DEL',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 35,
       keyName: 'END',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 34,
       keyName: 'PGDN',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 38,
-      keyName: '↑',
+      keyName: '↑'
     },
     {
       id: 37,
-      keyName: '←',
+      keyName: '←'
     },
     {
       id: 40,
-      keyName: '↓',
+      keyName: '↓'
     },
     {
       id: 39,
-      keyName: '→',
+      keyName: '→'
     },
     {
       id: 144,
       keyName: 'NUM',
       style: {
-        fontSize: 10,
-      },
+        fontSize: 10
+      }
     },
     {
       id: 111,
-      keyName: '/',
+      keyName: '/'
     },
     {
       id: 106,
-      keyName: '*',
+      keyName: '*'
     },
     {
       id: 109,
-      keyName: '-',
+      keyName: '-'
     },
     {
       id: 103,
-      keyName: '7',
+      keyName: '7'
     },
     {
       id: 104,
-      keyName: '8',
+      keyName: '8'
     },
     {
       id: 105,
-      keyName: '9',
+      keyName: '9'
     },
     {
       id: 100,
-      keyName: '4',
+      keyName: '4'
     },
     {
       id: 101,
-      keyName: '5',
+      keyName: '5'
     },
     {
       id: 102,
-      keyName: '6',
+      keyName: '6'
     },
     {
       id: 97,
-      keyName: '1',
+      keyName: '1'
     },
     {
       id: 98,
-      keyName: '2',
+      keyName: '2'
     },
     {
       id: 99,
-      keyName: '3',
+      keyName: '3'
     },
     {
       id: 96,
       keyName: '0',
       style: {
-        width: 80,
-      },
+        width: 80
+      }
     },
     {
       id: 110,
-      keyName: '.',
+      keyName: '.'
     },
     {
       id: 107,
       keyName: '+',
       style: {
-        height: 86,
-      },
+        height: 86
+      }
     },
     {
       keyName: 'Enter',
       code: 'NumpadEnter',
       style: {
         height: 86,
-        fontSize: 12,
-      },
-    },
+        fontSize: 12
+      }
+    }
   ]
 
   const [layout, setLayout] = React.useState(initialLayout)
 
   const handler = (e: KeyboardEvent) => {
     const newArray = [...layout]
-    const key = newArray.find(
-      (key) => key.id === e.keyCode || key.code === e.code,
-    )
+    const key = newArray.find((k) => k.id === e.keyCode || k.code === e.code)
 
     if (key) {
       e.preventDefault()
@@ -561,7 +558,7 @@ const KeyboardTester = () => {
       <div
         className={cn(
           'flex h-[35px] w-8 items-center justify-center rounded bg-[#333] text-sm text-white shadow-[rgb(34_34_34)_0px_4px_0px_5px]',
-          active && 'bg-green-800',
+          active && 'bg-green-800'
         )}
         style={style}
       >

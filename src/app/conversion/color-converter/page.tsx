@@ -37,65 +37,65 @@ const ColorConverter = () => {
       data: [
         {
           label: 'HEX',
-          value: colord(value).toHex(),
+          value: colord(value).toHex()
         },
         {
           label: 'RGB',
-          value: colord(value).toRgbString(),
+          value: colord(value).toRgbString()
         },
         {
           label: 'HSL',
-          value: colord(value).toHslString(),
+          value: colord(value).toHslString()
         },
         {
           label: 'HWB',
-          value: colord(value).toHwbString(),
+          value: colord(value).toHwbString()
         },
         {
           label: 'CMYK',
-          value: colord(value).toCmykString(),
+          value: colord(value).toCmykString()
         },
         {
           label: 'LCH',
-          value: colord(value).toLchString(),
+          value: colord(value).toLchString()
         },
         {
           label: 'CSS Keyword',
-          value: colord(value).toName({ closest: true }) || 'Unknown',
-        },
-      ],
+          value: colord(value).toName({ closest: true }) || 'Unknown'
+        }
+      ]
     },
     {
       label: 'Analysis',
       data: [
         {
           label: 'Is it a valid CSS value?',
-          value: colord(value).isValid() ? 'Yes' : 'No',
+          value: colord(value).isValid() ? 'Yes' : 'No'
         },
         {
           label: 'Format',
-          value: getFormat(value) || '-',
+          value: getFormat(value) || '-'
         },
         {
           label: 'Hue (0-359)',
-          value: `${colord(value).hue()} deg`,
+          value: `${colord(value).hue()} deg`
         },
         {
           label: 'Brightness',
           value: `${Math.floor(colord(value).brightness() * 100)}% (${
             colord(value).isDark() ? 'Dark' : 'Light'
-          })`,
+          })`
         },
         {
           label: 'Luminance',
-          value: `${Math.floor(colord(value).luminance() * 100)}%`,
+          value: `${Math.floor(colord(value).luminance() * 100)}%`
         },
         {
           label: 'Contrast',
-          value: `${colord(value).contrast()}:1`,
-        },
-      ],
-    },
+          value: `${colord(value).contrast()}:1`
+        }
+      ]
+    }
   ]
 
   return (

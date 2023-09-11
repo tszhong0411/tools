@@ -5,7 +5,6 @@ import React from 'react'
 
 import Hero from '@/components/hero'
 import { Input } from '@/components/ui/input'
-
 import { site, Tool } from '@/config/site'
 
 type CardProps = {
@@ -19,7 +18,7 @@ const HomePage = () => {
   const filter = (tool: Tool): boolean =>
     tool.label.toLowerCase().includes(value.toLowerCase()) ||
     tool.keywords.some((keyword) =>
-      keyword.toLowerCase().includes(value.toLowerCase()),
+      keyword.toLowerCase().includes(value.toLowerCase())
     )
 
   return (
@@ -39,14 +38,12 @@ const HomePage = () => {
         >
           {value
             ? site.tools
-                .filter((tool) => tool.links.some((tool) => filter(tool)))
-                .map((tool) => {
-                  const { label, links } = tool
+                .filter((t) => t.links.some((tool) => filter(tool)))
+                .map((t) => {
+                  const { label, links } = t
                   const filtered = links.filter((tool) => filter(tool))
 
-                  return (
-                    <Card key={label} tools={filtered} title={label}></Card>
-                  )
+                  return <Card key={label} tools={filtered} title={label} />
                 })
             : site.tools.map((tool) => {
                 const { label, links } = tool

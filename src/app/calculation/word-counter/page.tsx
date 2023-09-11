@@ -10,7 +10,7 @@ const WordCounter = () => {
   const [value, setValue] = React.useState('')
   const words = value.match(/\S+/g)?.length || 0
   const chars = value.length || 0
-  const charsWithoutSpaces = value.replace(/ /g, '').length || 0
+  const charsWithoutSpaces = value.replaceAll(' ', '').length || 0
   const paragraphs =
     value.split('\n').filter((paragraph) => paragraph !== '').length || 0
 

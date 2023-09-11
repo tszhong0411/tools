@@ -7,24 +7,24 @@ export const base64ToSvg = (file: Blob, callback: (result: string) => void) => {
     image.addEventListener('load', () => {
       const svgElement = document.createElementNS(
         'http://www.w3.org/2000/svg',
-        'svg',
+        'svg'
       )
 
       const imageElement = document.createElementNS(
         'http://www.w3.org/2000/svg',
-        'image',
+        'image'
       )
 
       imageElement.setAttributeNS(
         'http://www.w3.org/1999/xlink',
         'xlink:href',
-        result,
+        result
       )
 
       svgElement.setAttribute('width', `${image.width}`)
       svgElement.setAttribute('height', `${image.height}`)
 
-      svgElement.appendChild(imageElement)
+      svgElement.append(imageElement)
 
       const svgString = new XMLSerializer().serializeToString(svgElement)
 

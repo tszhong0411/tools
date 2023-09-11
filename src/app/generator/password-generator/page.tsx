@@ -50,19 +50,18 @@ const PasswordGenerator = () => {
     }
 
     if (avoidSimilarChars) {
-      chars = chars
-        .split('')
-        .filter((char) => !similarChars.includes(char))
-        .join('')
+      chars = [...chars].filter((char) => !similarChars.includes(char)).join('')
     }
 
-    let password = ''
+    let generatedPassword = ''
 
     for (let i = 0; i < length; i++) {
-      password += chars.charAt(Math.floor(Math.random() * chars.length))
+      generatedPassword += chars.charAt(
+        Math.floor(Math.random() * chars.length)
+      )
     }
 
-    setPassword(password)
+    setPassword(generatedPassword)
   }
 
   const handleClearPassword = () => {
@@ -73,7 +72,7 @@ const PasswordGenerator = () => {
     try {
       await navigator.clipboard.writeText(password)
       toast.success('Password copied to clipboard.')
-    } catch (error) {
+    } catch {
       toast.error('Failed to copy password to clipboard.')
     }
   }
@@ -85,9 +84,9 @@ const PasswordGenerator = () => {
 
     link.download = 'password.txt'
     link.href = url
-    document.body.appendChild(link)
+    document.body.append(link)
     link.click()
-    document.body.removeChild(link)
+    link.remove()
     URL.revokeObjectURL(url)
   }
 
@@ -105,7 +104,7 @@ const PasswordGenerator = () => {
             type='number'
             min='1'
             value={length}
-            onChange={(e) => setLength(parseInt(e.target.value))}
+            onChange={(e) => setLength(Number.parseInt(e.target.value))}
           />
         </div>
         <div>

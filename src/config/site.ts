@@ -4,9 +4,9 @@ import {
   ImageIcon,
   KeyboardIcon,
   KeyIcon,
-  LucideIcon,
+  type LucideIcon,
   PipetteIcon,
-  TextIcon,
+  TextIcon
 } from 'lucide-react'
 import { IconDescriptor } from 'next/dist/lib/metadata/types/metadata-types'
 
@@ -18,10 +18,10 @@ type Site = {
   titleTemplate: string
   description: string
   favicons: IconDescriptor[]
-  tools: {
+  tools: Array<{
     label: string
     links: Tool[]
-  }[]
+  }>
 }
 
 export type Tool = {
@@ -47,14 +47,14 @@ export const site: Site = {
       rel: 'icon',
       type: 'image/png',
       sizes: '16x16',
-      url: '/favicon/favicon-16x16.png',
+      url: '/favicon/favicon-16x16.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
       sizes: '32x32',
-      url: '/favicon/favicon-32x32.png',
-    },
+      url: '/favicon/favicon-32x32.png'
+    }
   ],
   tools: [
     {
@@ -65,23 +65,23 @@ export const site: Site = {
           link: '/conversion/css-unit-converter',
           keywords: ['Conversion', 'CSS'],
           color: '#fa5252',
-          icon: ArrowRightLeftIcon,
+          icon: ArrowRightLeftIcon
         },
         {
           label: 'Color Converter',
           link: '/conversion/color-converter',
           keywords: ['Conversion', 'Color'],
           color: '#fd7e14',
-          icon: PipetteIcon,
+          icon: PipetteIcon
         },
         {
           label: 'Image Converter',
           link: '/conversion/image-converter',
           keywords: ['Image', 'Format'],
           color: '#40c057',
-          icon: ImageIcon,
-        },
-      ],
+          icon: ImageIcon
+        }
+      ]
     },
     {
       label: 'Document',
@@ -91,9 +91,9 @@ export const site: Site = {
           link: '/document/pdf-viewer',
           keywords: ['PDF', 'Viewer', 'Document'],
           color: '#15aabf',
-          icon: FileTextIcon,
-        },
-      ],
+          icon: FileTextIcon
+        }
+      ]
     },
     {
       label: 'Calculation',
@@ -103,9 +103,9 @@ export const site: Site = {
           link: '/calculation/word-counter',
           keywords: ['Word', 'Counter'],
           color: '#4c6ef5',
-          icon: TextIcon,
-        },
-      ],
+          icon: TextIcon
+        }
+      ]
     },
     {
       label: 'Testing',
@@ -115,9 +115,9 @@ export const site: Site = {
           link: '/tester/keyboard-tester',
           keywords: ['Tester', 'Keyboard'],
           color: '#be4bdb',
-          icon: KeyboardIcon,
-        },
-      ],
+          icon: KeyboardIcon
+        }
+      ]
     },
     {
       label: 'Generator',
@@ -127,9 +127,9 @@ export const site: Site = {
           link: '/generator/password-generator',
           keywords: ['Generator', 'Password'],
           color: '#f783ac',
-          icon: KeyIcon,
-        },
-      ],
-    },
-  ],
+          icon: KeyIcon
+        }
+      ]
+    }
+  ]
 }

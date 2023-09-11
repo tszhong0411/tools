@@ -1,12 +1,7 @@
 export const truncateFilename = (filename: string) => {
   const length = filename.length
 
-  if (length > 40) {
-    return `${filename.substring(0, 20)}...${filename.substring(
-      length - 10,
-      length,
-    )}`
-  } else {
-    return filename
-  }
+  return length > 40
+    ? `${filename.slice(0, 20)}...${filename.slice(-10)}`
+    : filename
 }

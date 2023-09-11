@@ -5,8 +5,8 @@ export const svgToBase64 = (file: Blob, callback: (result: string) => void) => {
     if (e.target && e.target.result) {
       const svgURL = URL.createObjectURL(
         new Blob([e.target.result], {
-          type: 'image/svg+xml',
-        }),
+          type: 'image/svg+xml'
+        })
       )
 
       const svgImage = document.createElement('img')
@@ -17,7 +17,7 @@ export const svgToBase64 = (file: Blob, callback: (result: string) => void) => {
       svgImage.style.opacity = '0'
       svgImage.style.visibility = 'hidden'
 
-      document.body.appendChild(svgImage)
+      document.body.append(svgImage)
 
       svgImage.addEventListener('load', () => {
         const canvas = document.createElement('canvas')
@@ -29,12 +29,12 @@ export const svgToBase64 = (file: Blob, callback: (result: string) => void) => {
 
         callback(dataURL)
 
-        document.body.removeChild(svgImage)
+        svgImage.remove()
       })
 
       svgImage.src = svgURL
-
-      reader.readAsText(file)
     }
   })
+
+  reader.readAsText(file, 'utf8')
 }

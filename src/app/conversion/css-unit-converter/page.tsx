@@ -21,52 +21,48 @@ const CSSUnitConverter = () => {
     PC: 100,
     PT: 12,
     EM: 1,
-    REM: 1,
+    REM: 1
   })
 
   const changeHandler = (value: number, type: Units) => {
     if (type === 'EM' || type === 'REM') {
-      setValues({
+      return setValues({
         EM: value,
         REM: value,
         PX: value * 16,
         PC: value * 100,
-        PT: value * 12,
+        PT: value * 12
       })
-      return
     }
 
     if (type === 'PX') {
-      setValues({
+      return setValues({
         PX: value,
         EM: value / 16,
         REM: value / 16,
         PC: (value / 16) * 100,
-        PT: (value / 16) * 12,
+        PT: (value / 16) * 12
       })
-      return
     }
 
     if (type === 'PC') {
-      setValues({
+      return setValues({
         PC: value,
         EM: value / 100,
         PX: value / 100,
         REM: (value / 100) * 16,
-        PT: (value / 100) * 12,
+        PT: (value / 100) * 12
       })
-      return
     }
 
     if (type === 'PT') {
-      setValues({
+      return setValues({
         PT: value,
         EM: value / 12,
         REM: value / 12,
         PX: (value / 12) * 16,
-        PC: (value / 12) * 100,
+        PC: (value / 12) * 100
       })
-      return
     }
   }
 
@@ -110,7 +106,7 @@ const NumberInput = (props: InputProps) => {
 
   return (
     <div className='relative'>
-      <Input className='px-4 py-4 pr-14' type='number' {...rest} />
+      <Input className='p-4 pr-14' type='number' {...rest} />
       <div className='absolute right-3 top-1/2 -translate-y-1/2 select-none'>
         {unit}
       </div>

@@ -3,16 +3,16 @@
 import { Viewer, Worker } from '@react-pdf-viewer/core'
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 import { FileIcon } from 'lucide-react'
+import pkg from 'package.json'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import toast from 'react-hot-toast'
+
 import '@react-pdf-viewer/core/lib/styles/index.css'
 import '@react-pdf-viewer/default-layout/lib/styles/index.css'
-
-import { getExtension } from '@/lib/get-extension'
-
 import Container from '@/components/container'
 import Title from '@/components/title'
+import { getExtension } from '@/lib/get-extension'
 
 const PDFViewer = () => {
   const [mounted, setMounted] = React.useState(false)
@@ -23,13 +23,13 @@ const PDFViewer = () => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
-      'application/pdf': [],
+      'application/pdf': []
     },
     onDropRejected: (files) => {
-      files.forEach((file) => {
+      for (const file of files) {
         toast.error(`${getExtension(file.file.name)} format not supported`)
-      })
-    },
+      }
+    }
   })
 
   React.useEffect(() => setMounted(true), [])
@@ -49,7 +49,9 @@ const PDFViewer = () => {
         </div>
 
         {mounted && url && (
-          <Worker workerUrl='https://unpkg.com/pdfjs-dist@3.9.179/build/pdf.worker.min.js'>
+          <Worker
+            workerUrl={`https://unpkg.com/pdfjs-dist@${pkg['dependencies']['pdfjs-dist']}/build/pdf.worker.min.js`}
+          >
             <div className='my-20 h-[1000px]'>
               <Viewer
                 fileUrl={url}
