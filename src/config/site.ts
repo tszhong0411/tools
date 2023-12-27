@@ -70,14 +70,14 @@ export const site: Site = {
         {
           label: 'Color Converter',
           link: '/conversion/color-converter',
-          keywords: ['Conversion', 'Color'],
+          keywords: ['Conversion', 'Color', 'CSS'],
           color: '#fd7e14',
           icon: PipetteIcon
         },
         {
           label: 'Image Converter',
           link: '/conversion/image-converter',
-          keywords: ['Image', 'Format'],
+          keywords: ['Conversion', 'Image', 'Format', 'Extension'],
           color: '#40c057',
           icon: ImageIcon
         }
@@ -89,7 +89,7 @@ export const site: Site = {
         {
           label: 'PDF Viewer',
           link: '/document/pdf-viewer',
-          keywords: ['PDF', 'Viewer', 'Document'],
+          keywords: ['PDF', 'Viewer', 'Document', 'File', 'Document'],
           color: '#15aabf',
           icon: FileTextIcon
         }
@@ -101,7 +101,7 @@ export const site: Site = {
         {
           label: 'Word Counter',
           link: '/calculation/word-counter',
-          keywords: ['Word', 'Counter'],
+          keywords: ['Word', 'Counter', 'Calculation', 'Text'],
           color: '#4c6ef5',
           icon: TextIcon
         }
@@ -113,7 +113,7 @@ export const site: Site = {
         {
           label: 'Keyboard Tester',
           link: '/tester/keyboard-tester',
-          keywords: ['Tester', 'Keyboard'],
+          keywords: ['Tester', 'Keyboard', 'Test'],
           color: '#be4bdb',
           icon: KeyboardIcon
         }
@@ -125,7 +125,7 @@ export const site: Site = {
         {
           label: 'Password Generator',
           link: '/generator/password-generator',
-          keywords: ['Generator', 'Password'],
+          keywords: ['Generator', 'Password', 'Random'],
           color: '#f783ac',
           icon: KeyIcon
         }
