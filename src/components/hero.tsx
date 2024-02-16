@@ -1,6 +1,5 @@
+import { buttonVariants } from '@tszhong0411/ui'
 import Link from 'next/link'
-
-import { buttonVariants } from './ui/button'
 
 const Hero = () => {
   return (

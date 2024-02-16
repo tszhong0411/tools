@@ -1,5 +1,13 @@
 'use client'
 
+import { Button } from '@tszhong0411/ui'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@tszhong0411/ui'
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
 import { ImageIcon, XIcon } from 'lucide-react'
@@ -10,14 +18,6 @@ import { v4 as uuid } from 'uuid'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
-import { Button } from '@/components/ui/button'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
 import { base64ToSvg } from '@/lib/base64-to-svg'
 import { getExtension } from '@/lib/get-extension'
 import { imageToBase64 } from '@/lib/image-to-base64'
@@ -146,7 +146,7 @@ const ImageConverter = () => {
 
       <div
         {...getRootProps()}
-        className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300 hover:bg-muted'
+        className='hover:bg-muted my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300'
       >
         <ImageIcon size={48} />
         <input {...getInputProps()} />
@@ -241,7 +241,7 @@ const ImageConverter = () => {
 
                       <Button
                         variant='destructive'
-                        className='h-10 w-10 p-0'
+                        className='size-10 p-0'
                         onClick={() => deleteHandler(id)}
                         type='button'
                       >

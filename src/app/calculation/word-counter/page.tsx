@@ -1,10 +1,10 @@
 'use client'
 
+import { Textarea } from '@tszhong0411/ui'
 import React from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
-import { Textarea } from '@/components/ui/textarea'
 
 const WordCounter = () => {
   const [value, setValue] = React.useState('')

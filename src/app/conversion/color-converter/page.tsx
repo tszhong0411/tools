@@ -1,5 +1,6 @@
 'use client'
 
+import { Input } from '@tszhong0411/ui'
 import { colord, extend, getFormat } from 'colord'
 import a11yPlugin from 'colord/plugins/a11y'
 import cmykPlugin from 'colord/plugins/cmyk'
@@ -10,7 +11,6 @@ import React from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
-import { Input } from '@/components/ui/input'
 
 extend([hwbPlugin, cmykPlugin, lchPlugin, namesPlugin, a11yPlugin])
 
@@ -103,9 +103,11 @@ const ColorConverter = () => {
       <Title title='Color Converter' />
 
       <div className='relative my-8 flex w-full max-w-[250px] items-center justify-between gap-4'>
+        {/* I don't know why */}
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor='color' className='text-lg font-bold'>
           <div
-            className='h-7 w-7 cursor-pointer rounded-lg'
+            className='size-7 cursor-pointer rounded-lg'
             style={{ backgroundColor: value }}
           />
         </label>

@@ -1,12 +1,12 @@
 'use client'
 
+import { cn } from '@tszhong0411/utils'
 import React from 'react'
 import { useEventListener } from 'usehooks-ts'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
 import { useOs } from '@/hooks'
-import { cn } from '@/lib/utils'
 
 type KeyType = {
   keyName: string
@@ -655,12 +655,12 @@ const KeyboardTester = () => {
               </div>
               <div className='h-[35px]' />
               <div className='flex gap-4'>
-                <div className='h-8 w-8' />
+                <div className='size-8' />
                 {/* Up arrow */}
                 {layout.slice(82, 83).map((key) => (
                   <Key key={key.id || key.code} item={key} />
                 ))}
-                <div className='h-8 w-8' />
+                <div className='size-8' />
               </div>
               <div className='flex gap-4'>
                 {/* Left arrow to right arrow */}

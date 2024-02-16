@@ -1,14 +1,14 @@
 'use client'
 
+import { Button } from '@tszhong0411/ui'
+import { Checkbox } from '@tszhong0411/ui'
+import { Input } from '@tszhong0411/ui'
+import { Label } from '@tszhong0411/ui'
 import React from 'react'
 import { toast } from 'react-hot-toast'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 
 const PasswordGenerator = () => {
   const [length, setLength] = React.useState(10)

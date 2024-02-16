@@ -17,7 +17,7 @@ import { getExtension } from '@/lib/get-extension'
 const PDFViewer = () => {
   const [mounted, setMounted] = React.useState(false)
   const [url, setUrl] = React.useState('')
-  const onDrop = (files: File[]) => setUrl(URL.createObjectURL(files[0]))
+  const onDrop = (files: File[]) => setUrl(URL.createObjectURL(files[0]!))
   const defaultLayoutPluginInstance = defaultLayoutPlugin()
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -41,7 +41,7 @@ const PDFViewer = () => {
       <div className='my-12 w-full'>
         <div
           {...getRootProps()}
-          className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300 hover:bg-muted'
+          className='hover:bg-muted my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300'
         >
           <FileIcon size={48} />
           <input {...getInputProps()} />

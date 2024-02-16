@@ -1,24 +1,29 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { cn } from '@tszhong0411/utils'
+import { GeistSans } from 'geist/font/sans'
+import type { Metadata, Viewport } from 'next'
 
 import '@/styles/globals.css'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import CustomToaster from '@/components/toaster'
-import { site } from '@/config/site'
-import { cn } from '@/lib/utils'
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL
+} from '@/lib/constants'
 
 type RootLayoutProps = {
   children: React.ReactNode
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: site.title,
-    template: `%s ${site.titleTemplate}`
+    default: SITE_TITLE,
+    template: `%s | ${SITE_TITLE}`
   },
-  description: site.description,
+  description: SITE_DESCRIPTION,
   robots: {
     index: true,
     follow: true,
@@ -32,34 +37,50 @@ export const metadata: Metadata = {
   },
   manifest: '/favicon/site.webmanifest',
   twitter: {
-    title: site.name,
+    title: SITE_NAME,
     card: 'summary_large_image',
     site: '@tszhong0411',
-    creator: '@tszhong0411'
+    creator: '@tszhong0411',
+    images: [
+      {
+        url: 'https://honghong.me/images/projects/tools/cover.png',
+        width: 1280,
+        height: 832,
+        alt: SITE_DESCRIPTION
+      }
+    ]
   },
-  keywords: site.keywords,
-  themeColor: '#000',
+  alternates: {
+    canonical: SITE_URL
+  },
+  keywords: [
+    'tools',
+    'free tools',
+    'web tools',
+    'tools for developers',
+    'tools for designers'
+  ],
   creator: 'tszhong0411',
   openGraph: {
-    url: `${site.url}`,
+    url: SITE_URL,
     type: 'website',
-    title: site.title,
-    siteName: site.title,
-    description: site.description,
+    title: SITE_TITLE,
+    siteName: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     locale: 'en-US',
     images: [
       {
-        url: 'https://tools.honghong.me/og.png',
-        width: 1200,
-        height: 630,
-        alt: site.description,
+        url: 'https://honghong.me/images/projects/tools/cover.png',
+        width: 1280,
+        height: 832,
+        alt: SITE_DESCRIPTION,
         type: 'image/png'
       }
     ]
   },
   icons: {
-    icon: '/favicon/favicon.svg',
-    shortcut: '/favicon/favicon.svg',
+    icon: '/favicon/favicon.ico',
+    shortcut: '/favicon/favicon.ico',
     apple: [
       {
         url: '/favicon/apple-touch-icon.png',
@@ -67,22 +88,35 @@ export const metadata: Metadata = {
         type: 'image/png'
       }
     ],
-    other: [...site.favicons]
+    other: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        url: '/favicon/favicon-16x16.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/favicon/favicon-32x32.png'
+      }
+    ]
   }
 }
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  display: 'swap'
-})
+export const viewport: Viewport = {
+  themeColor: {
+    color: '#000000'
+  }
+}
 
 const RootLayout = (props: RootLayoutProps) => {
   const { children } = props
 
   return (
-    <html lang='en' className={cn(inter.variable, 'dark scroll-smooth')}>
-      <body className='font-default'>
+    <html lang='en' className={cn(GeistSans.variable, 'scroll-smooth')}>
+      <body>
         <Header />
         <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
           {children}
