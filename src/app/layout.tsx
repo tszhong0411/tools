@@ -115,7 +115,7 @@ const RootLayout = (props: RootLayoutProps) => {
   const { children } = props
 
   return (
-    <html lang='en' className={cn(GeistSans.variable, 'scroll-smooth')}>
+    <html lang='en-US' className={cn(GeistSans.variable, 'scroll-smooth')}>
       <body>
         <Header />
         <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
