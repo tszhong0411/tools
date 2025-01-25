@@ -5,11 +5,11 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css'
 
 import { Viewer, Worker } from '@react-pdf-viewer/core'
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
+import { toast } from '@tszhong0411/ui'
 import { FileIcon } from 'lucide-react'
 import pkg from 'package.json'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
-import toast from 'react-hot-toast'
 
 import Container from '@/components/container'
 import Title from '@/components/title'

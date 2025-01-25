@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from 'next'
 
 import '@/styles/globals.css'
 
+import { Toaster } from '@tszhong0411/ui'
 import { cn } from '@tszhong0411/utils'
 import { GeistSans } from 'geist/font/sans'
 
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import CustomToaster from '@/components/toaster'
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/constants'
 
 type RootLayoutProps = {
@@ -110,7 +110,7 @@ const RootLayout = (props: RootLayoutProps) => {
       <body>
         <Header />
         <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>{children}</main>
-        <CustomToaster />
+        <Toaster />
         <Footer />
       </body>
     </html>

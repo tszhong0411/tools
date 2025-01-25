@@ -6,14 +6,14 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
+  toast
 } from '@tszhong0411/ui'
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
 import { ImageIcon, XIcon } from 'lucide-react'
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
-import toast from 'react-hot-toast'
 import { v4 as uuid } from 'uuid'
 
 import Container from '@/components/container'

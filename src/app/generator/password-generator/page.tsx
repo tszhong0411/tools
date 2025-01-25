@@ -1,8 +1,7 @@
 'use client'
 
-import { Button, Checkbox, Input, Label } from '@tszhong0411/ui'
+import { Button, Checkbox, Input, Label, toast } from '@tszhong0411/ui'
 import React from 'react'
-import { toast } from 'react-hot-toast'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
