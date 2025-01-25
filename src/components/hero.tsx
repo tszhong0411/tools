@@ -14,7 +14,7 @@ const Hero = () => {
       <p className='leading-6 text-muted-foreground'>
         Discover a powerful collection of web tools designed to streamline your workflow and boost
         productivity. Made by{' '}
-        <Link href='https://instagram.com/tszhong0411' className='text-white'>
+        <Link href='https://github.com/tszhong0411' className='text-white'>
           @tszhong0411
         </Link>
         . I hope to practice my skills.
