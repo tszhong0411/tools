@@ -62,7 +62,7 @@
     "@cspell/dict-software-terms": "^4.2.4",
     "@tszhong0411/eslint-config": "^0.1.26",
     "@tszhong0411/prettier-config": "^0.0.13",
-    "@tszhong0411/tailwind-config": "^0.0.22",
+    "@tszhong0411/tailwind-config": "^0.0.23",
     "@tszhong0411/tsconfig": "latest",
     "@types/file-saver": "^2.0.7",
     "@types/node": "22.10.10",

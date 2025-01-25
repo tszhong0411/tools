@@ -91,8 +91,8 @@ importers:
         specifier: ^0.0.13
         version: 0.0.13(prettier@3.4.2)
       '@tszhong0411/tailwind-config':
-        specifier: ^0.0.22
-        version: 0.0.22(tailwindcss@3.4.17)
+        specifier: ^0.0.23
+        version: 0.0.23(tailwindcss@3.4.17)
       '@tszhong0411/tsconfig':
         specifier: latest
         version: 0.0.1(typescript@5.7.3)
@@ -2177,8 +2177,8 @@ packages:
     peerDependencies:
       prettier: 3.x
 
-  '@tszhong0411/tailwind-config@0.0.22':
-    resolution: {integrity: sha512-hyeSe2v5X2xz7zEm6MIWkpAoABI6EEGXxdFkJs2g75zLYf7WubSTru3np5zhgByU9YZ0Xcpk9lRk/w1mm6rdFA==}
+  '@tszhong0411/tailwind-config@0.0.23':
+    resolution: {integrity: sha512-0kZb1gxtYBFW0JN0KfpONNV3ftZAJ00jBiG7EKCKoNhHM1SwFCRrP8RpPdml2UiiAlZO7QjbJYlDAPe8gv9rPQ==}
     peerDependencies:
       tailwindcss: 3.x
 
@@ -7891,7 +7891,7 @@ snapshots:
       prettier: 3.4.2
       prettier-package-json: 2.8.0
 
-  '@tszhong0411/tailwind-config@0.0.22(tailwindcss@3.4.17)':
+  '@tszhong0411/tailwind-config@0.0.23(tailwindcss@3.4.17)':
     dependencies:
       '@tailwindcss/typography': 0.5.16(tailwindcss@3.4.17)
       tailwindcss: 3.4.17
