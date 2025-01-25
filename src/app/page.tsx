@@ -1,110 +1,11 @@
 'use client'
 
 import { Input } from '@tszhong0411/ui'
-import {
-  ArrowRightLeftIcon,
-  FileTextIcon,
-  ImageIcon,
-  KeyboardIcon,
-  KeyIcon,
-  type LucideIcon,
-  PipetteIcon,
-  TextIcon
-} from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
 import Hero from '@/components/hero'
-
-type CardProps = {
-  tools: Tool[]
-  title: string
-}
-
-type Tool = {
-  label: string
-  link: string
-  keywords: string[]
-  color: string
-  icon: LucideIcon
-}
-
-const TOOLS = [
-  {
-    label: 'Conversion',
-    links: [
-      {
-        label: 'CSS Unit Converter',
-        link: '/conversion/css-unit-converter',
-        keywords: ['Conversion', 'CSS'],
-        color: '#fa5252',
-        icon: ArrowRightLeftIcon
-      },
-      {
-        label: 'Color Converter',
-        link: '/conversion/color-converter',
-        keywords: ['Conversion', 'Color', 'CSS'],
-        color: '#fd7e14',
-        icon: PipetteIcon
-      },
-      {
-        label: 'Image Converter',
-        link: '/conversion/image-converter',
-        keywords: ['Conversion', 'Image', 'Format', 'Extension'],
-        color: '#40c057',
-        icon: ImageIcon
-      }
-    ]
-  },
-  {
-    label: 'Document',
-    links: [
-      {
-        label: 'PDF Viewer',
-        link: '/document/pdf-viewer',
-        keywords: ['PDF', 'Viewer', 'Document', 'File', 'Document'],
-        color: '#15aabf',
-        icon: FileTextIcon
-      }
-    ]
-  },
-  {
-    label: 'Calculation',
-    links: [
-      {
-        label: 'Word Counter',
-        link: '/calculation/word-counter',
-        keywords: ['Word', 'Counter', 'Calculation', 'Text'],
-        color: '#4c6ef5',
-        icon: TextIcon
-      }
-    ]
-  },
-  {
-    label: 'Testing',
-    links: [
-      {
-        label: 'Keyboard Tester',
-        link: '/tester/keyboard-tester',
-        keywords: ['Tester', 'Keyboard', 'Test'],
-        color: '#be4bdb',
-        icon: KeyboardIcon
-      }
-    ]
-  },
-  {
-    label: 'Generator',
-    links: [
-      {
-        label: 'Password Generator',
-        link: '/generator/password-generator',
-        keywords: ['Generator', 'Password', 'Random'],
-        color: '#f783ac',
-        icon: KeyIcon
-      }
-    ]
-  }
-]
+import { type Tool, TOOLS } from '@/lib/tool-groups'
 
 const HomePage = () => {
   const [value, setValue] = React.useState('')
@@ -116,7 +17,7 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
-      <div className='flex flex-col items-start'>
+      <div className='flex flex-col space-y-12'>
         <Input
           type='text'
           value={value}
@@ -126,18 +27,18 @@ const HomePage = () => {
           placeholder='Search'
           className='w-full'
         />
-        <div id='get-started' className='my-12 flex w-full scroll-mt-20 flex-col gap-6'>
+        <div id='get-started' className='flex w-full scroll-mt-20 flex-col gap-6'>
           {value
-            ? TOOLS.filter((t) => t.links.some((tool) => filter(tool))).map((t) => {
-                const { label, links } = t
-                const filtered = links.filter((tool) => filter(tool))
+            ? TOOLS.filter((t) => t.tools.some((tool) => filter(tool))).map((t) => {
+                const { label, tools } = t
+                const filtered = tools.filter((tool) => filter(tool))
 
                 return <Card key={label} tools={filtered} title={label} />
               })
             : TOOLS.map((tool) => {
-                const { label, links } = tool
+                const { label, tools } = tool
 
-                return <Card key={label} tools={links} title={label} />
+                return <Card key={label} tools={tools} title={label} />
               })}
         </div>
       </div>
@@ -145,13 +46,18 @@ const HomePage = () => {
   )
 }
 
+type CardProps = {
+  tools: Tool[]
+  title: string
+}
+
 const Card = (props: CardProps) => {
   const { tools, title } = props
 
   return (
-    <div className='w-full rounded-lg border p-4'>
-      <div>{title}</div>
-      <div className='mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
+    <div className='w-full space-y-4 rounded-lg border p-4'>
+      <h2 className='text-xl font-semibold'>{title}</h2>
+      <div className='grid gap-4 sm:grid-cols-2'>
         {tools.map((tool) => (
           <Item key={tool.label} {...tool} />
         ))}
@@ -161,16 +67,21 @@ const Card = (props: CardProps) => {
 }
 
 const Item = (props: Tool) => {
-  const { color, icon, label, link } = props
+  const { color, icon, label, description, link } = props
   const Icon = icon
 
   return (
     <Link
       href={link}
-      className='hover:bg-accent-highlight flex flex-col items-center justify-center rounded-lg bg-accent p-4 text-center transition-colors duration-300'
+      className='flex items-start gap-4 rounded-lg bg-muted/50 p-6 transition-colors hover:bg-muted'
     >
-      <Icon color={color} size={32} />
-      <div className='mt-1.5'>{label}</div>
+      <div className='rounded-lg bg-accent p-2'>
+        <Icon className='size-4' style={{ color }} />
+      </div>
+      <div className='space-y-1'>
+        <h3 className='text-lg font-medium leading-none tracking-tight'>{label}</h3>
+        <p className='text-sm text-muted-foreground'>{description}</p>
+      </div>
     </Link>
   )
 }
