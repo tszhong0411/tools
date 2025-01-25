@@ -167,7 +167,7 @@ const Item = (props: Tool) => {
   return (
     <Link
       href={link}
-      className='flex flex-col items-center justify-center rounded-lg bg-accent p-4 text-center transition-colors duration-300 hover:bg-accent-highlight'
+      className='hover:bg-accent-highlight flex flex-col items-center justify-center rounded-lg bg-accent p-4 text-center transition-colors duration-300'
     >
       <Icon color={color} size={32} />
       <div className='mt-1.5'>{label}</div>

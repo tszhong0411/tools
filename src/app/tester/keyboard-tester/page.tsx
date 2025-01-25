@@ -1,12 +1,12 @@
 'use client'
 
+import { useOs } from '@mantine/hooks'
 import { cn } from '@tszhong0411/utils'
 import React from 'react'
 import { useEventListener } from 'usehooks-ts'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
-import { useOs } from '@/hooks'
 
 type KeyType = {
   keyName: string

@@ -1,0 +1,7 @@
+jedec
+PGDN
+PGUP
+PRTSC
+SCRLK
+tszhong0411
+xlink

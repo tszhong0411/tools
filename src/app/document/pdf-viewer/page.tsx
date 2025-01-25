@@ -46,7 +46,7 @@ const PDFViewer = () => {
       <div className='my-12 w-full'>
         <div
           {...getRootProps()}
-          className='hover:bg-muted my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300'
+          className='my-12 flex cursor-pointer flex-col items-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 transition-colors duration-300 hover:bg-muted'
         >
           <FileIcon size={48} />
           <input {...getInputProps()} />

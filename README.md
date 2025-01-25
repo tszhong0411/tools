@@ -2,15 +2,14 @@
   <img src="https://honghong.me/images/projects/tools/cover.png">
 </p>
 
-## ⚡️ Tech Stack
+## Tech Stack
 
-| Name       | Link                                                      |
-| ---------- | --------------------------------------------------------- |
-| Framework  | [Next.js](https://nextjs.org/)                            |
-| Deployment | [Vercel](https://vercel.com)                              |
-| Favicon    | [realfavicongenerator](https://realfavicongenerator.net/) |
+| Name       | Link                           |
+| ---------- | ------------------------------ |
+| Framework  | [Next.js](https://nextjs.org/) |
+| Deployment | [Vercel](https://vercel.com)   |
 
-## 🤩 Features
+## Features
 
 - CSS unit converter
 - Color converter
@@ -19,7 +18,7 @@
 - Word counter
 - Keyboard tester
 
-## 👋 Getting Started
+## Getting Started
 
 Follow these steps to run the project locally on your machine:
 
