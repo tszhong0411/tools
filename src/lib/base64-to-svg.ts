@@ -5,21 +5,11 @@ export const base64ToSvg = (file: Blob, callback: (result: string) => void) => {
     const image = new Image()
 
     image.addEventListener('load', () => {
-      const svgElement = document.createElementNS(
-        'http://www.w3.org/2000/svg',
-        'svg'
-      )
+      const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 
-      const imageElement = document.createElementNS(
-        'http://www.w3.org/2000/svg',
-        'image'
-      )
+      const imageElement = document.createElementNS('http://www.w3.org/2000/svg', 'image')
 
-      imageElement.setAttributeNS(
-        'http://www.w3.org/1999/xlink',
-        'xlink:href',
-        result
-      )
+      imageElement.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', result)
 
       svgElement.setAttribute('width', `${image.width}`)
       svgElement.setAttribute('height', `${image.height}`)

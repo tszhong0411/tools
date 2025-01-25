@@ -37,7 +37,6 @@
     "@tszhong0411/utils": "^0.0.3",
     "@types/dom-to-image": "^2.6.7",
     "@types/uuid": "^9.0.8",
-    "autoprefixer": "^10.4.17",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "colord": "^2.9.3",
@@ -67,29 +66,28 @@
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
     "@tszhong0411/eslint-config": "^0.1.26",
-    "@tszhong0411/prettier-config": "latest",
+    "@tszhong0411/prettier-config": "^0.0.13",
     "@tszhong0411/tailwind-config": "^0.0.1",
     "@tszhong0411/tsconfig": "latest",
     "@types/file-saver": "^2.0.7",
     "@types/node": "20.11.19",
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
+    "cz-git": "^1.11.0",
     "eslint": "^9.19.0",
     "eslint-config-next": "^14.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.35",
+    "postcss-lightningcss": "^1.0.1",
+    "postcss-load-config": "^6.0.1",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
     "typescript": "5.3.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint"
-    ],
-    "*.{json,css,scss,md,mdx,js,jsx,ts,tsx,cjs,mjs}": [
-      "prettier -c"
-    ]
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
   },
-  "prettier": "@tszhong0411/prettier-config"
+  "packageManager": "pnpm@9.15.4"
 }

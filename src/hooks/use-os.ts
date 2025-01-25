@@ -1,7 +1,7 @@
 type OS = 'undetermined' | 'macos' | 'ios' | 'windows' | 'android' | 'linux'
 
 const getOS = (): OS => {
-  const { userAgent } = window.navigator
+  const { userAgent } = globalThis.navigator
   const macosPlatforms = /(macintosh)|(macintel)|(macppc)|(mac68k)/i
   const windowsPlatforms = /(win32)|(win64)|(windows)|(wince)/i
   const iosPlatforms = /(iphone)|(ipad)|(ipod)/i
@@ -25,8 +25,9 @@ const getOS = (): OS => {
   return 'undetermined'
 }
 
+// eslint-disable-next-line @eslint-react/hooks-extra/no-useless-custom-hooks -- will be fixed
 export const useOs = (): OS => {
-  if (typeof window !== 'undefined') {
+  if (typeof globalThis !== 'undefined') {
     return getOS()
   }
 

@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@tszhong0411/ui'
 import {
+  Button,
   Select,
   SelectContent,
   SelectItem,
@@ -48,6 +48,7 @@ const options = [
 
 const download = async (result: string, filename: string, to: string) => {
   const blob = await (await fetch(result)).blob()
+  // eslint-disable-next-line @typescript-eslint/no-deprecated -- will be fixed
   FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`)
 }
 
@@ -103,7 +104,9 @@ const ImageConverter = () => {
     )
   }
 
-  const clearAll = () => setFiles([])
+  const clearAll = () => {
+    setFiles([])
+  }
 
   const convertAll = () => {
     for (const imageFile of files) {
@@ -120,7 +123,7 @@ const ImageConverter = () => {
           conversion = imageToBase64
         }
 
-        conversion(file, (result) =>
+        conversion(file, (result) => {
           setFiles((prev) =>
             prev.map((f) => {
               if (f.id === id)
@@ -131,7 +134,7 @@ const ImageConverter = () => {
               return f
             })
           )
-        )
+        })
       }
     }
   }
@@ -159,7 +162,9 @@ const ImageConverter = () => {
             <div className='flex items-center justify-start gap-2.5'>
               Convert all to
               <Select
-                onValueChange={(option: Option) => setAllExtensions(option)}
+                onValueChange={(option: Option) => {
+                  setAllExtensions(option)
+                }}
               >
                 <SelectTrigger>
                   <SelectValue placeholder='Select' />
@@ -178,10 +183,7 @@ const ImageConverter = () => {
                 Clear all
               </Button>
               <Button
-                disabled={
-                  files.filter((file) => file.to !== undefined).length !==
-                  files.length
-                }
+                disabled={files.filter((file) => file.to !== undefined).length !== files.length}
                 onClick={convertAll}
                 type='button'
               >
@@ -195,10 +197,7 @@ const ImageConverter = () => {
               const { name, size, extension, id, result, to } = file
 
               return (
-                <div
-                  key={id}
-                  className='flex flex-col gap-4 rounded-lg border p-4'
-                >
+                <div key={id} className='flex flex-col gap-4 rounded-lg border p-4'>
                   <div>{name}</div>
 
                   <div className='flex flex-col justify-between sm:flex-row sm:items-center'>
@@ -218,19 +217,16 @@ const ImageConverter = () => {
                           {extension} to{' '}
                           <Select
                             value={to}
-                            onValueChange={(option: Option) =>
+                            onValueChange={(option: Option) => {
                               setExtension(id, option)
-                            }
+                            }}
                           >
                             <SelectTrigger className='w-32'>
                               <SelectValue placeholder='Select' />
                             </SelectTrigger>
                             <SelectContent>
                               {options.map((option) => (
-                                <SelectItem
-                                  key={option.value}
-                                  value={option.value}
-                                >
+                                <SelectItem key={option.value} value={option.value}>
                                   {option.label}
                                 </SelectItem>
                               ))}
@@ -242,7 +238,9 @@ const ImageConverter = () => {
                       <Button
                         variant='destructive'
                         className='size-10 p-0'
-                        onClick={() => deleteHandler(id)}
+                        onClick={() => {
+                          deleteHandler(id)
+                        }}
                         type='button'
                       >
                         <XIcon />

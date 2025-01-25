@@ -111,9 +111,7 @@ const HomePage = () => {
 
   const filter = (tool: Tool): boolean =>
     tool.label.toLowerCase().includes(value.toLowerCase()) ||
-    tool.keywords.some((keyword) =>
-      keyword.toLowerCase().includes(value.toLowerCase())
-    )
+    tool.keywords.some((keyword) => keyword.toLowerCase().includes(value.toLowerCase()))
 
   return (
     <div>
@@ -122,23 +120,20 @@ const HomePage = () => {
         <Input
           type='text'
           value={value}
-          onChange={(e) => setValue(e.currentTarget.value)}
+          onChange={(e) => {
+            setValue(e.currentTarget.value)
+          }}
           placeholder='Search'
           className='w-full'
         />
-        <div
-          id='get-started'
-          className='my-12 flex w-full scroll-mt-20 flex-col gap-6'
-        >
+        <div id='get-started' className='my-12 flex w-full scroll-mt-20 flex-col gap-6'>
           {value
-            ? TOOLS.filter((t) => t.links.some((tool) => filter(tool))).map(
-                (t) => {
-                  const { label, links } = t
-                  const filtered = links.filter((tool) => filter(tool))
+            ? TOOLS.filter((t) => t.links.some((tool) => filter(tool))).map((t) => {
+                const { label, links } = t
+                const filtered = links.filter((tool) => filter(tool))
 
-                  return <Card key={label} tools={filtered} title={label} />
-                }
-              )
+                return <Card key={label} tools={filtered} title={label} />
+              })
             : TOOLS.map((tool) => {
                 const { label, links } = tool
 

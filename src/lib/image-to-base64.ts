@@ -1,7 +1,4 @@
-export const imageToBase64 = (
-  file: Blob,
-  callback: (result: string) => void
-) => {
+export const imageToBase64 = (file: Blob, callback: (result: string) => void) => {
   const reader = new FileReader()
 
   reader.addEventListener('load', (e) => {

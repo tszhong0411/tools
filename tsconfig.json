@@ -8,5 +8,15 @@
   },
   "exclude": ["node_modules"],
   "extends": "@tszhong0411/tsconfig/nextjs.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next.config.mjs",
+    "commitlint.config.mjs",
+    "postcss.config.mjs",
+    "eslint.config.mjs",
+    "prettier.config.js"
+  ]
 }

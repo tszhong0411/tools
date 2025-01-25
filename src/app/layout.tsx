@@ -1,17 +1,14 @@
-import { cn } from '@tszhong0411/utils'
-import { GeistSans } from 'geist/font/sans'
 import type { Metadata, Viewport } from 'next'
 
 import '@/styles/globals.css'
+
+import { cn } from '@tszhong0411/utils'
+import { GeistSans } from 'geist/font/sans'
+
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import CustomToaster from '@/components/toaster'
-import {
-  SITE_DESCRIPTION,
-  SITE_NAME,
-  SITE_TITLE,
-  SITE_URL
-} from '@/lib/constants'
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/constants'
 
 type RootLayoutProps = {
   children: React.ReactNode
@@ -53,13 +50,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL
   },
-  keywords: [
-    'tools',
-    'free tools',
-    'web tools',
-    'tools for developers',
-    'tools for designers'
-  ],
+  keywords: ['tools', 'free tools', 'web tools', 'tools for developers', 'tools for designers'],
   creator: 'tszhong0411',
   openGraph: {
     url: SITE_URL,
@@ -118,9 +109,7 @@ const RootLayout = (props: RootLayoutProps) => {
     <html lang='en-US' className={cn(GeistSans.variable, 'scroll-smooth')}>
       <body>
         <Header />
-        <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
-          {children}
-        </main>
+        <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>{children}</main>
         <CustomToaster />
         <Footer />
       </body>

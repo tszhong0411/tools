@@ -61,7 +61,7 @@ const ColorConverter = () => {
         },
         {
           label: 'CSS Keyword',
-          value: colord(value).toName({ closest: true }) || 'Unknown'
+          value: colord(value).toName({ closest: true }) ?? 'Unknown'
         }
       ]
     },
@@ -74,7 +74,7 @@ const ColorConverter = () => {
         },
         {
           label: 'Format',
-          value: getFormat(value) || '-'
+          value: getFormat(value) ?? '-'
         },
         {
           label: 'Hue (0-359)',
@@ -103,21 +103,24 @@ const ColorConverter = () => {
       <Title title='Color Converter' />
 
       <div className='relative my-8 flex w-full max-w-[250px] items-center justify-between gap-4'>
-        {/* I don't know why */}
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control -- will be fixed */}
         <label htmlFor='color' className='text-lg font-bold'>
-          <div
-            className='size-7 cursor-pointer rounded-lg'
-            style={{ backgroundColor: value }}
-          />
+          <div className='size-7 cursor-pointer rounded-lg' style={{ backgroundColor: value }} />
         </label>
         <input
           className='invisible absolute left-0 top-2'
           type='color'
           id='color'
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => {
+            setValue(e.target.value)
+          }}
         />
-        <Input value={value} onChange={(e) => setValue(e.target.value)} />
+        <Input
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value)
+          }}
+        />
       </div>
 
       <div className='my-12 grid w-full gap-4 sm:grid-cols-2'>

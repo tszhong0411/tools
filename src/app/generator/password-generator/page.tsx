@@ -1,9 +1,6 @@
 'use client'
 
-import { Button } from '@tszhong0411/ui'
-import { Checkbox } from '@tszhong0411/ui'
-import { Input } from '@tszhong0411/ui'
-import { Label } from '@tszhong0411/ui'
+import { Button, Checkbox, Input, Label } from '@tszhong0411/ui'
 import React from 'react'
 import { toast } from 'react-hot-toast'
 
@@ -50,15 +47,14 @@ const PasswordGenerator = () => {
     }
 
     if (avoidSimilarChars) {
+      // eslint-disable-next-line @typescript-eslint/no-misused-spread -- will be fixed
       chars = [...chars].filter((char) => !similarChars.includes(char)).join('')
     }
 
     let generatedPassword = ''
 
     for (let i = 0; i < length; i++) {
-      generatedPassword += chars.charAt(
-        Math.floor(Math.random() * chars.length)
-      )
+      generatedPassword += chars.charAt(Math.floor(Math.random() * chars.length))
     }
 
     setPassword(generatedPassword)
@@ -104,7 +100,9 @@ const PasswordGenerator = () => {
             type='number'
             min='1'
             value={length}
-            onChange={(e) => setLength(Number.parseInt(e.target.value))}
+            onChange={(e) => {
+              setLength(Number.parseInt(e.target.value))
+            }}
           />
         </div>
         <div>
@@ -113,7 +111,9 @@ const PasswordGenerator = () => {
               <Checkbox
                 id='uppercase'
                 checked={upperCase}
-                onCheckedChange={(value: boolean) => setUpperCase(value)}
+                onCheckedChange={(value: boolean) => {
+                  setUpperCase(value)
+                }}
               />
               <Label htmlFor='uppercase'>Uppercase letters</Label>
             </div>
@@ -121,7 +121,9 @@ const PasswordGenerator = () => {
               <Checkbox
                 id='lowercase'
                 checked={lowerCase}
-                onCheckedChange={(value: boolean) => setLowerCase(value)}
+                onCheckedChange={(value: boolean) => {
+                  setLowerCase(value)
+                }}
               />
               <Label htmlFor='lowercase'>Lowercase letters</Label>
             </div>
@@ -129,7 +131,9 @@ const PasswordGenerator = () => {
               <Checkbox
                 id='digits'
                 checked={digits}
-                onCheckedChange={(value: boolean) => setDigits(value)}
+                onCheckedChange={(value: boolean) => {
+                  setDigits(value)
+                }}
               />
               <Label htmlFor='digits'>Digits</Label>
             </div>
@@ -137,7 +141,9 @@ const PasswordGenerator = () => {
               <Checkbox
                 id='symbols'
                 checked={symbols}
-                onCheckedChange={(value: boolean) => setSymbols(value)}
+                onCheckedChange={(value: boolean) => {
+                  setSymbols(value)
+                }}
               />
               <Label htmlFor='symbols'>Symbols</Label>
             </div>
@@ -145,9 +151,9 @@ const PasswordGenerator = () => {
               <Checkbox
                 id='avoid-similar-chars'
                 checked={avoidSimilarChars}
-                onCheckedChange={(value: boolean) =>
+                onCheckedChange={(value: boolean) => {
                   setAvoidSimilarChars(value)
-                }
+                }}
               />
               <Label htmlFor='avoid-similar-chars'>
                 Avoid similar characters (e.g. 1 and l, 0 and O)

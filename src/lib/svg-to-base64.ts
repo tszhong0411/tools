@@ -2,7 +2,7 @@ export const svgToBase64 = (file: Blob, callback: (result: string) => void) => {
   const reader = new FileReader()
 
   reader.addEventListener('load', (e) => {
-    if (e.target && e.target.result) {
+    if (e.target?.result) {
       const svgURL = URL.createObjectURL(
         new Blob([e.target.result], {
           type: 'image/svg+xml'

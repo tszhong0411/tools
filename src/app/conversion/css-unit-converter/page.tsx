@@ -7,9 +7,7 @@ import Container from '@/components/container'
 import Title from '@/components/title'
 
 type Units = 'PX' | 'PC' | 'PT' | 'EM' | 'REM'
-type Values = {
-  [key in Units]: number
-}
+type Values = Record<Units, number>
 
 type InputProps = {
   unit: string
@@ -26,37 +24,41 @@ const CSSUnitConverter = () => {
 
   const changeHandler = (value: number, type: Units) => {
     if (type === 'EM' || type === 'REM') {
-      return setValues({
+      setValues({
         EM: value,
         REM: value,
         PX: value * 16,
         PC: value * 100,
         PT: value * 12
       })
+      return
     }
 
     if (type === 'PX') {
-      return setValues({
+      setValues({
         PX: value,
         EM: value / 16,
         REM: value / 16,
         PC: (value / 16) * 100,
         PT: (value / 16) * 12
       })
+      return
     }
 
     if (type === 'PC') {
-      return setValues({
+      setValues({
         PC: value,
         EM: value / 100,
         PX: value / 100,
         REM: (value / 100) * 16,
         PT: (value / 100) * 12
       })
+      return
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- will be fixed
     if (type === 'PT') {
-      return setValues({
+      setValues({
         PT: value,
         EM: value / 12,
         REM: value / 12,
@@ -74,27 +76,37 @@ const CSSUnitConverter = () => {
         <NumberInput
           unit='PX'
           value={values.PX}
-          onChange={(e) => changeHandler(Number(e.currentTarget.value), 'PX')}
+          onChange={(e) => {
+            changeHandler(Number(e.currentTarget.value), 'PX')
+          }}
         />
         <NumberInput
           unit='%'
           value={values.PC}
-          onChange={(e) => changeHandler(Number(e.currentTarget.value), 'PC')}
+          onChange={(e) => {
+            changeHandler(Number(e.currentTarget.value), 'PC')
+          }}
         />
         <NumberInput
           unit='PT'
           value={values.PT}
-          onChange={(e) => changeHandler(Number(e.currentTarget.value), 'PT')}
+          onChange={(e) => {
+            changeHandler(Number(e.currentTarget.value), 'PT')
+          }}
         />
         <NumberInput
           unit='EM'
           value={values.EM}
-          onChange={(e) => changeHandler(Number(e.currentTarget.value), 'EM')}
+          onChange={(e) => {
+            changeHandler(Number(e.currentTarget.value), 'EM')
+          }}
         />
         <NumberInput
           unit='REM'
           value={values.REM}
-          onChange={(e) => changeHandler(Number(e.currentTarget.value), 'REM')}
+          onChange={(e) => {
+            changeHandler(Number(e.currentTarget.value), 'REM')
+          }}
         />
       </div>
     </Container>
@@ -107,9 +119,7 @@ const NumberInput = (props: InputProps) => {
   return (
     <div className='relative'>
       <Input className='p-4 pr-14' type='number' {...rest} />
-      <div className='absolute right-3 top-1/2 -translate-y-1/2 select-none'>
-        {unit}
-      </div>
+      <div className='absolute right-3 top-1/2 -translate-y-1/2 select-none'>{unit}</div>
     </div>
   )
 }
