@@ -12,7 +12,7 @@ import {
 import FileSaver from 'file-saver'
 import { filesize } from 'filesize'
 import { ImageIcon, XIcon } from 'lucide-react'
-import React from 'react'
+import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { v4 as uuid } from 'uuid'
 
@@ -53,9 +53,9 @@ const download = async (result: string, filename: string, to: string) => {
 }
 
 const ImageConverter = () => {
-  const [files, setFiles] = React.useState<ImageFile[]>([])
+  const [files, setFiles] = useState<ImageFile[]>([])
 
-  const onDrop = React.useCallback((newFiles: File[]) => {
+  const onDrop = useCallback((newFiles: File[]) => {
     for (const file of newFiles) {
       const name = truncateFilename(file.name)
       const newFile: ImageFile = {

@@ -2,7 +2,7 @@
 
 import { useOs } from '@mantine/hooks'
 import { cn } from '@tszhong0411/utils'
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { useEventListener } from 'usehooks-ts'
 
 import Container from '@/components/container'
@@ -37,7 +37,7 @@ const Key = (props: KeyProps) => {
 }
 
 const KeyboardTester = () => {
-  const [mounted, setMounted] = React.useState(false)
+  const [mounted, setMounted] = useState(false)
   const os = useOs()
   const isMacos = os === 'macos'
 
@@ -544,7 +544,7 @@ const KeyboardTester = () => {
     }
   ]
 
-  const [layout, setLayout] = React.useState(initialLayout)
+  const [layout, setLayout] = useState(initialLayout)
 
   const handler = (e: KeyboardEvent) => {
     const newArray = [...layout]
@@ -565,7 +565,7 @@ const KeyboardTester = () => {
     if (e.keyCode === 44) handler(e)
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true)
   }, [])
 

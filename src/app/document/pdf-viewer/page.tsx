@@ -8,7 +8,7 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 import { toast } from '@tszhong0411/ui'
 import { FileIcon } from 'lucide-react'
 import pkg from 'package.json'
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 
 import Container from '@/components/container'
@@ -16,8 +16,8 @@ import Title from '@/components/title'
 import { getExtension } from '@/lib/get-extension'
 
 const PDFViewer = () => {
-  const [mounted, setMounted] = React.useState(false)
-  const [url, setUrl] = React.useState('')
+  const [mounted, setMounted] = useState(false)
+  const [url, setUrl] = useState('')
   const onDrop = (files: File[]) => {
     setUrl(URL.createObjectURL(files[0]!))
   }
@@ -35,7 +35,7 @@ const PDFViewer = () => {
     }
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true)
   }, [])
 

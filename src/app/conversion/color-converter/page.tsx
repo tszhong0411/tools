@@ -7,7 +7,7 @@ import cmykPlugin from 'colord/plugins/cmyk'
 import hwbPlugin from 'colord/plugins/hwb'
 import lchPlugin from 'colord/plugins/lch'
 import namesPlugin from 'colord/plugins/names'
-import React from 'react'
+import { useState } from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
@@ -29,7 +29,7 @@ type ItemProps = {
 }
 
 const ColorConverter = () => {
-  const [value, setValue] = React.useState('#ffffff')
+  const [value, setValue] = useState('#ffffff')
 
   const lists: Lists[] = [
     {

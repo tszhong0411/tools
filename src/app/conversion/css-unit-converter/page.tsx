@@ -1,7 +1,7 @@
 'use client'
 
 import { Input } from '@tszhong0411/ui'
-import React from 'react'
+import { useState } from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
@@ -14,7 +14,7 @@ type InputProps = {
 } & React.ComponentPropsWithoutRef<'input'>
 
 const CSSUnitConverter = () => {
-  const [values, setValues] = React.useState<Values>({
+  const [values, setValues] = useState<Values>({
     PX: 16,
     PC: 100,
     PT: 12,

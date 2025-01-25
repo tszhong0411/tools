@@ -1,13 +1,13 @@
 'use client'
 
 import { Textarea } from '@tszhong0411/ui'
-import React from 'react'
+import { useState } from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
 
 const WordCounter = () => {
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = useState('')
   const words = value.match(/\S+/g)?.length ?? 0
   const chars = value.length || 0
   const charsWithoutSpaces = value.replaceAll(' ', '').length || 0

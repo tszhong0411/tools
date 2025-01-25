@@ -1,19 +1,19 @@
 'use client'
 
 import { Button, Checkbox, Input, Label, toast } from '@tszhong0411/ui'
-import React from 'react'
+import { useState } from 'react'
 
 import Container from '@/components/container'
 import Title from '@/components/title'
 
 const PasswordGenerator = () => {
-  const [length, setLength] = React.useState(10)
-  const [upperCase, setUpperCase] = React.useState(true)
-  const [lowerCase, setLowerCase] = React.useState(true)
-  const [digits, setDigits] = React.useState(true)
-  const [symbols, setSymbols] = React.useState(true)
-  const [avoidSimilarChars, setAvoidSimilarChars] = React.useState(true)
-  const [password, setPassword] = React.useState('')
+  const [length, setLength] = useState(10)
+  const [upperCase, setUpperCase] = useState(true)
+  const [lowerCase, setLowerCase] = useState(true)
+  const [digits, setDigits] = useState(true)
+  const [symbols, setSymbols] = useState(true)
+  const [avoidSimilarChars, setAvoidSimilarChars] = useState(true)
+  const [password, setPassword] = useState('')
 
   const handleGeneratePassword = () => {
     if (!upperCase && !lowerCase && !digits && !symbols) {
