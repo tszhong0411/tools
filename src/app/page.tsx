@@ -2,17 +2,39 @@
 
 import { Input } from '@tszhong0411/ui'
 import Link from 'next/link'
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
+import { useDebounce } from 'use-debounce'
 
 import Hero from '@/components/hero'
 import { type Tool, TOOLS } from '@/lib/tool-groups'
 
+type FilteredTools = {
+  label: string
+  tools: Tool[]
+}
+
+const useFilteredTools = (searchValue: string): FilteredTools[] => {
+  const filter = useCallback(
+    (tool: Tool): boolean =>
+      tool.label.toLowerCase().includes(searchValue.toLowerCase()) ||
+      tool.keywords.some((keyword) => keyword.toLowerCase().includes(searchValue.toLowerCase())),
+    [searchValue]
+  )
+
+  return useMemo(() => {
+    if (!searchValue) return TOOLS
+
+    return TOOLS.map((t) => ({
+      label: t.label,
+      tools: t.tools.filter((element) => filter(element))
+    })).filter((t) => t.tools.length > 0)
+  }, [searchValue, filter])
+}
+
 const HomePage = () => {
   const [value, setValue] = React.useState('')
-
-  const filter = (tool: Tool): boolean =>
-    tool.label.toLowerCase().includes(value.toLowerCase()) ||
-    tool.keywords.some((keyword) => keyword.toLowerCase().includes(value.toLowerCase()))
+  const [debouncedValue] = useDebounce(value, 300)
+  const filteredTools = useFilteredTools(debouncedValue)
 
   return (
     <div>
@@ -28,18 +50,12 @@ const HomePage = () => {
           className='w-full'
         />
         <div id='get-started' className='flex w-full scroll-mt-20 flex-col gap-6'>
-          {value
-            ? TOOLS.filter((t) => t.tools.some((tool) => filter(tool))).map((t) => {
-                const { label, tools } = t
-                const filtered = tools.filter((tool) => filter(tool))
-
-                return <Card key={label} tools={filtered} title={label} />
-              })
-            : TOOLS.map((tool) => {
-                const { label, tools } = tool
-
-                return <Card key={label} tools={tools} title={label} />
-              })}
+          {filteredTools.map(({ label, tools }) => (
+            <Card key={label} tools={tools} title={label} />
+          ))}
+          {filteredTools.length === 0 ? (
+            <div className='text-center text-muted-foreground'>No results found.</div>
+          ) : null}
         </div>
       </div>
     </div>
