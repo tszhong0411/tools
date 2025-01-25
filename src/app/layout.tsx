@@ -8,18 +8,20 @@ import { GeistSans } from 'geist/font/sans'
 
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/constants'
 
 type RootLayoutProps = {
   children: React.ReactNode
 }
 
+const SITE_URL =
+  process.env.NODE_ENV === 'production' ? 'https://tools.honghong.me' : 'http://localhost:3000'
+const SITE_TITLE = 'Tools'
+const SITE_DESCRIPTION =
+  'Discover a powerful collection of web tools designed to streamline your workflow and boost productivity. Made by @tszhong0411.'
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: SITE_TITLE,
-    template: `%s | ${SITE_TITLE}`
-  },
+  title: SITE_TITLE,
   description: SITE_DESCRIPTION,
   robots: {
     index: true,
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   manifest: '/favicon/site.webmanifest',
   twitter: {
-    title: SITE_NAME,
+    title: 'Hong',
     card: 'summary_large_image',
     site: '@tszhong0411',
     creator: '@tszhong0411',
