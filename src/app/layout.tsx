@@ -111,7 +111,7 @@ const RootLayout = (props: RootLayoutProps) => {
     <html lang='en-US' className={cn(GeistSans.variable, 'dark')}>
       <body>
         <Header />
-        <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>{children}</main>
+        <main className='relative mx-auto max-w-4xl px-8 py-24'>{children}</main>
         <Toaster />
         <Footer />
       </body>
