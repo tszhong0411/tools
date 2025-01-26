@@ -14,18 +14,14 @@ import Title from '@/components/title'
 
 extend([hwbPlugin, cmykPlugin, lchPlugin, namesPlugin, a11yPlugin])
 
-type List = {
+type ConversionItem = {
   label: string
   value: string
 }
 
-type Lists = {
+type ConversionList = {
   label: string
-  data: List[]
-}
-
-type ItemProps = {
-  list: List[]
+  data: ConversionItem[]
 }
 
 const ColorConverter = () => {
@@ -33,7 +29,7 @@ const ColorConverter = () => {
   const color = colord(value)
   const isValid = color.isValid()
 
-  const lists: Lists[] = [
+  const lists: ConversionList[] = [
     {
       label: 'Conversion',
       data: [
@@ -124,37 +120,19 @@ const ColorConverter = () => {
       </div>
 
       <div className='my-12 grid w-full gap-4 sm:grid-cols-2'>
-        {lists.map((list) => {
-          const { label, data } = list
-
-          return (
-            <div key={label} className='rounded-lg border p-4'>
-              <div className='mb-8 text-center text-3xl font-bold'>{label}</div>
-              <Items list={data} />
-            </div>
-          )
-        })}
+        {lists.map((list) => (
+          <div key={list.label} className='rounded-lg border p-4'>
+            <div className='mb-8 text-center text-3xl font-bold'>{list.label}</div>
+            {list.data.map((item) => (
+              <div className='mb-4 border-b-4' key={item.label}>
+                <div className='text-sm font-medium'>{item.label}</div>
+                <div className='my-2 text-lg font-bold'>{item.value}</div>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </Container>
-  )
-}
-
-const Items = (props: ItemProps) => {
-  const { list } = props
-
-  return (
-    <>
-      {list.map((item) => {
-        const { label, value } = item
-
-        return (
-          <div className='mb-4 border-b-4' key={label}>
-            <div className='text-sm font-medium'>{label}</div>
-            <div className='my-2 text-lg font-bold'>{value}</div>
-          </div>
-        )
-      })}
-    </>
   )
 }
 
