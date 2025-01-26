@@ -103,9 +103,9 @@ const ColorConverter = () => {
       <Title title='Color Converter' />
 
       <div className='relative my-8 flex w-full max-w-[250px] items-center justify-between gap-4'>
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control -- will be fixed */}
         <label htmlFor='color' className='text-lg font-bold'>
           <div className='size-7 cursor-pointer rounded-lg' style={{ backgroundColor: value }} />
+          <span className='sr-only'>Select color</span>
         </label>
         <input
           className='invisible absolute left-0 top-2'
