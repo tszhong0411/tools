@@ -23,48 +23,48 @@ const CSSUnitConverter = () => {
   })
 
   const changeHandler = (value: number, type: Units) => {
-    if (type === 'EM' || type === 'REM') {
-      setValues({
-        EM: value,
-        REM: value,
-        PX: value * 16,
-        PC: value * 100,
-        PT: value * 12
-      })
-      return
-    }
-
-    if (type === 'PX') {
-      setValues({
-        PX: value,
-        EM: value / 16,
-        REM: value / 16,
-        PC: (value / 16) * 100,
-        PT: (value / 16) * 12
-      })
-      return
-    }
-
-    if (type === 'PC') {
-      setValues({
-        PC: value,
-        EM: value / 100,
-        PX: value / 100,
-        REM: (value / 100) * 16,
-        PT: (value / 100) * 12
-      })
-      return
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- will be fixed
-    if (type === 'PT') {
-      setValues({
-        PT: value,
-        EM: value / 12,
-        REM: value / 12,
-        PX: (value / 12) * 16,
-        PC: (value / 12) * 100
-      })
+    switch (type) {
+      case 'EM':
+      case 'REM': {
+        setValues({
+          EM: value,
+          REM: value,
+          PX: value * 16,
+          PC: value * 100,
+          PT: value * 12
+        })
+        break
+      }
+      case 'PX': {
+        setValues({
+          PX: value,
+          EM: value / 16,
+          REM: value / 16,
+          PC: (value / 16) * 100,
+          PT: (value / 16) * 12
+        })
+        break
+      }
+      case 'PC': {
+        setValues({
+          PC: value,
+          EM: value / 100,
+          PX: value / 100,
+          REM: (value / 100) * 16,
+          PT: (value / 100) * 12
+        })
+        break
+      }
+      case 'PT': {
+        setValues({
+          PT: value,
+          EM: value / 12,
+          REM: value / 12,
+          PX: (value / 12) * 16,
+          PC: (value / 12) * 100
+        })
+        break
+      }
     }
   }
 
