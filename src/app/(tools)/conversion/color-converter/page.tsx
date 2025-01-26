@@ -30,6 +30,8 @@ type ItemProps = {
 
 const ColorConverter = () => {
   const [value, setValue] = useState('#ffffff')
+  const color = colord(value)
+  const isValid = color.isValid()
 
   const lists: Lists[] = [
     {
@@ -37,31 +39,31 @@ const ColorConverter = () => {
       data: [
         {
           label: 'HEX',
-          value: colord(value).toHex()
+          value: color.toHex()
         },
         {
           label: 'RGB',
-          value: colord(value).toRgbString()
+          value: color.toRgbString()
         },
         {
           label: 'HSL',
-          value: colord(value).toHslString()
+          value: color.toHslString()
         },
         {
           label: 'HWB',
-          value: colord(value).toHwbString()
+          value: color.toHwbString()
         },
         {
           label: 'CMYK',
-          value: colord(value).toCmykString()
+          value: color.toCmykString()
         },
         {
           label: 'LCH',
-          value: colord(value).toLchString()
+          value: color.toLchString()
         },
         {
           label: 'CSS Keyword',
-          value: colord(value).toName({ closest: true }) ?? 'Unknown'
+          value: color.toName({ closest: true }) ?? 'Unknown'
         }
       ]
     },
@@ -70,7 +72,7 @@ const ColorConverter = () => {
       data: [
         {
           label: 'Is it a valid CSS value?',
-          value: colord(value).isValid() ? 'Yes' : 'No'
+          value: isValid ? 'Yes' : 'No'
         },
         {
           label: 'Format',
@@ -78,21 +80,19 @@ const ColorConverter = () => {
         },
         {
           label: 'Hue (0-359)',
-          value: `${colord(value).hue()} deg`
+          value: `${color.hue()} deg`
         },
         {
           label: 'Brightness',
-          value: `${Math.floor(colord(value).brightness() * 100)}% (${
-            colord(value).isDark() ? 'Dark' : 'Light'
-          })`
+          value: `${Math.floor(color.brightness() * 100)}% (${color.isDark() ? 'Dark' : 'Light'})`
         },
         {
           label: 'Luminance',
-          value: `${Math.floor(colord(value).luminance() * 100)}%`
+          value: `${Math.floor(color.luminance() * 100)}%`
         },
         {
           label: 'Contrast',
-          value: `${colord(value).contrast()}:1`
+          value: `${color.contrast()}:1`
         }
       ]
     }
