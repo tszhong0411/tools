@@ -37,7 +37,7 @@
     "@mantine/hooks": "^7.16.1",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
-    "@tszhong0411/ui": "^0.0.50",
+    "@tszhong0411/ui": "^0.0.51",
     "@tszhong0411/utils": "^0.0.17",
     "@types/uuid": "^10.0.0",
     "colord": "^2.9.3",
