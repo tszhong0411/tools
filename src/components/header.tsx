@@ -9,14 +9,9 @@ const Header = () => {
           <Logo width={24} height={24} />
         </Link>
         <div className='flex items-center justify-center gap-6'>
-          <a
-            href='https://github.com/tszhong0411/tools'
-            target='_blank'
-            rel='noreferrer noopener'
-            aria-label='GitHub'
-          >
+          <Link href='https://github.com/tszhong0411/tools' aria-label='GitHub'>
             <SiGithub />
-          </a>
+          </Link>
         </div>
       </div>
     </header>
