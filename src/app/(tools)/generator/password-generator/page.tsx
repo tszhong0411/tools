@@ -46,8 +46,11 @@ const PasswordGenerator = () => {
     }
 
     if (avoidSimilarChars) {
-      // eslint-disable-next-line @typescript-eslint/no-misused-spread -- will be fixed
-      chars = [...chars].filter((char) => !similarChars.includes(char)).join('')
+      chars = chars
+        // eslint-disable-next-line unicorn/prefer-spread -- This is safer
+        .split('')
+        .filter((char) => !similarChars.includes(char))
+        .join('')
     }
 
     let generatedPassword = ''
