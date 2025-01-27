@@ -9,7 +9,7 @@ import {
   SelectValue,
   toast
 } from '@tszhong0411/ui'
-import FileSaver from 'file-saver'
+import { saveAs } from 'file-saver'
 import { filesize } from 'filesize'
 import { ImageIcon, XIcon } from 'lucide-react'
 import { useCallback, useState } from 'react'
@@ -48,8 +48,7 @@ const options = [
 
 const download = async (result: string, filename: string, to: string) => {
   const blob = await (await fetch(result)).blob()
-  // eslint-disable-next-line @typescript-eslint/no-deprecated -- will be fixed
-  FileSaver.saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`)
+  saveAs(blob, `${filename.replace(/\.[^./]+$/, '')}.${to}`)
 }
 
 const ImageConverter = () => {
