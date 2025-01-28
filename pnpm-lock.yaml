@@ -94,8 +94,8 @@ importers:
         specifier: ^0.0.23
         version: 0.0.23(tailwindcss@3.4.17)
       '@tszhong0411/tsconfig':
-        specifier: latest
-        version: 0.0.1(typescript@5.7.3)
+        specifier: ^0.0.10
+        version: 0.0.10(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)
       '@types/file-saver':
         specifier: ^2.0.7
         version: 2.0.7
@@ -2173,8 +2173,8 @@ packages:
     peerDependencies:
       tailwindcss: 3.x
 
-  '@tszhong0411/tsconfig@0.0.1':
-    resolution: {integrity: sha512-2m8pYJjGVLn2YOfra36FNQeXN9GR+cPpWY4nioygvDVXw9eMCqml1rrtWHRPKw9zWHiQzq8LCwMvI3lJOb/BtA==}
+  '@tszhong0411/tsconfig@0.0.10':
+    resolution: {integrity: sha512-5eGcEe2BFiXIkFdC9wtZQ+n+yJMq19ZUaTWjLxeunZByp+vcXLJE9ILHnDEA+n3L8c8KMdcKv2hcN/ToVvEIXA==}
     peerDependencies:
       typescript: 5.x
 
@@ -7876,9 +7876,19 @@ snapshots:
       tailwindcss: 3.4.17
       tailwindcss-animate: 1.0.7(tailwindcss@3.4.17)
 
-  '@tszhong0411/tsconfig@0.0.1(typescript@5.7.3)':
+  '@tszhong0411/tsconfig@0.0.10(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)':
     dependencies:
+      next: 15.1.6(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       typescript: 5.7.3
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@opentelemetry/api'
+      - '@playwright/test'
+      - babel-plugin-macros
+      - babel-plugin-react-compiler
+      - react
+      - react-dom
+      - sass
 
   '@tszhong0411/ui@0.0.51(@tanstack/react-table@8.20.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@tszhong0411/utils@0.0.17)(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(next@15.1.6(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)':
     dependencies:
